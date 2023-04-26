@@ -1,5 +1,5 @@
-#ifndef SMART_ROAD_SMARTROAD_H
-#define SMART_ROAD_SMARTROAD_H
+#ifndef SMART_ROAD_SMART_ROAD_RADAR_H
+#define SMART_ROAD_SMART_ROAD_RADAR_H
 
 #include "serial.h"
 
@@ -29,9 +29,9 @@
 Serial dataBus;
 
 
-class smartRoad {
+class SmartRoadRadar {
 
 };
 
 
-#endif //SMART_ROAD_SMARTROAD_H
+#endif //SMART_ROAD_SMART_ROAD_RADAR_H
