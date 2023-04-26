@@ -1,13 +1,41 @@
-//
-// Created by Administrator on 4/26/2023.
-//
-
 #ifndef SMART_ROAD_SERIAL_H
 #define SMART_ROAD_SERIAL_H
 
+#include <windows.h>
+#include <iostream>
 
-class serial {
+#define SYMBOL_NULL '\0'
+#define SYMBOL_CR   '\r'
+#define SYMBOL_LF   '\n'
 
+#define PACKET_LENGTH 256
+#define BYTES_TO_READ 1
+
+using namespace std;
+
+struct PortConfig {
+    DWORD baudRate;
+    DWORD byteSize;
+    DWORD stopBits;
+    DWORD parity;
+};
+
+class Serial {
+
+private:
+    HANDLE hSerial;
+
+    void append(char *dest, char symbol);
+
+public:
+    Serial() = default;
+    Serial(LPTSTR address, PortConfig config);
+
+    void write(char *data);
+    void writeLn(char *data);
+
+    char readByte();
+    void readBytes(char *buffer, int bufferLength);
 };
 
 
