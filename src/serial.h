@@ -26,16 +26,23 @@ private:
     HANDLE hSerial;
 
     void append(char *dest, char symbol);
+    void append(unsigned char *dest, unsigned char symbol);
 
 public:
     Serial() = default;
     Serial(LPTSTR address, PortConfig config);
 
     void write(char *data);
+    void write(unsigned char *data);
+
     void writeLn(char *data);
+    void writeLn(unsigned char *data);
 
     char readByte();
     void readBytes(char *buffer, int bufferLength);
+
+    unsigned char readUnsignedByte();
+    void readUnsignedBytes(unsigned char *buffer, int bufferLength);
 };
 
 

@@ -26,13 +26,25 @@ Serial::Serial(LPTSTR address, PortConfig config) {
 }
 
 void Serial::write(char *data) {
-    DWORD dwSize = strlen(data);
+    DWORD dwSize = sizeof data;
+    DWORD dwBytesWritten;
+
+    WriteFile(hSerial, data, dwSize, &dwBytesWritten, NULL);
+}
+
+void Serial::write(unsigned char *data) {
+    DWORD dwSize = sizeof data;
     DWORD dwBytesWritten;
 
     WriteFile(hSerial, data, dwSize, &dwBytesWritten, NULL);
 }
 
 void Serial::writeLn(char *data) {
+    append(data, SYMBOL_LF);
+    write(data);
+}
+
+void Serial::writeLn(unsigned char *data) {
     append(data, SYMBOL_LF);
     write(data);
 }
@@ -48,9 +60,27 @@ char Serial::readByte() {
 }
 
 void Serial::readBytes(char *buffer, int bufferLength) {
-    for (int pos = 0; pos < bufferLength; ++pos) {
-        char receivedByte = readByte();
+    char receivedByte{};
 
+    for (int pos = 0; pos < bufferLength; ++pos) {
+        receivedByte = readByte();
+        buffer[pos] = receivedByte;
+    }
+
+    buffer[bufferLength] = SYMBOL_NULL;
+}
+
+unsigned char Serial::readUnsignedByte() {
+    char signedByte = readByte();
+
+    return static_cast<unsigned char>(signedByte);
+}
+
+void Serial::readUnsignedBytes(unsigned char *buffer, int bufferLength) {
+    unsigned char receivedByte;
+
+    for (int pos = 0; pos < bufferLength; ++pos) {
+        receivedByte = readUnsignedByte();
         buffer[pos] = receivedByte;
     }
 
@@ -59,6 +89,13 @@ void Serial::readBytes(char *buffer, int bufferLength) {
 
 void Serial::append(char *dest, char symbol) {
     int length = strlen(dest);
+
+    dest[length] = symbol;
+    dest[length + 1] = SYMBOL_NULL;
+}
+
+void Serial::append(unsigned char *dest, unsigned char symbol) {
+    size_t length = sizeof dest;
 
     dest[length] = symbol;
     dest[length + 1] = SYMBOL_NULL;
