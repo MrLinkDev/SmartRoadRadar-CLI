@@ -137,7 +137,7 @@ class SmartRoadRadar {
 private:
     Serial dataBus;
 
-    Frame readFrame();
+    Frame readFrame(byte_t expectedCmd);
     void writeFrame(Frame frame);
 
     Frame configureFrame(byte_t cmd, byte_t *data, unsigned short length);
@@ -148,7 +148,6 @@ private:
     float dataByteToFloat(byte_t dataByte1, byte_t dataByte2);
 
 public:
-
     SmartRoadRadar() = default;
     SmartRoadRadar(char *address);
     SmartRoadRadar(char *address, PortConfig config);
