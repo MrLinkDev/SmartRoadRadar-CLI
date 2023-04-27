@@ -151,6 +151,7 @@ public:
 
     SmartRoadRadar() = default;
     SmartRoadRadar(char *address);
+    SmartRoadRadar(char *address, PortConfig config);
 
     void getFirmwareVersion(char *version);
 

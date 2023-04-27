@@ -11,6 +11,10 @@ SmartRoadRadar::SmartRoadRadar(char *address){
     dataBus = Serial(address, config);
 }
 
+SmartRoadRadar::SmartRoadRadar(char *address, PortConfig config){
+    dataBus = Serial(address, config);
+}
+
 Frame SmartRoadRadar::readFrame() {
     Frame receivedFrame{};
 
