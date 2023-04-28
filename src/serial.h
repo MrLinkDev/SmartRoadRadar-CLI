@@ -30,6 +30,7 @@ private:
 
 public:
     Serial() = default;
+    Serial(LPTSTR address);
     Serial(LPTSTR address, PortConfig config);
 
     void write(char *data);

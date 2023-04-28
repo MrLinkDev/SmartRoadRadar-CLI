@@ -1,7 +1,5 @@
-#ifndef SMART_ROAD_SMART_ROAD_RADAR_H
-#define SMART_ROAD_SMART_ROAD_RADAR_H
-
-#include "serial.h"
+#ifndef SMART_ROAD_SMART_ROAD_RADAR_UTILS_H
+#define SMART_ROAD_SMART_ROAD_RADAR_UTILS_H
 
 #define SUCCESS     0x0A
 #define FAILURE     0xFF
@@ -62,7 +60,6 @@
 
 #define ZERO_DATA_REPORT        0x0A
 #define ZERO_DATA_NOT_REPORT    0xFF
-
 
 typedef unsigned char byte_t;
 
@@ -126,48 +123,14 @@ struct Parameters {
 struct TargetData {
     byte_t targetNum{};
 
-    float distance;
-    float speed;
-    float angle;
-    float snr;
+    float distance{};
+    float speed{};
+    float angle{};
+    float snr{};
 };
 
-class SmartRoadRadar {
+byte_t calculateChecksum(Frame frame);
 
-private:
-    Serial dataBus;
+float dataByteToFloat(byte_t dataByte1, byte_t dataByte2);
 
-    Frame readFrame(byte_t expectedCmd);
-    void writeFrame(Frame frame);
-
-    Frame configureFrame(byte_t cmd, byte_t *data, unsigned short length);
-    Frame configureFrame(byte_t cmd, byte_t data);
-    Frame configureFrame(byte_t cmd);
-
-    byte_t calculateChecksum(Frame frame);
-    float dataByteToFloat(byte_t dataByte1, byte_t dataByte2);
-
-public:
-    SmartRoadRadar() = default;
-    SmartRoadRadar(char *address);
-    SmartRoadRadar(char *address, PortConfig config);
-
-    void getFirmwareVersion(char *version);
-
-    byte_t setParameters(Parameters parameters);
-    Parameters getParameters();
-
-    byte_t setTargetNumber(uint8_t number);
-
-    void getTargetData(TargetData *targetData);
-
-    byte_t enableDataTransmit();
-    byte_t disableDataTransmit();
-
-    byte_t setDataTransmitFrequency(byte_t freq);
-
-    byte_t setZeroDataReporting(byte_t state);
-};
-
-
-#endif //SMART_ROAD_SMART_ROAD_RADAR_H
+#endif //SMART_ROAD_SMART_ROAD_RADAR_UTILS_H
