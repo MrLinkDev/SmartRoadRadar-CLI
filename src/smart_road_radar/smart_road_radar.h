@@ -16,6 +16,7 @@ private:
     bool isPaused = false;
 
     Frame readFrame();
+    Frame getSpecificFrame(byte_t expectedCmd);
     void writeFrame(Frame frame);
 
     Frame configureFrame(byte_t cmd, byte_t *data, unsigned short length);
@@ -33,6 +34,17 @@ public:
 
     void enableDataTransmit();
     void disableDataTransmit();
+
+    byte_t setParameters(Parameters parameters);
+    Parameters getParameters();
+
+    byte_t setTargetNumber(uint8_t number);
+
+    void getTargetData(TargetData *targetData);
+
+    byte_t setDataTransmitFrequency(byte_t freq);
+
+    byte_t setZeroDataReporting(byte_t state);
 
     void start();
     void stop();

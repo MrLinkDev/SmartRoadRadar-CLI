@@ -1,20 +1,16 @@
-#include "smart_road_radar/smart_road_radar.h"
+#include "smart_road_radar/smart_road_radar_cli.cpp"
 
-LPTSTR address = nullptr;
-SmartRoadRadar radar;
-TargetData *targetData;
+SmartRoadRadarCli cli;
 
-void send(int param){
-    radar.disableDataTransmit();
-    radar.getFirmwareVersion();
+void stop(int s) {
+    cli.breakReadLoop();
 }
 
-int main() {
-    signal(SIGINT, send);
-    address = LPTSTR("COM3");
+int main(int argc, char* argv[]) {
+    signal(SIGINT, stop);
 
-    radar = SmartRoadRadar(address);
+    LPTSTR address = LPTSTR(argv[1]);
 
-    radar.start();
-    radar.stop();
+    cli = SmartRoadRadarCli(address);
+    cli.mainLoop();
 }

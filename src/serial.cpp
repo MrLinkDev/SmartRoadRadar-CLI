@@ -19,7 +19,7 @@ Serial::Serial(LPTSTR address) {
 
     dcbSerialParameters.DCBlength = sizeof dcbSerialParameters;
     dcbSerialParameters.BaudRate = BAUD_115200;
-    dcbSerialParameters.ByteSize = 1;
+    dcbSerialParameters.ByteSize = 8;
     dcbSerialParameters.StopBits = ONESTOPBIT;
     dcbSerialParameters.Parity = NOPARITY;
 }
@@ -43,7 +43,7 @@ Serial::Serial(LPTSTR address, PortConfig config) {
 
     dcbSerialParameters.DCBlength = sizeof dcbSerialParameters;
     dcbSerialParameters.BaudRate = config.baudRate;
-    dcbSerialParameters.ByteSize = 8;
+    dcbSerialParameters.ByteSize = config.byteSize;
     dcbSerialParameters.StopBits = config.stopBits;
     dcbSerialParameters.Parity = config.parity;
 
@@ -61,12 +61,24 @@ void Serial::write(unsigned char *data) {
     DWORD dwSize = sizeof data;
     DWORD dwBytesWritten;
 
-    for (int i = 0; i < dwSize; ++i) {
-        printf("%02X ", data[i]);
-    }
-    printf("\n");
+    //for (int i = 0; i < dwSize; ++i) {
+    //    printf("%02X ", data[i]);
+    //}
+    //printf("\n");
 
-    WriteFile(hSerial, reinterpret_cast<const char *>(data), dwSize, &dwBytesWritten, nullptr);
+    WriteFile(hSerial, data, dwSize, &dwBytesWritten, nullptr);
+}
+
+void Serial::write(unsigned char *data, size_t length) {
+    DWORD dwSize = length;
+    DWORD dwBytesWritten;
+
+    //for (int i = 0; i < dwSize; ++i) {
+    //    printf("%02X ", data[i]);
+    //}
+    //printf("\n");
+
+    WriteFile(hSerial, data, dwSize, &dwBytesWritten, nullptr);
 }
 
 void Serial::writeLn(char *data) {
@@ -104,7 +116,7 @@ unsigned char Serial::readUnsignedByte() {
     char signedByte = readByte();
     unsigned char unsignedByte = static_cast<unsigned char>(signedByte);
 
-    printf("%02X ", unsignedByte);
+    //printf("%02X ", unsignedByte);
 
     return unsignedByte;
 }

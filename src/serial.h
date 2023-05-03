@@ -35,6 +35,7 @@ public:
 
     void write(char *data);
     void write(unsigned char *data);
+    void write(unsigned char *data, size_t length);
 
     void writeLn(char *data);
     void writeLn(unsigned char *data);
