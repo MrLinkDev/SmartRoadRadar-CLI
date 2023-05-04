@@ -1,16 +1,10 @@
-#include "smart_road_radar/smart_road_radar_cli.cpp"
+#include "smart_road_radar_cli.hpp"
 
-SmartRoadRadarCli cli;
 
-void stop(int s) {
-    cli.breakReadLoop();
-}
 
 int main(int argc, char* argv[]) {
-    signal(SIGINT, stop);
 
-    LPTSTR address = LPTSTR(argv[1]);
+    SmartRoadRadarCLI radar_cli((LPTSTR) argv[1]);
 
-    cli = SmartRoadRadarCli(address);
-    cli.mainLoop();
+    radar_cli.main_loop();
 }
