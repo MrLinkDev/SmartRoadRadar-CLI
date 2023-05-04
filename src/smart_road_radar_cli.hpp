@@ -1,6 +1,9 @@
 #ifndef SMART_ROAD_SMART_ROAD_RADAR_CLI_HPP
 #define SMART_ROAD_SMART_ROAD_RADAR_CLI_HPP
 
+#include <thread>
+#include <conio.h>
+
 #include "smart_road_radar.hpp"
 
 #define CLI_VERSION                 "version"
@@ -33,31 +36,28 @@
 #define CLI_DISABLE_ZERO_DATA       "disable-zero"
 #define CLI_DISABLE_ZERO_DATA_SHORT "-dz"
 
-#define DELIMITER   " "
+#define CLI_HELP                    "help"
+#define CLI_HELP_SHORT              "?"
+
+#define CLI_EXIT                    "exit"
+
+#define ESCAPE_CHAR 27
 
 class SmartRoadRadarCLI {
+
+protected:
+    inline static bool exit_from_target_data;
+
+    static void wait_exc_char() {
+        while ((int) getch() != ESCAPE_CHAR);
+
+        SmartRoadRadarCLI::exit_from_target_data = true;
+    }
 
 private:
     SmartRoadRadar radar{};
 
     bool exit_from_main_loop = false;
-    bool exit_from_target_data = false;
-
-    std::string get_first_item(std::string *line) {
-        std::string item{};
-        std::string delimiter = DELIMITER;
-
-
-        if (line->find(delimiter) == std::string::npos) {
-            item = *line;
-            line->erase(0, line->length());
-        } else {
-            item = line->substr(0, line->find(delimiter));
-            line->erase(0, line->find(delimiter) + delimiter.length());
-        }
-
-        return item;
-    }
 
     void parse_line(std::string *line) {
         if (line->length() <= 1) {
@@ -74,25 +74,82 @@ private:
                 usage();
         } else if (cmd == CLI_SET_PARAMS || cmd == CLI_SET_PARAMS_SHORT) {
             if (line->length() > 0)
-                set_params(line);
+                set_parameters(line);
             else
                 usage();
         } else if (cmd == CLI_GET_PARAMS || cmd == CLI_GET_PARAMS_SHORT) {
             if (line->length() == 0)
-                get_params();
+                get_parameters();
+            else
+                usage();
+        } else if (cmd == CLI_SET_TARGET_NUM || cmd == CLI_SET_TARGET_NUM_SHORT) {
+            if (line->length() > 0)
+                set_target_num(*line);
             else
                 usage();
         } else if (cmd == CLI_GET_TARGET_DATA || cmd == CLI_GET_TARGET_DATA_SHORT) {
-            if (line->length() == 0)
-                get_targets();
+            if (line->length() >= 0)
+                get_target_data(*line);
             else
                 usage();
+        } else if (cmd == CLI_ENABLE_TRANSMIT || cmd == CLI_ENABLE_TRANSMIT_SHORT) {
+            if (line->length() == 0)
+                enable_data_transmit();
+            else
+                usage();
+        } else if (cmd == CLI_DISABLE_TRANSMIT || cmd == CLI_DISABLE_TRANSMIT_SHORT) {
+            if (line->length() == 0)
+                disable_data_transmit();
+            else
+                usage();
+        } else if (cmd == CLI_SET_DATA_FREQ || cmd == CLI_SET_DATA_FREQ_SHORT) {
+            if (line->length() > 0)
+                set_data_freq(*line);
+            else
+                usage();
+        } else if (cmd == CLI_ENABLE_ZERO_DATA || cmd == CLI_ENABLE_ZERO_DATA_SHORT) {
+            if (line->length() == 0)
+                enable_zero_data_transmit();
+            else
+                usage();
+        } else if (cmd == CLI_DISABLE_ZERO_DATA || cmd == CLI_DISABLE_ZERO_DATA_SHORT) {
+            if (line->length() == 0)
+                disable_zero_data_transmit();
+            else
+                usage();
+        } else if (cmd == CLI_HELP || cmd == CLI_HELP_SHORT) {
+            usage();
+        } else if (cmd == CLI_EXIT) {
+            exit_from_main_loop = true;
+
+            printf("Leaving...");
+        } else {
+            usage();
         }
     }
 
     void usage() {
-        printf("Usage was here...\n");
-        exit_from_main_loop = true;
+        printf("\nSmartRoad radar Communication CLI\n\n");
+        printf("Usage:\n");
+        printf("\tversion      ( -v) -- shows firmware version of radar.\n\n");
+        printf("\tset-params   (-sp) -- uploading default or custom configuration into radar.\n"
+               "\tset-params   (-sp) default\n"
+               "\tset-params   (-sp) [min_dist max_dist min_speed max_speed\n"
+               "\t                    min_angle max_angle left_border right_border]\n\n");
+        printf("\tget-params   (-gp) -- shows current radar configuration.\n\n");
+        printf("\ttarget-num   ( -t) -- uploading number of targets.\n");
+        printf("\ttarget-num   ( -t) [num]\n\n");
+        printf("\tget-targets  (-gt) -- shows information about visible targets. Press esc to exit.\n");
+        printf("\tget-targets  (-gt)\n");
+        printf("\tget-targets  (-gt) [target_num]\n\n");
+        printf("\tenable       ( -e) -- starts data transmit.\n");
+        printf("\tdisable      ( -d) -- stops data transmit.\n\n");
+        printf("\tfreq         ( -f) -- uploading data frequency.\n");
+        printf("\tfreq         ( -f) [data_freq]\n\n");
+        printf("\tenable-zero  (-ez) -- enable zero data reporting.\n");
+        printf("\tdisable-zero (-dz) -- disable zero data reporting.\n\n");
+        printf("\thelp         ( ? ) -- shows this usage.\n");
+        printf("\texit               -- program closure.\n\n");
     }
 
     void get_version() {
@@ -108,56 +165,71 @@ private:
         }
     }
 
-    void set_params(std::string *args) {
-        parameters params;
+    void set_parameters(std::string *args) {
+        parameters target_parameters;
 
         if (*args != "default") {
-            params.min_dist.f       = std::stof(get_first_item(args));
-            params.max_dist.f       = std::stof(get_first_item(args));
-            params.min_speed.f      = std::stof(get_first_item(args));
-            params.max_speed.f      = std::stof(get_first_item(args));
-            params.min_angle.f      = std::stof(get_first_item(args));
-            params.max_angle.f      = std::stof(get_first_item(args));
-            params.left_border.f    = std::stof(get_first_item(args));
-            params.right_border.f   = std::stof(get_first_item(args));
+            target_parameters.min_dist.f     = std::stof(get_first_item(args));
+            target_parameters.max_dist.f     = std::stof(get_first_item(args));
+            target_parameters.min_speed.f    = std::stof(get_first_item(args));
+            target_parameters.max_speed.f    = std::stof(get_first_item(args));
+            target_parameters.min_angle.f    = std::stof(get_first_item(args));
+            target_parameters.max_angle.f    = std::stof(get_first_item(args));
+            target_parameters.left_border.f  = std::stof(get_first_item(args));
+            target_parameters.right_border.f = std::stof(get_first_item(args));
         }
 
-        if (radar.set_parameters(params) == SMART_ROAD_RADAR_OK) {
-            printf("Parameters loaded\n");
+        if (radar.set_parameters(target_parameters) == SMART_ROAD_RADAR_OK) {
+            printf("Parameters are loaded\n");
         } else {
-            printf("Error\n");
+            printf("Can't load parameters into radar\n");
         }
     }
 
-    void get_params() {
-        parameters params;
+    void get_parameters() {
+        parameters received_parameters;
 
-        if (radar.get_parameters(&params) == SMART_ROAD_RADAR_OK) {
-            printf("Min distance = %f\n", params.min_dist.f);
-            printf("Max distance = %f\n", params.max_dist.f);
-            printf("Min speed = %f\n", params.min_speed.f);
-            printf("Max speed = %f\n", params.max_speed.f);
-            printf("Min angle = %f\n", params.min_angle.f);
-            printf("max angle = %f\n", params.max_angle.f);
-            printf("Left border = %f\n", params.left_border.f);
-            printf("Right border = %f\n", params.right_border.f);
+        if (radar.get_parameters(&received_parameters) == SMART_ROAD_RADAR_OK) {
+            printf("Min distance = %f\n", received_parameters.min_dist.f);
+            printf("Max distance = %f\n", received_parameters.max_dist.f);
+            printf("Min speed    = %f\n", received_parameters.min_speed.f);
+            printf("Max speed    = %f\n", received_parameters.max_speed.f);
+            printf("Min angle    = %f\n", received_parameters.min_angle.f);
+            printf("max angle    = %f\n", received_parameters.max_angle.f);
+            printf("Left border  = %f\n", received_parameters.left_border.f);
+            printf("Right border = %f\n", received_parameters.right_border.f);
         } else {
-            printf("Error\n");
+            printf("Can't get parameters from radar\n");
         }
     }
 
-    void get_targets() {
-        target_data data[35];
+    void set_target_num(std::string num) {
+        u_byte_t target_num = std::stoi(num);
+
+        if (radar.set_target_number(target_num) == SMART_ROAD_RADAR_OK) {
+            printf("Target number inserted\n");
+        } else {
+            printf("Can't insert target number into radar\n");
+        }
+    }
+
+    void get_target_data(std::string count) {
+        int target_count = count.length() == 0 ? 35 : std::stoi(count);
+        target_data data[target_count];
+
+        SmartRoadRadarCLI::exit_from_target_data = false;
 
         system("cls");
 
         printf(" # |  dist  |   speed  |  angle  \n");
         printf("---------------------------------\n");
 
-        while (true) {
+        std::thread esc_handler_thread(SmartRoadRadarCLI::wait_exc_char);
+
+        while (!SmartRoadRadarCLI::exit_from_target_data) {
             if (radar.get_target_data(data) == SMART_ROAD_RADAR_OK) {
 
-                for (int i = 0; i < 10; ++i) {
+                for (int i = 0; i < target_count; ++i) {
                     printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
                            data[i].num,
                            data[i].distance,
@@ -167,8 +239,54 @@ private:
                     data[i] = target_data{};
                 }
 
-                printf("\x1b[10A");
+                printf("\x1b[%dA", target_count);
             }
+        }
+
+        esc_handler_thread.join();
+
+        system("cls");
+    }
+
+    void enable_data_transmit() {
+        if (radar.enable_data_transmit() == SMART_ROAD_RADAR_OK) {
+            printf("Data transmit enabled\n");
+        } else {
+            printf("Can't enable data transmit\n");
+        }
+    }
+
+    void disable_data_transmit() {
+        if (radar.disable_data_transmit() == SMART_ROAD_RADAR_OK) {
+            printf("Data transmit disabled\n");
+        } else {
+            printf("Can't disable data transmit\n");
+        }
+    }
+
+    void set_data_freq(std::string freq) {
+        u_byte_t data_freq = std::stoi(freq);
+
+        if (radar.set_data_transmit_freq(data_freq) == SMART_ROAD_RADAR_OK) {
+            printf("Frequency value uploaded into radar\n");
+        } else {
+            printf("Can't upload frequency value\n");
+        }
+    }
+
+    void enable_zero_data_transmit() {
+        if (radar.enable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
+            printf("Zero data reporting enabled\n");
+        } else {
+            printf("Can't enable zero data reporting\n");
+        }
+    }
+
+    void disable_zero_data_transmit() {
+        if (radar.disable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
+            printf("Zero data reporting disabled\n");
+        } else {
+            printf("Can't disable zero data reporting\n");
         }
     }
 
@@ -188,6 +306,8 @@ public:
         exit_from_main_loop = false;
 
         while (!exit_from_main_loop) {
+            printf("smart_road_radar:\\> ");
+
             line = std::string{};
             std::getline(std::cin, line);
 
