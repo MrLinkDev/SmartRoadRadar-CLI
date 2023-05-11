@@ -150,7 +150,8 @@ u_byte_t calculate_checksum(frame target_frame) {
 }
 
 float u_byte_to_float(const u_byte_t u_bytes[2]) {
-    return float((int) u_bytes[0] + (int) u_bytes[1]) * SCALE;
+    short data = (u_bytes[1] << 8) | u_bytes[0];
+    return (float) data * SCALE;
 }
 
 frame configure_frame(u_byte_t word) {
