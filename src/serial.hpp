@@ -1,3 +1,11 @@
+/**
+ * \file
+ * \brief Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу
+ *
+ * \authors Александр Горбунов
+ * \date 11 марта 2023
+ */
+
 #ifndef SMART_ROAD_SERIAL_HPP
 #define SMART_ROAD_SERIAL_HPP
 
@@ -6,30 +14,62 @@
 
 #include "utils.hpp"
 
+/** Стандартный размер байта */
 #define BYTE_SIZE 8
 
+/** Нулевой символ */
 #define SYMBOL_NULL '\0'
+/** Символ возврата каретки */
 #define SYMBOL_CR   '\r'
+/** Символ переноса строки */
 #define SYMBOL_LF   '\n'
 
 #define SERIAL_OK       0
 #define SERIAL_ERROR    1
 
+/** Структура настроек для создания подключения */
 struct port_config {
-    DWORD baud_rate;
-    DWORD byte_size;
-    DWORD stop_bits;
-    DWORD parity;
+    DWORD baud_rate;    ///<Скорость передачи данных
+    DWORD byte_size;    ///<Размер байта
+    DWORD stop_bits;    ///<Количество стоп-битов
+    DWORD parity;       ///<Бит чётности
 };
 
+/**
+ * \brief Объект для общения с устройствами по последовательному интерфейсу
+ *
+ * Объект содержит в себе конструкторы для инициализации подключения и функции для отправки и чтения
+ * данных типа byte_t и u_byte_t
+ */
 class Serial {
 
 private:
     HANDLE h_serial;
 
 public:
+    /** Стандартный конструктор
+     *
+     * **Пример:**
+     * \code
+     * Serial data_bus;
+     * \endcode
+     */
     Serial() = default;
 
+    /**
+     * Конструктор, который создаёт подключение к устройству со следующими параметрами:
+     * - baud_rate = 115200
+     * - byte_size = 8
+     * - stop_bits = ONESTOPBIT
+     * - parity = NOPARITY
+     *
+     * \param [in] address Адрес устройства, к которому требуется подключиться
+     *
+     * **Пример:**
+     * \code
+     * Serial data_bus("COM1");
+     * \endcode
+     */
     explicit Serial(LPTSTR address) {
         h_serial = ::CreateFile(
                 address,
@@ -56,6 +96,24 @@ public:
         SetCommState(h_serial, &dcbSerialParameters);
     }
 
+    /**
+     * Конструктор, который создаёт подключение к устройству с параметрами, которые
+     * передаются в структуре типа port_config.
+     *
+     * \param [in] address Адрес устройства, к которому требуется подключиться
+     * \param [in] config Структура, содержащая в себе настройки для подключения
+     *
+     * **Пример:**
+     * \code
+     * port_config config;
+     * config.baud_rate = BAUD_115200;
+     * config.byte_size = 8;
+     * config.stop_bits = ONESTOPBIT;
+     * config.parity = NOPARITY;
+     *
+     * Serial data_bus("COM1", config);
+     * \endcode
+     */
     Serial(LPTSTR address, port_config config) {
         h_serial = ::CreateFile(
                 address,
@@ -82,6 +140,12 @@ public:
         SetCommState(h_serial, &dcbSerialParameters);
     }
 
+    /**
+     * Отправляет на подключенное устройство один байт типа byte_t
+     *
+     * \param [in] data Отправляемый байт
+     * \return Возвращает SERIAL_OK, если байт был успешно передан. В противнм случае - SERIAL_ERROR.
+     */
     int write_byte(byte_t data) {
         DWORD dw_size = 1;
         DWORD dw_bytes_written;
@@ -100,6 +164,13 @@ public:
         }
     }
 
+    /**
+     * Отправляет на подключенное устройство массив байтов типа byte_t
+     *
+     * \param [in] data Отправляемый массив
+     * \param [in] length Размер отправляемого массива
+     * \return Возвращает SERIAL_OK, если массив был успешно передан. В противнм случае - SERIAL_ERROR.
+     */
     int write_bytes(byte_t *data, size_t length) {
         DWORD dw_bytes_written;
 
@@ -117,6 +188,12 @@ public:
         }
     }
 
+    /**
+     * Отправляет на подключенное устройство один байт типа u_byte_t
+     *
+     * \param [in] data Отправляемый байт
+     * \return Возвращает SERIAL_OK, если байт был успешно передан. В противнм случае - SERIAL_ERROR.
+     */
     int write_u_byte(u_byte_t data) {
         DWORD dw_size = 1;
         DWORD dw_bytes_written;
@@ -135,6 +212,13 @@ public:
         }
     }
 
+    /**
+     * Отправляет на подключенное устройство массив байтов типа u_byte_t
+     *
+     * \param [in] data Отправляемый массив
+     * \param [in] length Размер отправляемого массива
+     * \return Возвращает SERIAL_OK, если массив был успешно передан. В противнм случае - SERIAL_ERROR.
+     */
     int write_u_bytes(u_byte_t *data, size_t length) {
         DWORD dw_bytes_written;
 
@@ -152,6 +236,11 @@ public:
         }
     }
 
+    /**
+     * Считывает один байт типа byte_t, отправленный устройством.
+     *
+     * \return Возвращает байт типа byte_t.
+     */
     byte_t read_byte() {
         DWORD size;
         byte_t received_byte;
@@ -168,6 +257,12 @@ public:
         }
     }
 
+    /**
+     * Считывает массив байтов типа byte_t, отправленный устройством.
+     *
+     * \param [out] buffer Указатель на буфер, в который записываются принятые байты.
+     * \param [in] buffer_length Размер буфера
+     */
     void read_bytes(byte_t *buffer, size_t buffer_length) {
         byte_t received_byte;
 
@@ -177,6 +272,11 @@ public:
         }
     }
 
+    /**
+     * Считывает один байт типа u_byte_t, отправленный устройством.
+     *
+     * \return Возвращает байт типа u_byte_t.
+     */
     u_byte_t read_u_byte() {
         DWORD size;
         u_byte_t received_byte;
@@ -193,6 +293,12 @@ public:
         }
     }
 
+    /**
+     * Считывает массив байтов типа u_byte_t, отправленный устройством.
+     *
+     * \param [out] buffer Указатель на буфер, в который записываются принятые байты.
+     * \param [in] buffer_length Размер буфера
+     */
     void read_u_bytes(u_byte_t *buffer, size_t buffer_length) {
         u_byte_t received_byte;
 
