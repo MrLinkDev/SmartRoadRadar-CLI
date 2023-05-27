@@ -1,0 +1,208 @@
+\doxysection{src/smart\+\_\+road\+\_\+radar\+\_\+cli.hpp File Reference}
+\hypertarget{smart__road__radar__cli_8hpp}{}\label{smart__road__radar__cli_8hpp}\index{src/smart\_road\_radar\_cli.hpp@{src/smart\_road\_radar\_cli.hpp}}
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include \"{}smart\+\_\+road\+\_\+radar.\+hpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_smart_road_radar_c_l_i}{Smart\+Road\+Radar\+CLI}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a7550c6ae17b93c7c63597c3385cfdd84}{CLI\+\_\+\+VERSION}}~\"{}version\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a60f2bc396111652db1e60d3421e6c045}{CLI\+\_\+\+VERSION\+\_\+\+SHORT}}~\"{}-\/v\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a5200c7ba3999ee70ef24fcd62892ba19}{CLI\+\_\+\+SET\+\_\+\+PARAMS}}~\"{}set-\/params\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a1cb4b237008d7bd84bc0b2be7ae9110d}{CLI\+\_\+\+SET\+\_\+\+PARAMS\+\_\+\+SHORT}}~\"{}-\/sp\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a0778ff39e973d74dfdc421cb4e182f37}{CLI\+\_\+\+GET\+\_\+\+PARAMS}}~\"{}get-\/params\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_ab45a1a8a185321038c82f3bebcd1894a}{CLI\+\_\+\+GET\+\_\+\+PARAMS\+\_\+\+SHORT}}~\"{}-\/gp\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_ac21835963d0683400a5b2da0b178d1a4}{CLI\+\_\+\+SET\+\_\+\+TARGET\+\_\+\+NUM}}~\"{}target-\/num\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_af4b59bfcad7b38b194e6ac792ecb5a34}{CLI\+\_\+\+SET\+\_\+\+TARGET\+\_\+\+NUM\+\_\+\+SHORT}}~\"{}-\/t\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a89a3dfbb3ebdbc51187778104fe691b2}{CLI\+\_\+\+GET\+\_\+\+TARGET\+\_\+\+DATA}}~\"{}get-\/targets\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a27d41bc5b02e256b7ff216243fb21f3e}{CLI\+\_\+\+GET\+\_\+\+TARGET\+\_\+\+DATA\+\_\+\+SHORT}}~\"{}-\/gt\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_add9047b15ad6d5301bd5c99780bb867a}{CLI\+\_\+\+ENABLE\+\_\+\+TRANSMIT}}~\"{}enable\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_acc78621fdafe1a76cf3e80427f5393e0}{CLI\+\_\+\+ENABLE\+\_\+\+TRANSMIT\+\_\+\+SHORT}}~\"{}-\/e\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a76a2ef46dfd863f9af7d438950484567}{CLI\+\_\+\+DISABLE\+\_\+\+TRANSMIT}}~\"{}disable\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_af4da46aab3566aa943e0a89efb0c8abf}{CLI\+\_\+\+DISABLE\+\_\+\+TRANSMIT\+\_\+\+SHORT}}~\"{}-\/d\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_ad9062fb62893bd07d9f8442fb4a72dc1}{CLI\+\_\+\+SET\+\_\+\+DATA\+\_\+\+FREQ}}~\"{}freq\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a42abce86c460075c4f69f2c971837d99}{CLI\+\_\+\+SET\+\_\+\+DATA\+\_\+\+FREQ\+\_\+\+SHORT}}~\"{}-\/f\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a77b8279c03adeff5dc1d7462d14c1a45}{CLI\+\_\+\+ENABLE\+\_\+\+ZERO\+\_\+\+DATA}}~\"{}enable-\/zero\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a3115ed945e5b13599982f880affb6409}{CLI\+\_\+\+ENABLE\+\_\+\+ZERO\+\_\+\+DATA\+\_\+\+SHORT}}~\"{}-\/ez\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_aefe3812ee02456168db84d36eb0e16dc}{CLI\+\_\+\+DISABLE\+\_\+\+ZERO\+\_\+\+DATA}}~\"{}disable-\/zero\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_aca163fdaee5e8a636dbf5bbbf14ae67e}{CLI\+\_\+\+DISABLE\+\_\+\+ZERO\+\_\+\+DATA\+\_\+\+SHORT}}~\"{}-\/dz\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_acd456b59e6d4009012c394e2344d7fb7}{CLI\+\_\+\+HELP}}~\"{}help\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a343cc848bb54fb2b8c4b04b0993e44cc}{CLI\+\_\+\+HELP\+\_\+\+SHORT}}~\"{}?\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_a8d30936f12d9ab18a12efc723c94d335}{CLI\+\_\+\+EXIT}}~\"{}exit\"{}
+\item 
+\#define \mbox{\hyperlink{smart__road__radar__cli_8hpp_ac1044915eb305f07e6825a5ba500c06d}{ESCAPE\+\_\+\+CHAR}}~27
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{smart__road__radar__cli_8hpp_a76a2ef46dfd863f9af7d438950484567}\label{smart__road__radar__cli_8hpp_a76a2ef46dfd863f9af7d438950484567} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_DISABLE\_TRANSMIT@{CLI\_DISABLE\_TRANSMIT}}
+\index{CLI\_DISABLE\_TRANSMIT@{CLI\_DISABLE\_TRANSMIT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_DISABLE\_TRANSMIT}{CLI\_DISABLE\_TRANSMIT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+DISABLE\+\_\+\+TRANSMIT~\"{}disable\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_af4da46aab3566aa943e0a89efb0c8abf}\label{smart__road__radar__cli_8hpp_af4da46aab3566aa943e0a89efb0c8abf} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_DISABLE\_TRANSMIT\_SHORT@{CLI\_DISABLE\_TRANSMIT\_SHORT}}
+\index{CLI\_DISABLE\_TRANSMIT\_SHORT@{CLI\_DISABLE\_TRANSMIT\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_DISABLE\_TRANSMIT\_SHORT}{CLI\_DISABLE\_TRANSMIT\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+DISABLE\+\_\+\+TRANSMIT\+\_\+\+SHORT~\"{}-\/d\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_aefe3812ee02456168db84d36eb0e16dc}\label{smart__road__radar__cli_8hpp_aefe3812ee02456168db84d36eb0e16dc} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_DISABLE\_ZERO\_DATA@{CLI\_DISABLE\_ZERO\_DATA}}
+\index{CLI\_DISABLE\_ZERO\_DATA@{CLI\_DISABLE\_ZERO\_DATA}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_DISABLE\_ZERO\_DATA}{CLI\_DISABLE\_ZERO\_DATA}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+DISABLE\+\_\+\+ZERO\+\_\+\+DATA~\"{}disable-\/zero\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_aca163fdaee5e8a636dbf5bbbf14ae67e}\label{smart__road__radar__cli_8hpp_aca163fdaee5e8a636dbf5bbbf14ae67e} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_DISABLE\_ZERO\_DATA\_SHORT@{CLI\_DISABLE\_ZERO\_DATA\_SHORT}}
+\index{CLI\_DISABLE\_ZERO\_DATA\_SHORT@{CLI\_DISABLE\_ZERO\_DATA\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_DISABLE\_ZERO\_DATA\_SHORT}{CLI\_DISABLE\_ZERO\_DATA\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+DISABLE\+\_\+\+ZERO\+\_\+\+DATA\+\_\+\+SHORT~\"{}-\/dz\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_add9047b15ad6d5301bd5c99780bb867a}\label{smart__road__radar__cli_8hpp_add9047b15ad6d5301bd5c99780bb867a} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_ENABLE\_TRANSMIT@{CLI\_ENABLE\_TRANSMIT}}
+\index{CLI\_ENABLE\_TRANSMIT@{CLI\_ENABLE\_TRANSMIT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_ENABLE\_TRANSMIT}{CLI\_ENABLE\_TRANSMIT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+ENABLE\+\_\+\+TRANSMIT~\"{}enable\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_acc78621fdafe1a76cf3e80427f5393e0}\label{smart__road__radar__cli_8hpp_acc78621fdafe1a76cf3e80427f5393e0} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_ENABLE\_TRANSMIT\_SHORT@{CLI\_ENABLE\_TRANSMIT\_SHORT}}
+\index{CLI\_ENABLE\_TRANSMIT\_SHORT@{CLI\_ENABLE\_TRANSMIT\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_ENABLE\_TRANSMIT\_SHORT}{CLI\_ENABLE\_TRANSMIT\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+ENABLE\+\_\+\+TRANSMIT\+\_\+\+SHORT~\"{}-\/e\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a77b8279c03adeff5dc1d7462d14c1a45}\label{smart__road__radar__cli_8hpp_a77b8279c03adeff5dc1d7462d14c1a45} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_ENABLE\_ZERO\_DATA@{CLI\_ENABLE\_ZERO\_DATA}}
+\index{CLI\_ENABLE\_ZERO\_DATA@{CLI\_ENABLE\_ZERO\_DATA}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_ENABLE\_ZERO\_DATA}{CLI\_ENABLE\_ZERO\_DATA}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+ENABLE\+\_\+\+ZERO\+\_\+\+DATA~\"{}enable-\/zero\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a3115ed945e5b13599982f880affb6409}\label{smart__road__radar__cli_8hpp_a3115ed945e5b13599982f880affb6409} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_ENABLE\_ZERO\_DATA\_SHORT@{CLI\_ENABLE\_ZERO\_DATA\_SHORT}}
+\index{CLI\_ENABLE\_ZERO\_DATA\_SHORT@{CLI\_ENABLE\_ZERO\_DATA\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_ENABLE\_ZERO\_DATA\_SHORT}{CLI\_ENABLE\_ZERO\_DATA\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+ENABLE\+\_\+\+ZERO\+\_\+\+DATA\+\_\+\+SHORT~\"{}-\/ez\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a8d30936f12d9ab18a12efc723c94d335}\label{smart__road__radar__cli_8hpp_a8d30936f12d9ab18a12efc723c94d335} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_EXIT@{CLI\_EXIT}}
+\index{CLI\_EXIT@{CLI\_EXIT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_EXIT}{CLI\_EXIT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+EXIT~\"{}exit\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a0778ff39e973d74dfdc421cb4e182f37}\label{smart__road__radar__cli_8hpp_a0778ff39e973d74dfdc421cb4e182f37} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_GET\_PARAMS@{CLI\_GET\_PARAMS}}
+\index{CLI\_GET\_PARAMS@{CLI\_GET\_PARAMS}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_GET\_PARAMS}{CLI\_GET\_PARAMS}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+GET\+\_\+\+PARAMS~\"{}get-\/params\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_ab45a1a8a185321038c82f3bebcd1894a}\label{smart__road__radar__cli_8hpp_ab45a1a8a185321038c82f3bebcd1894a} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_GET\_PARAMS\_SHORT@{CLI\_GET\_PARAMS\_SHORT}}
+\index{CLI\_GET\_PARAMS\_SHORT@{CLI\_GET\_PARAMS\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_GET\_PARAMS\_SHORT}{CLI\_GET\_PARAMS\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+GET\+\_\+\+PARAMS\+\_\+\+SHORT~\"{}-\/gp\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a89a3dfbb3ebdbc51187778104fe691b2}\label{smart__road__radar__cli_8hpp_a89a3dfbb3ebdbc51187778104fe691b2} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_GET\_TARGET\_DATA@{CLI\_GET\_TARGET\_DATA}}
+\index{CLI\_GET\_TARGET\_DATA@{CLI\_GET\_TARGET\_DATA}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_GET\_TARGET\_DATA}{CLI\_GET\_TARGET\_DATA}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+GET\+\_\+\+TARGET\+\_\+\+DATA~\"{}get-\/targets\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a27d41bc5b02e256b7ff216243fb21f3e}\label{smart__road__radar__cli_8hpp_a27d41bc5b02e256b7ff216243fb21f3e} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_GET\_TARGET\_DATA\_SHORT@{CLI\_GET\_TARGET\_DATA\_SHORT}}
+\index{CLI\_GET\_TARGET\_DATA\_SHORT@{CLI\_GET\_TARGET\_DATA\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_GET\_TARGET\_DATA\_SHORT}{CLI\_GET\_TARGET\_DATA\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+GET\+\_\+\+TARGET\+\_\+\+DATA\+\_\+\+SHORT~\"{}-\/gt\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_acd456b59e6d4009012c394e2344d7fb7}\label{smart__road__radar__cli_8hpp_acd456b59e6d4009012c394e2344d7fb7} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_HELP@{CLI\_HELP}}
+\index{CLI\_HELP@{CLI\_HELP}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_HELP}{CLI\_HELP}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+HELP~\"{}help\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a343cc848bb54fb2b8c4b04b0993e44cc}\label{smart__road__radar__cli_8hpp_a343cc848bb54fb2b8c4b04b0993e44cc} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_HELP\_SHORT@{CLI\_HELP\_SHORT}}
+\index{CLI\_HELP\_SHORT@{CLI\_HELP\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_HELP\_SHORT}{CLI\_HELP\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+HELP\+\_\+\+SHORT~\"{}?\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_ad9062fb62893bd07d9f8442fb4a72dc1}\label{smart__road__radar__cli_8hpp_ad9062fb62893bd07d9f8442fb4a72dc1} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_SET\_DATA\_FREQ@{CLI\_SET\_DATA\_FREQ}}
+\index{CLI\_SET\_DATA\_FREQ@{CLI\_SET\_DATA\_FREQ}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_SET\_DATA\_FREQ}{CLI\_SET\_DATA\_FREQ}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+SET\+\_\+\+DATA\+\_\+\+FREQ~\"{}freq\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a42abce86c460075c4f69f2c971837d99}\label{smart__road__radar__cli_8hpp_a42abce86c460075c4f69f2c971837d99} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_SET\_DATA\_FREQ\_SHORT@{CLI\_SET\_DATA\_FREQ\_SHORT}}
+\index{CLI\_SET\_DATA\_FREQ\_SHORT@{CLI\_SET\_DATA\_FREQ\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_SET\_DATA\_FREQ\_SHORT}{CLI\_SET\_DATA\_FREQ\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+SET\+\_\+\+DATA\+\_\+\+FREQ\+\_\+\+SHORT~\"{}-\/f\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a5200c7ba3999ee70ef24fcd62892ba19}\label{smart__road__radar__cli_8hpp_a5200c7ba3999ee70ef24fcd62892ba19} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_SET\_PARAMS@{CLI\_SET\_PARAMS}}
+\index{CLI\_SET\_PARAMS@{CLI\_SET\_PARAMS}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_SET\_PARAMS}{CLI\_SET\_PARAMS}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+SET\+\_\+\+PARAMS~\"{}set-\/params\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a1cb4b237008d7bd84bc0b2be7ae9110d}\label{smart__road__radar__cli_8hpp_a1cb4b237008d7bd84bc0b2be7ae9110d} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_SET\_PARAMS\_SHORT@{CLI\_SET\_PARAMS\_SHORT}}
+\index{CLI\_SET\_PARAMS\_SHORT@{CLI\_SET\_PARAMS\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_SET\_PARAMS\_SHORT}{CLI\_SET\_PARAMS\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+SET\+\_\+\+PARAMS\+\_\+\+SHORT~\"{}-\/sp\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_ac21835963d0683400a5b2da0b178d1a4}\label{smart__road__radar__cli_8hpp_ac21835963d0683400a5b2da0b178d1a4} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_SET\_TARGET\_NUM@{CLI\_SET\_TARGET\_NUM}}
+\index{CLI\_SET\_TARGET\_NUM@{CLI\_SET\_TARGET\_NUM}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_SET\_TARGET\_NUM}{CLI\_SET\_TARGET\_NUM}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+SET\+\_\+\+TARGET\+\_\+\+NUM~\"{}target-\/num\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_af4b59bfcad7b38b194e6ac792ecb5a34}\label{smart__road__radar__cli_8hpp_af4b59bfcad7b38b194e6ac792ecb5a34} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_SET\_TARGET\_NUM\_SHORT@{CLI\_SET\_TARGET\_NUM\_SHORT}}
+\index{CLI\_SET\_TARGET\_NUM\_SHORT@{CLI\_SET\_TARGET\_NUM\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_SET\_TARGET\_NUM\_SHORT}{CLI\_SET\_TARGET\_NUM\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+SET\+\_\+\+TARGET\+\_\+\+NUM\+\_\+\+SHORT~\"{}-\/t\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a7550c6ae17b93c7c63597c3385cfdd84}\label{smart__road__radar__cli_8hpp_a7550c6ae17b93c7c63597c3385cfdd84} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_VERSION@{CLI\_VERSION}}
+\index{CLI\_VERSION@{CLI\_VERSION}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_VERSION}{CLI\_VERSION}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+VERSION~\"{}version\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_a60f2bc396111652db1e60d3421e6c045}\label{smart__road__radar__cli_8hpp_a60f2bc396111652db1e60d3421e6c045} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!CLI\_VERSION\_SHORT@{CLI\_VERSION\_SHORT}}
+\index{CLI\_VERSION\_SHORT@{CLI\_VERSION\_SHORT}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{CLI\_VERSION\_SHORT}{CLI\_VERSION\_SHORT}}
+{\footnotesize\ttfamily \#define CLI\+\_\+\+VERSION\+\_\+\+SHORT~\"{}-\/v\"{}}
+
+\Hypertarget{smart__road__radar__cli_8hpp_ac1044915eb305f07e6825a5ba500c06d}\label{smart__road__radar__cli_8hpp_ac1044915eb305f07e6825a5ba500c06d} 
+\index{smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}!ESCAPE\_CHAR@{ESCAPE\_CHAR}}
+\index{ESCAPE\_CHAR@{ESCAPE\_CHAR}!smart\_road\_radar\_cli.hpp@{smart\_road\_radar\_cli.hpp}}
+\doxysubsubsection{\texorpdfstring{ESCAPE\_CHAR}{ESCAPE\_CHAR}}
+{\footnotesize\ttfamily \#define ESCAPE\+\_\+\+CHAR~27}
+

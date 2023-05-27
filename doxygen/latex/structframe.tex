@@ -1,0 +1,115 @@
+\doxysection{frame Struct Reference}
+\hypertarget{structframe}{}\label{structframe}\index{frame@{frame}}
+
+
+Структура кадра  
+
+
+
+
+{\ttfamily \#include $<$smart\+\_\+road\+\_\+radar\+\_\+utils.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structframe_a7643bc1c782ec65f470465969395cb2f}{is\+\_\+valid}} = false
+\begin{DoxyCompactList}\small\item\em Флаг целости кадра \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} \mbox{\hyperlink{structframe_a40cccfb84cd780d83397425dae57b1b6}{header}} \mbox{[}2\mbox{]} = \{\mbox{\hyperlink{smart__road__radar__utils_8hpp_a0c9d10cc0518130783d38ec26c63265d}{HEADER\+\_\+\+DATA\+\_\+\+FRAME\+\_\+1}}, \mbox{\hyperlink{smart__road__radar__utils_8hpp_acd4fc33a59923e4f329c8763fecdf9be}{HEADER\+\_\+\+DATA\+\_\+\+FRAME\+\_\+2}}\}
+\begin{DoxyCompactList}\small\item\em Заголовок \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}} \mbox{\hyperlink{structframe_a37c2bcbe917d6d59ba90baef324a164d}{b}} \mbox{[}2\mbox{]}\\
+\>\mbox{\hyperlink{utils_8hpp_a04c2f5b8699de28357fbcb4a61679695}{u\_short\_t}} \mbox{\hyperlink{structframe_af434fcc36cb95c0b0dcbe13e6c7d2cfd}{s}}\\
+\} \mbox{\hyperlink{structframe_af1bdbc369c0f20174d8e10895383c791}{data\_length}}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em Размер данных \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} \mbox{\hyperlink{structframe_a2cf0c0eb9410df0d4b83340561dac748}{word}} \{\}
+\begin{DoxyCompactList}\small\item\em Командное слово \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}} = nullptr
+\begin{DoxyCompactList}\small\item\em Данные \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} \mbox{\hyperlink{structframe_a0d86c626252120c9871139a50cd5a1a3}{checksum}} \{\}
+\begin{DoxyCompactList}\small\item\em Контрольная сумма \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Структура кадра 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structframe_a37c2bcbe917d6d59ba90baef324a164d}\label{structframe_a37c2bcbe917d6d59ba90baef324a164d} 
+\index{frame@{frame}!b@{b}}
+\index{b@{b}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} frame\+::b\mbox{[}2\mbox{]}}
+
+\Hypertarget{structframe_a0d86c626252120c9871139a50cd5a1a3}\label{structframe_a0d86c626252120c9871139a50cd5a1a3} 
+\index{frame@{frame}!checksum@{checksum}}
+\index{checksum@{checksum}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{checksum}{checksum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} frame\+::checksum \{\}}
+
+
+
+Контрольная сумма 
+
+\Hypertarget{structframe_a7818808ac0ce266a28f447781db0c5eb}\label{structframe_a7818808ac0ce266a28f447781db0c5eb} 
+\index{frame@{frame}!data@{data}}
+\index{data@{data}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}}\texorpdfstring{$\ast$}{*} frame\+::data = nullptr}
+
+
+
+Данные 
+
+\Hypertarget{structframe_af1bdbc369c0f20174d8e10895383c791}\label{structframe_af1bdbc369c0f20174d8e10895383c791} 
+\index{frame@{frame}!data\_length@{data\_length}}
+\index{data\_length@{data\_length}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  frame\+::data\+\_\+length}
+
+
+
+Размер данных 
+
+\Hypertarget{structframe_a40cccfb84cd780d83397425dae57b1b6}\label{structframe_a40cccfb84cd780d83397425dae57b1b6} 
+\index{frame@{frame}!header@{header}}
+\index{header@{header}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} frame\+::header\mbox{[}2\mbox{]} = \{\mbox{\hyperlink{smart__road__radar__utils_8hpp_a0c9d10cc0518130783d38ec26c63265d}{HEADER\+\_\+\+DATA\+\_\+\+FRAME\+\_\+1}}, \mbox{\hyperlink{smart__road__radar__utils_8hpp_acd4fc33a59923e4f329c8763fecdf9be}{HEADER\+\_\+\+DATA\+\_\+\+FRAME\+\_\+2}}\}}
+
+
+
+Заголовок 
+
+\Hypertarget{structframe_a7643bc1c782ec65f470465969395cb2f}\label{structframe_a7643bc1c782ec65f470465969395cb2f} 
+\index{frame@{frame}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{is\_valid}{is\_valid}}
+{\footnotesize\ttfamily bool frame\+::is\+\_\+valid = false}
+
+
+
+Флаг целости кадра 
+
+\Hypertarget{structframe_af434fcc36cb95c0b0dcbe13e6c7d2cfd}\label{structframe_af434fcc36cb95c0b0dcbe13e6c7d2cfd} 
+\index{frame@{frame}!s@{s}}
+\index{s@{s}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{s}{s}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8hpp_a04c2f5b8699de28357fbcb4a61679695}{u\+\_\+short\+\_\+t}} frame\+::s}
+
+\Hypertarget{structframe_a2cf0c0eb9410df0d4b83340561dac748}\label{structframe_a2cf0c0eb9410df0d4b83340561dac748} 
+\index{frame@{frame}!word@{word}}
+\index{word@{word}!frame@{frame}}
+\doxysubsubsection{\texorpdfstring{word}{word}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\+\_\+byte\+\_\+t}} frame\+::word \{\}}
+
+
+
+Командное слово 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{smart__road__radar__utils_8hpp}{smart\+\_\+road\+\_\+radar\+\_\+utils.\+hpp}}\end{DoxyCompactItemize}

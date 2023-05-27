@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Класс SmartRoadRadar</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="class_smart_road_radar-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс SmartRoadRadar</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Объект для взаимодействия с радаром  
+ <a href="class_smart_road_radar.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:afaa4b7fa9189e635d5785bf63c1130bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#afaa4b7fa9189e635d5785bf63c1130bd">SmartRoadRadar</a> ()=default</td></tr>
+<tr class="memdesc:afaa4b7fa9189e635d5785bf63c1130bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стандартный конструктор  <br /></td></tr>
+<tr class="separator:afaa4b7fa9189e635d5785bf63c1130bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38be22598c8e0eb76b240f40e3128bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aa38be22598c8e0eb76b240f40e3128bc">SmartRoadRadar</a> (LPTSTR address)</td></tr>
+<tr class="memdesc:aa38be22598c8e0eb76b240f40e3128bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор, в который передаётся порт радара.  <br /></td></tr>
+<tr class="separator:aa38be22598c8e0eb76b240f40e3128bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e03c46dae52b480301492b5a2364384"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a4e03c46dae52b480301492b5a2364384">SmartRoadRadar</a> (LPTSTR address, <a class="el" href="structport__config.html">port_config</a> config)</td></tr>
+<tr class="memdesc:a4e03c46dae52b480301492b5a2364384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор, в который передаётся порт радара и настройки подключения.  <br /></td></tr>
+<tr class="separator:a4e03c46dae52b480301492b5a2364384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e02fefc0c401668114ce41ec9eda7e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a2e02fefc0c401668114ce41ec9eda7e8">get_firmware_version</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *version_buffer)</td></tr>
+<tr class="memdesc:a2e02fefc0c401668114ce41ec9eda7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрос версии ПО у радара.  <br /></td></tr>
+<tr class="separator:a2e02fefc0c401668114ce41ec9eda7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3975a1a1681946f74e24328ea10b7025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025">set_parameters</a> (<a class="el" href="structparameters.html">parameters</a> target_parameters)</td></tr>
+<tr class="memdesc:a3975a1a1681946f74e24328ea10b7025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменение настроек радара.  <br /></td></tr>
+<tr class="separator:a3975a1a1681946f74e24328ea10b7025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ebab995997fd2d4cf91b72297c3bef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#ab6ebab995997fd2d4cf91b72297c3bef">get_parameters</a> (<a class="el" href="structparameters.html">parameters</a> *received_parameters)</td></tr>
+<tr class="memdesc:ab6ebab995997fd2d4cf91b72297c3bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение настроек с радара.  <br /></td></tr>
+<tr class="separator:ab6ebab995997fd2d4cf91b72297c3bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68582d046bc01ac72bbc0dbec366deb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb">set_target_number</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> number)</td></tr>
+<tr class="memdesc:ac68582d046bc01ac72bbc0dbec366deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка числа целей.  <br /></td></tr>
+<tr class="separator:ac68582d046bc01ac72bbc0dbec366deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb34ccb7999a4f6a67eb77121c4d7a93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aeb34ccb7999a4f6a67eb77121c4d7a93">get_target_data</a> (<a class="el" href="structtarget__data.html">target_data</a> *data)</td></tr>
+<tr class="memdesc:aeb34ccb7999a4f6a67eb77121c4d7a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение данных о целях.  <br /></td></tr>
+<tr class="separator:aeb34ccb7999a4f6a67eb77121c4d7a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c359504214e8d6796df36308ce344c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0">enable_data_transmit</a> ()</td></tr>
+<tr class="memdesc:a4c359504214e8d6796df36308ce344c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запуск передачи данных.  <br /></td></tr>
+<tr class="separator:a4c359504214e8d6796df36308ce344c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955c0ffc54498e77b42323c5b6d7c858"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858">disable_data_transmit</a> ()</td></tr>
+<tr class="memdesc:a955c0ffc54498e77b42323c5b6d7c858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Остановка передачи данных.  <br /></td></tr>
+<tr class="separator:a955c0ffc54498e77b42323c5b6d7c858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66f8c64c85119620bae8380b8856124"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124">set_data_transmit_freq</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> freq)</td></tr>
+<tr class="memdesc:aa66f8c64c85119620bae8380b8856124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка частоты отправки данных.  <br /></td></tr>
+<tr class="separator:aa66f8c64c85119620bae8380b8856124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1fe3f83ba38b5a1fb0eeb76f72c906"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906">enable_zero_data_reporting</a> ()</td></tr>
+<tr class="separator:a2d1fe3f83ba38b5a1fb0eeb76f72c906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fb7d07156913963a6b9abd20b07e1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c">disable_zero_data_reporting</a> ()</td></tr>
+<tr class="separator:a85fb7d07156913963a6b9abd20b07e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Объект для взаимодействия с радаром </p>
+<p>Объект содержит в себе конструкторы для инициализации подключения к радару, функции чтения и отправки кадров в радар, также, содержит функции для отправки определённых протоколом команд. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="afaa4b7fa9189e635d5785bf63c1130bd" name="afaa4b7fa9189e635d5785bf63c1130bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa4b7fa9189e635d5785bf63c1130bd">&#9670;&#160;</a></span>SmartRoadRadar() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartRoadRadar::SmartRoadRadar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Стандартный конструктор </p>
+<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_smart_road_radar.html">SmartRoadRadar</a> radar;</div>
+<div class="ttc" id="aclass_smart_road_radar_html"><div class="ttname"><a href="class_smart_road_radar.html">SmartRoadRadar</a></div><div class="ttdoc">Объект для взаимодействия с радаром</div><div class="ttdef"><b>Definition</b> smart_road_radar.hpp:20</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa38be22598c8e0eb76b240f40e3128bc" name="aa38be22598c8e0eb76b240f40e3128bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38be22598c8e0eb76b240f40e3128bc">&#9670;&#160;</a></span>SmartRoadRadar() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartRoadRadar::SmartRoadRadar </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор, в который передаётся порт радара. </p>
+<p>Создаётся подключение к радару со следующими параметрами:</p><ul>
+<li>baud_rate = 115200</li>
+<li>byte_size = 8</li>
+<li>stop_bits = ONESTOPBIT</li>
+<li>parity = NOPARITY</li>
+</ul>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес радара</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_smart_road_radar.html">SmartRoadRadar</a> radar(<span class="stringliteral">&quot;COM1&quot;</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a4e03c46dae52b480301492b5a2364384" name="a4e03c46dae52b480301492b5a2364384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e03c46dae52b480301492b5a2364384">&#9670;&#160;</a></span>SmartRoadRadar() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartRoadRadar::SmartRoadRadar </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structport__config.html">port_config</a>&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор, в который передаётся порт радара и настройки подключения. </p>
+<p>Создаёт подключение к радару с параметрами, которые передаются в структуре типа <a class="el" href="structport__config.html">port_config</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес радара </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Структура, содержащая в себе настройки для подключения</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structport__config.html">port_config</a> config;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">baud_rate</a> = BAUD_115200;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">byte_size</a> = 8;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a15dfef1d17723095f344d529498d158f">stop_bits</a> = ONESTOPBIT;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">parity</a> = NOPARITY;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_smart_road_radar.html">SmartRoadRadar</a> radar(<span class="stringliteral">&quot;COM1&quot;</span>, config);</div>
+<div class="ttc" id="astructport__config_html"><div class="ttname"><a href="structport__config.html">port_config</a></div><div class="ttdef"><b>Definition</b> serial.hpp:33</div></div>
+<div class="ttc" id="astructport__config_html_a110d2bd9e1e6ad1b99325072b43da5aa"><div class="ttname"><a href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">port_config::baud_rate</a></div><div class="ttdeci">DWORD baud_rate</div><div class="ttdoc">Скорость передачи данных</div><div class="ttdef"><b>Definition</b> serial.hpp:34</div></div>
+<div class="ttc" id="astructport__config_html_a15dfef1d17723095f344d529498d158f"><div class="ttname"><a href="structport__config.html#a15dfef1d17723095f344d529498d158f">port_config::stop_bits</a></div><div class="ttdeci">DWORD stop_bits</div><div class="ttdoc">Количество стоп-битов</div><div class="ttdef"><b>Definition</b> serial.hpp:36</div></div>
+<div class="ttc" id="astructport__config_html_a1f051b2ced88656882d9cb0f17d0affe"><div class="ttname"><a href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">port_config::byte_size</a></div><div class="ttdeci">DWORD byte_size</div><div class="ttdoc">Размер байта</div><div class="ttdef"><b>Definition</b> serial.hpp:35</div></div>
+<div class="ttc" id="astructport__config_html_a3ced652683c9b90e2b4bb331f0ccf786"><div class="ttname"><a href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">port_config::parity</a></div><div class="ttdeci">DWORD parity</div><div class="ttdoc">Бит чётности</div><div class="ttdef"><b>Definition</b> serial.hpp:37</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a955c0ffc54498e77b42323c5b6d7c858" name="a955c0ffc54498e77b42323c5b6d7c858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955c0ffc54498e77b42323c5b6d7c858">&#9670;&#160;</a></span>disable_data_transmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::disable_data_transmit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Остановка передачи данных. </p>
+<p>Функция отправляет запрос на радар об остановке передачи данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (radar.disable_data_transmit() == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Data transmit disabled\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t disable data transmit\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a19cd20d00719b9df76dc42a44fc45371"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a></div><div class="ttdeci">#define SMART_ROAD_RADAR_OK</div><div class="ttdoc">Возвращаемое значение при успешно выполненном действии</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:15</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a85fb7d07156913963a6b9abd20b07e1c" name="a85fb7d07156913963a6b9abd20b07e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fb7d07156913963a6b9abd20b07e1c">&#9670;&#160;</a></span>disable_zero_data_reporting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::disable_zero_data_reporting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c359504214e8d6796df36308ce344c0" name="a4c359504214e8d6796df36308ce344c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c359504214e8d6796df36308ce344c0">&#9670;&#160;</a></span>enable_data_transmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::enable_data_transmit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запуск передачи данных. </p>
+<p>Функция отправляет запрос на радар о запуске передачи данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (radar.enable_data_transmit() == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Data transmit enabled\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t enable data transmit\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a2d1fe3f83ba38b5a1fb0eeb76f72c906" name="a2d1fe3f83ba38b5a1fb0eeb76f72c906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d1fe3f83ba38b5a1fb0eeb76f72c906">&#9670;&#160;</a></span>enable_zero_data_reporting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::enable_zero_data_reporting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e02fefc0c401668114ce41ec9eda7e8" name="a2e02fefc0c401668114ce41ec9eda7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e02fefc0c401668114ce41ec9eda7e8">&#9670;&#160;</a></span>get_firmware_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::get_firmware_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *&#160;</td>
+          <td class="paramname"><em>version_buffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запрос версии ПО у радара. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">version_buffer</td><td>Указатель на буфер типа u_byte_t[3]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> version_buffer[3];</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (radar.get_firmware_version(version_buffer) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Firmware version: V%d.%d.%d\n&quot;</span>,</div>
+<div class="line">            (<span class="keywordtype">int</span>) version_buffer[0],</div>
+<div class="line">            (<span class="keywordtype">int</span>) version_buffer[1],</div>
+<div class="line">            (<span class="keywordtype">int</span>) version_buffer[2]);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t get firmware version from radar\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="autils_8hpp_html_aef3662a5e2b349ba1b8498db3aa36a27"><div class="ttname"><a href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a></div><div class="ttdeci">unsigned char u_byte_t</div><div class="ttdoc">Тип данных u_byte_t размером 1 байт</div><div class="ttdef"><b>Definition</b> utils.hpp:21</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab6ebab995997fd2d4cf91b72297c3bef" name="ab6ebab995997fd2d4cf91b72297c3bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6ebab995997fd2d4cf91b72297c3bef">&#9670;&#160;</a></span>get_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::get_parameters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structparameters.html">parameters</a> *&#160;</td>
+          <td class="paramname"><em>received_parameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение настроек с радара. </p>
+<p>При получении кадра данных от радара, функция выделяет из принятого кадра настройки радара и записывает их в структуру по переданному указателю.</p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Приходящие от радара минимальное и максимальное расстояния перепутаны местами. Также перепутаны местами и минимальная и максимальная скорости.</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">received_parameters</td><td>Указатель на структуру, в которую будут записаны принятые значения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос настроек выполнен успешно, то возвращает SMART_ROAD_RADAR_OK/ В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structparameters.html">parameters</a> received_parameters;</div>
+<div class="line"><span class="keywordflow">if</span> (radar.get_parameters(&amp;received_parameters) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Min distance = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">min_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Max distance = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">max_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Min speed    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">min_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Max speed    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">max_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Min angle    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">min_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;max angle    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">max_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Left border  = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">left_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Right border = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">right_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t get parameters from radar\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="astructparameters_html"><div class="ttname"><a href="structparameters.html">parameters</a></div><div class="ttdoc">Структура параметров радара</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:136</div></div>
+<div class="ttc" id="astructparameters_html_a0c2b999fd504fbe696a9fcaa62a655aa"><div class="ttname"><a href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">parameters::left_border</a></div><div class="ttdeci">union parameters::@7 left_border</div><div class="ttdoc">Левая граница</div></div>
+<div class="ttc" id="astructparameters_html_a2382032b45a30b806eb318a0c6f02836"><div class="ttname"><a href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">parameters::f</a></div><div class="ttdeci">float f</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:138</div></div>
+<div class="ttc" id="astructparameters_html_a5cce04e60033009e1c789713624d9ab0"><div class="ttname"><a href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">parameters::max_dist</a></div><div class="ttdeci">union parameters::@2 max_dist</div><div class="ttdoc">Максимальное расстояние</div></div>
+<div class="ttc" id="astructparameters_html_a7c24e021bde3819ffcca5c6cb29e98ed"><div class="ttname"><a href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">parameters::right_border</a></div><div class="ttdeci">union parameters::@8 right_border</div><div class="ttdoc">Правая граница</div></div>
+<div class="ttc" id="astructparameters_html_abf61e6b0aebd4f8a1bb759999ae4820b"><div class="ttname"><a href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">parameters::min_dist</a></div><div class="ttdeci">union parameters::@1 min_dist</div><div class="ttdoc">Минимальное расстояние</div></div>
+<div class="ttc" id="astructparameters_html_ac27388a3ab29077c4a35a57c39395546"><div class="ttname"><a href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">parameters::max_angle</a></div><div class="ttdeci">union parameters::@6 max_angle</div><div class="ttdoc">Максимальный угол</div></div>
+<div class="ttc" id="astructparameters_html_ac863cbc146e1fd27f0b853d757346ac5"><div class="ttname"><a href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">parameters::max_speed</a></div><div class="ttdeci">union parameters::@4 max_speed</div><div class="ttdoc">Максимальная скорость</div></div>
+<div class="ttc" id="astructparameters_html_ad6991b63b32058dbd1228fc47e7ce7d7"><div class="ttname"><a href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">parameters::min_angle</a></div><div class="ttdeci">union parameters::@5 min_angle</div><div class="ttdoc">Минимальный угол</div></div>
+<div class="ttc" id="astructparameters_html_af3dd3caff17f6a7c5ff02265c66a890e"><div class="ttname"><a href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">parameters::min_speed</a></div><div class="ttdeci">union parameters::@3 min_speed</div><div class="ttdoc">Минимальная скорость</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aeb34ccb7999a4f6a67eb77121c4d7a93" name="aeb34ccb7999a4f6a67eb77121c4d7a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb34ccb7999a4f6a67eb77121c4d7a93">&#9670;&#160;</a></span>get_target_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::get_target_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtarget__data.html">target_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение данных о целях. </p>
+<p>Функция преобразует полученные кадры в структуры <a class="el" href="structtarget__data.html" title="Структура данных о цели">target_data</a>, которые записываются в массив по переданному указателю</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Указатель на массив структур <a class="el" href="structtarget__data.html" title="Структура данных о цели">target_data</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если чтение кадра выполнено успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structtarget__data.html">target_data</a> data[35];</div>
+<div class="line"> </div>
+<div class="line">printf(<span class="stringliteral">&quot; # |  dist  |   speed  |  angle  \n&quot;</span>);</div>
+<div class="line">printf(<span class="stringliteral">&quot;---------------------------------\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (radar.get_target_data(data) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; target_count; ++i) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n&quot;</span>,</div>
+<div class="line">               data[i].num,</div>
+<div class="line">               data[i].distance,</div>
+<div class="line">               data[i].speed,</div>
+<div class="line">               data[i].angle);</div>
+<div class="line">        data[i] = <a class="code hl_struct" href="structtarget__data.html">target_data</a>{};</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="astructtarget__data_html"><div class="ttname"><a href="structtarget__data.html">target_data</a></div><div class="ttdoc">Структура данных о цели</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:179</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa66f8c64c85119620bae8380b8856124" name="aa66f8c64c85119620bae8380b8856124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66f8c64c85119620bae8380b8856124">&#9670;&#160;</a></span>set_data_transmit_freq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::set_data_transmit_freq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>freq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка частоты отправки данных. </p>
+<p>Функция устанавливает частоту передаваемы данных, которая передаётся в качестве аргумента. Возможные варианты частоты:</p><ul>
+<li>DATA_FREQ_1 - один раз в секунду</li>
+<li>DATA_FREQ_2 - два раза в секунду</li>
+<li>DATA_FREQ_3 - три раза в секунду</li>
+<li>DATA_FREQ_4 - четыре раза в секунду</li>
+<li>DATA_FREQ_5 - пять раз в секунду</li>
+<li>DATA_FREQ_10 - десять раз в секунду</li>
+<li>DATA_FREQ_15 - пятнадцать раз в секунду</li>
+<li>DATA_FREQ_20 - двадцать раз в секунду</li>
+</ul>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">freq</td><td>Частота передаваемых данных</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> data_freq = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#aca105d80c88c1cfee26c72f0e5703dc1">DATA_FREQ_1</a></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (radar.set_data_transmit_freq(data_freq) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Frequency value uploaded into radar\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t upload frequency value\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_aca105d80c88c1cfee26c72f0e5703dc1"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#aca105d80c88c1cfee26c72f0e5703dc1">DATA_FREQ_1</a></div><div class="ttdeci">#define DATA_FREQ_1</div><div class="ttdoc">Частота передачи данных (1 раз в секунду)</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:98</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a3975a1a1681946f74e24328ea10b7025" name="a3975a1a1681946f74e24328ea10b7025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3975a1a1681946f74e24328ea10b7025">&#9670;&#160;</a></span>set_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::set_parameters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structparameters.html">parameters</a>&#160;</td>
+          <td class="paramname"><em>target_parameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Изменение настроек радара. </p>
+<p>Желаемые настроки передаются в структуре parameters.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">target_parameters</td><td>Требуемые настройки радара </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если изменение настроек прошло успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structparameters.html">parameters</a> target_parameters;</div>
+<div class="line"><span class="keywordflow">if</span> (*args != <span class="stringliteral">&quot;default&quot;</span>) {</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">min_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>     = 0.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">max_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>     = 13.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">min_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = 0.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">max_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = 5.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">min_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = -60.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">max_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = 60.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">left_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>  = -6.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">right_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = 6.0f;</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (radar.set_parameters(target_parameters) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Parameters are loaded\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t load parameters into radar\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ac68582d046bc01ac72bbc0dbec366deb" name="ac68582d046bc01ac72bbc0dbec366deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68582d046bc01ac72bbc0dbec366deb">&#9670;&#160;</a></span>set_target_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::set_target_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Установка числа целей. </p>
+<p>Функция, позволяющая задать количество целей, которые будут распознаваться радаром.</p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Возможно, не количество целей, а максимальный номер цели </dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>Количество целей</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если команда выполнена успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> target_num = std::stoi(num);</div>
+<div class="line"><span class="keywordflow">if</span> (radar.set_target_number(target_num) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Target number inserted\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t insert target number into radar\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/<a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

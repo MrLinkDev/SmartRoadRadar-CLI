@@ -1,13 +1,35 @@
+/**
+ * \file
+ * \brief Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу
+ *
+ * \authors Александр Горбунов
+ * \date 11 марта 2023
+ */
+
 #ifndef SMART_ROAD_SMART_ROAD_RADAR_HPP
 #define SMART_ROAD_SMART_ROAD_RADAR_HPP
 
 #include "smart_road_radar_utils.hpp"
 
+/**
+ * \brief Объект для взаимодействия с радаром
+ *
+ * Объект содержит в себе конструкторы для инициализации подключения к радару, функции чтения и отправки кадров
+ * в радар, также, содержит функции для отправки определённых протоколом команд.
+ */
 class SmartRoadRadar {
 
 private:
+    /// Объект для подключения к радару по последовательному интерфейсу
     Serial data_bus{};
 
+
+    /**
+     * \brief Чтение данных с радара.
+     * Читает данные, которые отправляет радар и формирует из них кадр
+     *
+     * \return Возвращает сформированный кадр
+     */
     frame read_frame() {
         frame received_frame{};
 
@@ -41,6 +63,12 @@ private:
         return received_frame;
     }
 
+    /**
+     * \brief Чтение данных с радара с требуемым командным словом.
+     *
+     * \param [in] expected_word Командное слово, ожидаемое в кадре
+     * \return Возвращает кадр с требуемым командным словом
+     */
     frame read_expected_frame(u_byte_t expected_word) {
         frame received_frame;
 
@@ -51,6 +79,13 @@ private:
         return received_frame;
     }
 
+    /**
+     * \brief Чтение статуса.
+     * Функция, которая ожидает кадр с командным словом чтения статуса от радара
+     *
+     * \return Если от радара пришёл статус SUCCESS, то возвращается код SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     */
     int read_status() {
         frame received_frame = read_expected_frame(CMD_READ_STATUS);
 
@@ -65,6 +100,14 @@ private:
         }
     }
 
+    /**
+     * \brief Отправка кадра.
+     * Из кадра, передаваемого в качестве аргумента, формируется массив
+     * типа u_byte_t, который затем передаётся на устройство.
+     *
+     * \param [in] target_frame Кадр, который требуется отправить
+     * \return Возвращает SERIAL_OK, если данные были успешно отправлены. В противном случае - SERIAL_ERROR
+     */
     int write_frame(frame target_frame) {
         int packet_length =
                 LENGTH_HEADER +
@@ -96,8 +139,32 @@ private:
     }
 
 public:
+    /**
+     * \brief Стандартный конструктор
+     *
+     * **Пример:**
+     * \code
+     * SmartRoadRadar radar;
+     * \endcode
+     */
     SmartRoadRadar() = default;
 
+    /**
+     * \brief Конструктор, в который передаётся порт радара.
+     *
+     * Создаётся подключение к радару со следующими параметрами:
+     * - baud_rate = 115200
+     * - byte_size = 8
+     * - stop_bits = ONESTOPBIT
+     * - parity = NOPARITY
+     *
+     * \param [in] address Адрес радара
+     *
+     * **Пример:**
+     * \code
+     * SmartRoadRadar radar("COM1");
+     * \endcode
+     */
     explicit SmartRoadRadar(LPTSTR address) {
         port_config config{};
 
@@ -109,10 +176,49 @@ public:
         data_bus = Serial(address, config);
     }
 
+    /**
+     * \brief Конструктор, в который передаётся порт радара и настройки подключения.
+     *
+     * Создаёт подключение к радару с параметрами, которые передаются в структуре типа port_config.
+     *
+     * \param [in] address Адрес радара
+     * \param [in] config Структура, содержащая в себе настройки для подключения
+     *
+     * **Пример:**
+     * \code
+     * port_config config;
+     * config.baud_rate = BAUD_115200;
+     * config.byte_size = 8;
+     * config.stop_bits = ONESTOPBIT;
+     * config.parity = NOPARITY;
+     *
+     * SmartRoadRadar radar("COM1", config);
+     * \endcode
+     */
     SmartRoadRadar(LPTSTR address, port_config config) {
         data_bus = Serial(address, config);
     }
 
+    /**
+     * \brief Запрос версии ПО у радара.
+     *
+     * \param [out] version_buffer Указатель на буфер типа u_byte_t[3].
+     * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * u_byte_t version_buffer[3];
+     *
+     * if (radar.get_firmware_version(version_buffer) == SMART_ROAD_RADAR_OK) {
+     *     printf("Firmware version: V%d.%d.%d\n",
+     *             (int) version_buffer[0],
+     *             (int) version_buffer[1],
+     *             (int) version_buffer[2]);
+     * } else {
+     *     printf("Can't get firmware version from radar\n");
+     * }
+     * \endcode
+     */
     int get_firmware_version(u_byte_t *version_buffer) {
         frame target_frame = configure_frame(CMD_REQUEST_VERSION);
         write_frame(target_frame);
@@ -130,6 +236,34 @@ public:
         }
     }
 
+    /**
+     * \brief Изменение настроек радара.
+     *
+     * Желаемые настроки передаются в структуре parameters.
+     *
+     * \param [in] target_parameters Требуемые настройки радара
+     * \return Если изменение настроек прошло успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * parameters target_parameters;
+     * if (*args != "default") {
+     *     target_parameters.min_dist.f     = 0.0f;
+     *     target_parameters.max_dist.f     = 13.0f;
+     *     target_parameters.min_speed.f    = 0.0f;
+     *     target_parameters.max_speed.f    = 5.0f;
+     *     target_parameters.min_angle.f    = -60.0f;
+     *     target_parameters.max_angle.f    = 60.0f;
+     *     target_parameters.left_border.f  = -6.0f;
+     *     target_parameters.right_border.f = 6.0f;
+     * }
+     * if (radar.set_parameters(target_parameters) == SMART_ROAD_RADAR_OK) {
+     *     printf("Parameters are loaded\n");
+     * } else {
+     *     printf("Can't load parameters into radar\n");
+     * }
+     * \endcode
+     */
     int set_parameters(parameters target_parameters) {
         u_short_t length = sizeof target_parameters;
         u_byte_t data[length];
@@ -181,6 +315,35 @@ public:
         return result;
     }
 
+    /**
+     * \brief Чтение настроек с радара.
+     *
+     * При получении кадра данных от радара, функция выделяет из принятого кадра
+     * настройки радара и записывает их в структуру по переданному указателю.
+     *
+     * \warning Приходящие от радара минимальное и максимальное расстояния перепутаны местами.
+     * Также перепутаны местами и минимальная и максимальная скорости.
+     *
+     * \param [out] received_parameters Указатель на структуру, в которую будут записаны принятые значения
+     * \return Если запрос настроек выполнен успешно, то возвращает SMART_ROAD_RADAR_OK/
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * parameters received_parameters;
+     * if (radar.get_parameters(&received_parameters) == SMART_ROAD_RADAR_OK)
+     *     printf("Min distance = %f\n", received_parameters.min_dist.f);
+     *     printf("Max distance = %f\n", received_parameters.max_dist.f);
+     *     printf("Min speed    = %f\n", received_parameters.min_speed.f);
+     *     printf("Max speed    = %f\n", received_parameters.max_speed.f);
+     *     printf("Min angle    = %f\n", received_parameters.min_angle.f);
+     *     printf("max angle    = %f\n", received_parameters.max_angle.f);
+     *     printf("Left border  = %f\n", received_parameters.left_border.f);
+     *     printf("Right border = %f\n", received_parameters.right_border.f);
+     * } else {
+     *     printf("Can't get parameters from radar\n");
+     * }
+     * \endcode
+     */
     int get_parameters(parameters *received_parameters) {
         frame target_frame = configure_frame(CMD_GET_PARAMETERS);
         write_frame(target_frame);
@@ -233,7 +396,27 @@ public:
             return SMART_ROAD_RADAR_ERROR;
         }
     }
-    
+
+    /**
+     * \brief Установка числа целей.
+     *
+     * Функция, позволяющая задать количество целей, которые будут распознаваться радаром.
+     *
+     * \warning Возможно, не количество целей, а максимальный номер цели
+     * \param [in] number Количество целей
+     *
+     * \return Если команда выполнена успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * u_byte_t target_num = std::stoi(num);
+     * if (radar.set_target_number(target_num) == SMART_ROAD_RADAR_OK) {
+     *     printf("Target number inserted\n");
+     * } else {
+     *     printf("Can't insert target number into radar\n");
+     * }
+     * \endcode
+     */
     int set_target_number(u_byte_t number) {
         frame target_frame = configure_frame(CMD_SET_TARGET_NUM, number);
         write_frame(target_frame);
@@ -241,7 +424,36 @@ public:
         int result = read_status();
         return result;
     }
-    
+
+    /**
+     * \brief Чтение данных о целях.
+     *
+     * Функция преобразует полученные кадры в структуры target_data, которые записываются
+     * в массив по переданному указателю
+     *
+     * \param [out] data Указатель на массив структур target_data
+     *
+     * \return Если чтение кадра выполнено успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * target_data data[35];
+     *
+     * printf(" # |  dist  |   speed  |  angle  \n");
+     * printf("---------------------------------\n");
+     *
+     * if (radar.get_target_data(data) == SMART_ROAD_RADAR_OK) {
+     *     for (int i = 0; i < target_count; ++i) {
+     *         printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
+     *                data[i].num,
+     *                data[i].distance,
+     *                data[i].speed,
+     *                data[i].angle);
+     *         data[i] = target_data{};
+     *     }
+     * }
+     * \endcode
+     */
     int get_target_data(target_data *data) {
         frame received_frame;
         
@@ -282,6 +494,22 @@ public:
         }
     }
 
+    /**
+     * \brief Запуск передачи данных.
+     *
+     * Функция отправляет запрос на радар о запуске передачи данных.
+     *
+     * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * if (radar.enable_data_transmit() == SMART_ROAD_RADAR_OK) {
+     *     printf("Data transmit enabled\n");
+     * } else {
+     *     printf("Can't enable data transmit\n");
+     * }
+     * \endcode
+     */
     int enable_data_transmit() {
         frame target_frame = configure_frame(CMD_ENABLE_TRANSMIT);
         write_frame(target_frame);
@@ -290,6 +518,22 @@ public:
         return result;
     }
 
+    /**
+     * \brief Остановка передачи данных.
+     *
+     * Функция отправляет запрос на радар об остановке передачи данных.
+     *
+     * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     * if (radar.disable_data_transmit() == SMART_ROAD_RADAR_OK) {
+     *     printf("Data transmit disabled\n");
+     * } else {
+     *     printf("Can't disable data transmit\n");
+     * }
+     * \endcode
+     */
     int disable_data_transmit() {
         frame target_frame = configure_frame(CMD_DISABLE_TRANSMIT);
         write_frame(target_frame);
@@ -298,6 +542,35 @@ public:
         return result;
     }
 
+    /**
+     * \brief Установка частоты отправки данных.
+     *
+     * Функция устанавливает частоту передаваемы данных, которая передаётся в качестве аргумента.
+     * Возможные варианты частоты:
+     * - DATA_FREQ_1 - один раз в секунду
+     * - DATA_FREQ_2 - два раза в секунду
+     * - DATA_FREQ_3 - три раза в секунду
+     * - DATA_FREQ_4 - четыре раза в секунду
+     * - DATA_FREQ_5 - пять раз в секунду
+     * - DATA_FREQ_10 - десять раз в секунду
+     * - DATA_FREQ_15 - пятнадцать раз в секунду
+     * - DATA_FREQ_20 - двадцать раз в секунду
+     *
+     * \param [in] freq Частота передаваемых данных
+     *
+     * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * \code
+     *  u_byte_t data_freq = DATA_FREQ_1
+     *
+     *  if (radar.set_data_transmit_freq(data_freq) == SMART_ROAD_RADAR_OK) {
+     *      printf("Frequency value uploaded into radar\n");
+     *  } else {
+     *      printf("Can't upload frequency value\n");
+     *  }
+     * \endcode
+     */
     int set_data_transmit_freq(u_byte_t freq) {
         frame target_frame = configure_frame(CMD_SET_DATA_FREQ, freq);
         write_frame(target_frame);
@@ -306,6 +579,14 @@ public:
         return result;
     }
 
+    /**
+     * \brief Включение передачи нулевых данных.
+     *
+     * Функция позволяет включить передачу нулевых данных.
+     *
+     * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     */
     int enable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_REPORT);
         write_frame(target_frame);
@@ -314,6 +595,14 @@ public:
         return result;
     }
 
+    /**
+     * \brief Выключение передачи нулевых данных.
+     *
+     * Функция позволяет выключить передачу нулевых данных.
+     *
+     * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
+     * В противном случае - SMART_ROAD_RADAR_ERROR.
+     */
     int disable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_NOT_REPORT);
         write_frame(target_frame);

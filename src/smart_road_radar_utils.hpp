@@ -11,7 +11,9 @@
 
 #include "serial.hpp"
 
+/// Возвращаемое значение при успешно выполненном действии
 #define SMART_ROAD_RADAR_OK     0
+/// Возвращаемое значение при невыполненном действии
 #define SMART_ROAD_RADAR_ERROR  1
 
 /// Байт в пакете данных при успешном действии
@@ -114,7 +116,7 @@
 /// Передача только ненулевых данных
 #define ZERO_DATA_NOT_REPORT    0xFF
 
-/** Структура кадра */
+/// Структура кадра
 struct frame {
     bool is_valid = false;      ///< Флаг целости кадра
 
@@ -130,7 +132,7 @@ struct frame {
     u_byte_t checksum{};        ///< Контрольная сумма
 };
 
-/** Структура параметров радара */
+/// Структура параметров радара
 struct parameters {
     union {
         float f = MIN_DISTANCE;
@@ -173,7 +175,7 @@ struct parameters {
     } right_border;             ///< Правая граница
 };
 
-/** Структура данных о цели */
+/// Структура данных о цели
 struct target_data {
     u_byte_t num{};             ///< Номер цели
 

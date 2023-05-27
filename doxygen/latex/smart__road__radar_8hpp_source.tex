@@ -1,0 +1,335 @@
+\doxysection{smart\+\_\+road\+\_\+radar.\+hpp}
+\hypertarget{smart__road__radar_8hpp_source}{}\label{smart__road__radar_8hpp_source}\index{src/smart\_road\_radar.hpp@{src/smart\_road\_radar.hpp}}
+\mbox{\hyperlink{smart__road__radar_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SMART\_ROAD\_SMART\_ROAD\_RADAR\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SMART\_ROAD\_SMART\_ROAD\_RADAR\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{smart__road__radar__utils_8hpp}{smart\_road\_radar\_utils.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_smart_road_radar}{SmartRoadRadar}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_serial}{Serial}}\ data\_bus\{\};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ read\_frame()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ received\_frame\{\};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (data\_bus.\mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}()\ !=\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a0c9d10cc0518130783d38ec26c63265d}{HEADER\_DATA\_FRAME\_1}});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\_bus.\mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}()\ !=\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_acd4fc33a59923e4f329c8763fecdf9be}{HEADER\_DATA\_FRAME\_2}})\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7643bc1c782ec65f470465969395cb2f}{is\_valid}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ received\_frame;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ received\_frame.data\_length.b[0]\ =\ data\_bus.\mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ received\_frame.data\_length.b[1]\ =\ data\_bus.\mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ received\_frame.word\ =\ data\_bus.\mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (received\_frame.data\_length.s\ >\ 1)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.data\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}[received\_frame.data\_length.s\ -\/\ 1];}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ data\_bus.\mbox{\hyperlink{class_serial_acd3b5133a1bb28da5c5d7e1b811aff3e}{read\_u\_bytes}}(received\_frame.data,\ received\_frame.data\_length.s\ -\/\ 1);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ received\_frame.checksum\ =\ data\_bus.\mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ calc\_checksum\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_ac95cbfca74bef5fb7d0ebe516fe72cac}{calculate\_checksum}}(received\_frame);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (calc\_checksum\ ==\ received\_frame.checksum)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.is\_valid\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.is\_valid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ received\_frame;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ read\_expected\_frame(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ expected\_word)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ received\_frame;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame\ =\ read\_frame();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (received\_frame.\mbox{\hyperlink{structframe_a2cf0c0eb9410df0d4b83340561dac748}{word}}\ !=\ expected\_word);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ received\_frame;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ read\_status()\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ received\_frame\ =\ read\_expected\_frame(\mbox{\hyperlink{smart__road__radar__utils_8hpp_a9e6939d67b2c530299b8df6bb5534b77}{CMD\_READ\_STATUS}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (received\_frame.\mbox{\hyperlink{structframe_a7643bc1c782ec65f470465969395cb2f}{is\_valid}})\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[0]\ ==\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}})\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a19cd20d00719b9df76dc42a44fc45371}{SMART\_ROAD\_RADAR\_OK}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a7f0a0abaf0c95c4b000c4f45fa68d66a}{SMART\_ROAD\_RADAR\_ERROR}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a7f0a0abaf0c95c4b000c4f45fa68d66a}{SMART\_ROAD\_RADAR\_ERROR}};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ write\_frame(\mbox{\hyperlink{structframe}{frame}}\ target\_frame)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ packet\_length\ =}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{smart__road__radar__utils_8hpp_aa1747ccd379d1fb2ff470490ba6c7f79}{LENGTH\_HEADER}}\ +}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a3e0f086c4ff108dc4889876fa0d3f8c9}{LENGTH\_DATA\_LENGTH}}\ +}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a850ad5f9f2f225f0fcdb21c09b899cbf}{LENGTH\_COMMAND\_WORD}}\ +}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (target\_frame.\mbox{\hyperlink{structframe_af1bdbc369c0f20174d8e10895383c791}{data\_length}}.\mbox{\hyperlink{structframe_af434fcc36cb95c0b0dcbe13e6c7d2cfd}{s}}\ -\/\ 1)\ +}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{smart__road__radar__utils_8hpp_ab0ab3548513de192164efc1eaa495cb3}{LENGTH\_CHECKSUM}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ packet[packet\_length];}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ packet[0]\ =\ target\_frame.\mbox{\hyperlink{structframe_a40cccfb84cd780d83397425dae57b1b6}{header}}[0];}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ packet[1]\ =\ target\_frame.\mbox{\hyperlink{structframe_a40cccfb84cd780d83397425dae57b1b6}{header}}[1];}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ packet[2]\ =\ target\_frame.\mbox{\hyperlink{structframe_af1bdbc369c0f20174d8e10895383c791}{data\_length}}.\mbox{\hyperlink{structframe_a37c2bcbe917d6d59ba90baef324a164d}{b}}[0];}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ packet[3]\ =\ target\_frame.\mbox{\hyperlink{structframe_af1bdbc369c0f20174d8e10895383c791}{data\_length}}.\mbox{\hyperlink{structframe_a37c2bcbe917d6d59ba90baef324a164d}{b}}[1];}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ packet[4]\ =\ target\_frame.\mbox{\hyperlink{structframe_a2cf0c0eb9410df0d4b83340561dac748}{word}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 5;\ i\ <\ packet\_length\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ packet[i]\ =\ target\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[i\ -\/\ 5];}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ packet[packet\_length\ -\/\ 1]\ =\ target\_frame.\mbox{\hyperlink{structframe_a0d86c626252120c9871139a50cd5a1a3}{checksum}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ data\_bus.\mbox{\hyperlink{class_serial_a29ef8d7663e7c90420c7c982be42e557}{write\_u\_bytes}}(packet,\ packet\_length);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{class_smart_road_radar_afaa4b7fa9189e635d5785bf63c1130bd}{SmartRoadRadar}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_smart_road_radar_aa38be22598c8e0eb76b240f40e3128bc}{SmartRoadRadar}}(LPTSTR\ address)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structport__config}{port\_config}}\ config\{\};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ config.\mbox{\hyperlink{structport__config_a110d2bd9e1e6ad1b99325072b43da5aa}{baud\_rate}}\ =\ 115200;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ config.byte\_size\ =\ 8;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ config.stop\_bits\ =\ ONESTOPBIT;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ config.parity\ =\ NOPARITY;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ data\_bus\ =\ \mbox{\hyperlink{class_serial}{Serial}}(address,\ config);}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{class_smart_road_radar_a4e03c46dae52b480301492b5a2364384}{SmartRoadRadar}}(LPTSTR\ address,\ \mbox{\hyperlink{structport__config}{port\_config}}\ config)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ data\_bus\ =\ \mbox{\hyperlink{class_serial}{Serial}}(address,\ config);}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8}{get\_firmware\_version}}(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ *version\_buffer)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_a3331c73fb55f8661ec20d938a7b51e52}{CMD\_REQUEST\_VERSION}});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ received\_frame\ =\ read\_expected\_frame(\mbox{\hyperlink{smart__road__radar__utils_8hpp_a1065194adfb50317a6f35d21e4743a95}{CMD\_READ\_VERSION}});}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (received\_frame.\mbox{\hyperlink{structframe_a7643bc1c782ec65f470465969395cb2f}{is\_valid}})\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ version\_buffer[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[0];}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ version\_buffer[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[1];}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ version\_buffer[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[2];}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a19cd20d00719b9df76dc42a44fc45371}{SMART\_ROAD\_RADAR\_OK}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a7f0a0abaf0c95c4b000c4f45fa68d66a}{SMART\_ROAD\_RADAR\_ERROR}};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_a3975a1a1681946f74e24328ea10b7025}{set\_parameters}}(\mbox{\hyperlink{structparameters}{parameters}}\ target\_parameters)\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_a04c2f5b8699de28357fbcb4a61679695}{u\_short\_t}}\ length\ =\ \textcolor{keyword}{sizeof}\ target\_parameters;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ data[length];}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ data[0]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ data[1]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ data[2]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ data[3]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00275\ \ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ data[4]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ data[5]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ data[6]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ data[7]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00280\ \ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ data[8]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ data[9]\ \ =\ target\_parameters.\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ data[10]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ data[11]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ data[12]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ data[13]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ data[14]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ data[15]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ data[16]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ data[17]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ data[18]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ data[19]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ data[20]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ data[21]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ data[22]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ data[23]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ data[24]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ data[25]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ data[26]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ data[27]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ data[28]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0];}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ data[29]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1];}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ data[30]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2];}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ data[31]\ =\ target\_parameters.\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3];}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_ac923a560b17091042852a8ed814ba9b3}{CMD\_SET\_PARAMETERS}},\ data,\ length);}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef}{get\_parameters}}(\mbox{\hyperlink{structparameters}{parameters}}\ *received\_parameters)\ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_a439e1efba763e0adcc50a5d6fab662de}{CMD\_GET\_PARAMETERS}});}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ received\_frame\ =\ read\_expected\_frame(\mbox{\hyperlink{smart__road__radar__utils_8hpp_aae049aa2b369731b2a4318d81fb8013a}{CMD\_READ\_PARAMETERS}});}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (received\_frame.\mbox{\hyperlink{structframe_a7643bc1c782ec65f470465969395cb2f}{is\_valid}})\ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[4];}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[5];}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[6];}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_abf61e6b0aebd4f8a1bb759999ae4820b}{min\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[7];}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[0];}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[1];}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[2];}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a5cce04e60033009e1c789713624d9ab0}{max\_dist}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[3];}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[12];}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[13];}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[14];}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_af3dd3caff17f6a7c5ff02265c66a890e}{min\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[15];}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[8];}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[9];}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[10];}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac863cbc146e1fd27f0b853d757346ac5}{max\_speed}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[11];}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[16];}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[17];}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[18];}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ad6991b63b32058dbd1228fc47e7ce7d7}{min\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[19];}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[20];}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[21];}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[22];}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_ac27388a3ab29077c4a35a57c39395546}{max\_angle}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[23];}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[24];}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[25];}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[26];}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a0c2b999fd504fbe696a9fcaa62a655aa}{left\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[27];}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[0]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[28];}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[1]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[29];}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[2]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[30];}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ received\_parameters-\/>\mbox{\hyperlink{structparameters_a7c24e021bde3819ffcca5c6cb29e98ed}{right\_border}}.\mbox{\hyperlink{structparameters_a58ae8654fd2b67ed5fd628131b796107}{b}}[3]\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[31];}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a19cd20d00719b9df76dc42a44fc45371}{SMART\_ROAD\_RADAR\_OK}};}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a7f0a0abaf0c95c4b000c4f45fa68d66a}{SMART\_ROAD\_RADAR\_ERROR}};}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \}}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00420\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb}{set\_target\_number}}(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ number)\ \{}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_ab92354d3de6ea5c18a0c2764ddf9ba08}{CMD\_SET\_TARGET\_NUM}},\ number);}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00426\ \ \ \ \ \}}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93}{get\_target\_data}}(\mbox{\hyperlink{structtarget__data}{target\_data}}\ *data)\ \{}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ received\_frame;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame\ =\ read\_expected\_frame(\mbox{\hyperlink{smart__road__radar__utils_8hpp_a1026cf94d88089bc8f1a0df146fa82ea}{CMD\_READ\_TARGET\_DATA}});}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (received\_frame.\mbox{\hyperlink{structframe_af1bdbc369c0f20174d8e10895383c791}{data\_length}}.\mbox{\hyperlink{structframe_af434fcc36cb95c0b0dcbe13e6c7d2cfd}{s}}\ <=\ 1);}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (received\_frame.\mbox{\hyperlink{structframe_a7643bc1c782ec65f470465969395cb2f}{is\_valid}})\ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ target\_count\ =\ (received\_frame.\mbox{\hyperlink{structframe_af1bdbc369c0f20174d8e10895383c791}{data\_length}}.\mbox{\hyperlink{structframe_af434fcc36cb95c0b0dcbe13e6c7d2cfd}{s}}\ -\/\ 1)\ /\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}};}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pos\ =\ 0;\ pos\ <\ target\_count;\ ++pos)\ \{}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[pos].\mbox{\hyperlink{structtarget__data_a5660f037bc7e8ea5689832d076437db5}{num}}\ =\ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[0\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos];}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[pos].\mbox{\hyperlink{structtarget__data_a3635c3c8c54d622ab6cf18b0df1d22a8}{distance}}\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_abcd974e8aaebad5eec9f1530e88a4b57}{u\_byte\_to\_float}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}[2]\ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[1\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos],}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[2\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos]}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[pos].\mbox{\hyperlink{structtarget__data_a8d92f7c474abce43f5ebf82f0e044441}{speed}}\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_abcd974e8aaebad5eec9f1530e88a4b57}{u\_byte\_to\_float}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}[2]\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[3\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos],}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[4\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos]}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[pos].\mbox{\hyperlink{structtarget__data_ac2ad3e57b31c868d28822e6564b04e2c}{angle}}\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_abcd974e8aaebad5eec9f1530e88a4b57}{u\_byte\_to\_float}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}[2]\ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[5\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos],}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[6\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos]}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[pos].\mbox{\hyperlink{structtarget__data_a1a81a6dc721f221efdaac15a859a84d7}{snr}}\ =\mbox{\hyperlink{smart__road__radar__utils_8hpp_abcd974e8aaebad5eec9f1530e88a4b57}{u\_byte\_to\_float}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}[2]\ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[7\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos],}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ received\_frame.\mbox{\hyperlink{structframe_a7818808ac0ce266a28f447781db0c5eb}{data}}[8\ +\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a1e9818102f2730d9b7af567451f06820}{TARGET\_DATA\_BYTE\_LENGTH}}\ *\ pos]}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a19cd20d00719b9df76dc42a44fc45371}{SMART\_ROAD\_RADAR\_OK}};}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a7f0a0abaf0c95c4b000c4f45fa68d66a}{SMART\_ROAD\_RADAR\_ERROR}};}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00495\ \ \ \ \ \}}
+\DoxyCodeLine{00496\ }
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_a4c359504214e8d6796df36308ce344c0}{enable\_data\_transmit}}()\ \{}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_afbb3143ce5ad5064004a047eafba86a0}{CMD\_ENABLE\_TRANSMIT}});}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00519\ \ \ \ \ \}}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00537\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858}{disable\_data\_transmit}}()\ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_ac990cbe9e81bd9f88ca2defbff442f1b}{CMD\_DISABLE\_TRANSMIT}});}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00540\ }
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00543\ \ \ \ \ \}}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_aa66f8c64c85119620bae8380b8856124}{set\_data\_transmit\_freq}}(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ freq)\ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_a935426bff7bab3e9cf61e02d16b25b76}{CMD\_SET\_DATA\_FREQ}},\ freq);}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00580\ \ \ \ \ \}}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00582\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906}{enable\_zero\_data\_reporting}}()\ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_ae137a784e3103151ea36ed30bf040ab6}{CMD\_SET\_ZERO\_REPORT}},\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a664e7b856d048814a9d9f1426a8556d2}{ZERO\_DATA\_REPORT}});}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00585\ }
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00588\ \ \ \ \ \}}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c}{disable\_zero\_data\_reporting}}()\ \{}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structframe}{frame}}\ target\_frame\ =\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126}{configure\_frame}}(\mbox{\hyperlink{smart__road__radar__utils_8hpp_ae137a784e3103151ea36ed30bf040ab6}{CMD\_SET\_ZERO\_REPORT}},\ \mbox{\hyperlink{smart__road__radar__utils_8hpp_a97fb3faa8735921a3071ac2701c962a4}{ZERO\_DATA\_NOT\_REPORT}});}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ write\_frame(target\_frame);}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ read\_status();}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00596\ \ \ \ \ \}}
+\DoxyCodeLine{00597\ \};}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SMART\_ROAD\_SMART\_ROAD\_RADAR\_HPP}}
+
+\end{DoxyCode}

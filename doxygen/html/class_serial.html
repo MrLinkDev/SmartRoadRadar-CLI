@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Класс Serial</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="class_serial-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс Serial</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Объект для общения с устройствами по последовательному интерфейсу  
+ <a href="class_serial.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="serial_8hpp_source.html">serial.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0b74d4e3978870dff84e883f0ed1748c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a0b74d4e3978870dff84e883f0ed1748c">Serial</a> ()=default</td></tr>
+<tr class="separator:a0b74d4e3978870dff84e883f0ed1748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713ae640ac110caf66367c89ad568ea0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a713ae640ac110caf66367c89ad568ea0">Serial</a> (LPTSTR address)</td></tr>
+<tr class="separator:a713ae640ac110caf66367c89ad568ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dace505e018f8253a296f28f03c9a0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a8dace505e018f8253a296f28f03c9a0f">Serial</a> (LPTSTR address, <a class="el" href="structport__config.html">port_config</a> config)</td></tr>
+<tr class="separator:a8dace505e018f8253a296f28f03c9a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9a3e346a804a9257dc57edd9668eac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a2b9a3e346a804a9257dc57edd9668eac">write_byte</a> (<a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> data)</td></tr>
+<tr class="separator:a2b9a3e346a804a9257dc57edd9668eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e1ddf3dab93186584bef4addd72870c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a8e1ddf3dab93186584bef4addd72870c">write_bytes</a> (<a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *data, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> length)</td></tr>
+<tr class="separator:a8e1ddf3dab93186584bef4addd72870c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e04973bb83284ce74689a16c9018c9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a4e04973bb83284ce74689a16c9018c9c">write_u_byte</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> data)</td></tr>
+<tr class="separator:a4e04973bb83284ce74689a16c9018c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ef8d7663e7c90420c7c982be42e557"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557">write_u_bytes</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *data, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> length)</td></tr>
+<tr class="separator:a29ef8d7663e7c90420c7c982be42e557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87bfd9aae65c56c2f9944329c4a4533"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533">read_byte</a> ()</td></tr>
+<tr class="separator:aa87bfd9aae65c56c2f9944329c4a4533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092c16d293ab0431d46aad36c27c6146"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a092c16d293ab0431d46aad36c27c6146">read_bytes</a> (<a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *buffer, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> buffer_length)</td></tr>
+<tr class="separator:a092c16d293ab0431d46aad36c27c6146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07339f65a29949df9b5949d26bd63113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a07339f65a29949df9b5949d26bd63113">read_u_byte</a> ()</td></tr>
+<tr class="separator:a07339f65a29949df9b5949d26bd63113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3b5133a1bb28da5c5d7e1b811aff3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e">read_u_bytes</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *buffer, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> buffer_length)</td></tr>
+<tr class="separator:acd3b5133a1bb28da5c5d7e1b811aff3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Объект для общения с устройствами по последовательному интерфейсу </p>
+<p>Объект содержит в себе конструкторы для инициализации подключения и функции для отправки и чтения данных типа byte_t и u_byte_t </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a0b74d4e3978870dff84e883f0ed1748c" name="a0b74d4e3978870dff84e883f0ed1748c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b74d4e3978870dff84e883f0ed1748c">&#9670;&#160;</a></span>Serial() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Serial::Serial </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Стандартный конструктор</p>
+<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus;</div>
+<div class="ttc" id="aclass_serial_html"><div class="ttname"><a href="class_serial.html">Serial</a></div><div class="ttdoc">Объект для общения с устройствами по последовательному интерфейсу</div><div class="ttdef"><b>Definition</b> serial.hpp:46</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a713ae640ac110caf66367c89ad568ea0" name="a713ae640ac110caf66367c89ad568ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a713ae640ac110caf66367c89ad568ea0">&#9670;&#160;</a></span>Serial() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Serial::Serial </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Конструктор, который создаёт подключение к устройству со следующими параметрами:</p><ul>
+<li>baud_rate = 115200</li>
+<li>byte_size = 8</li>
+<li>stop_bits = ONESTOPBIT</li>
+<li>parity = NOPARITY</li>
+</ul>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес устройства, к которому требуется подключиться</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus(<span class="stringliteral">&quot;COM1&quot;</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a8dace505e018f8253a296f28f03c9a0f" name="a8dace505e018f8253a296f28f03c9a0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dace505e018f8253a296f28f03c9a0f">&#9670;&#160;</a></span>Serial() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Serial::Serial </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structport__config.html">port_config</a>&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Конструктор, который создаёт подключение к устройству с параметрами, которые передаются в структуре типа <a class="el" href="structport__config.html">port_config</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес устройства, к которому требуется подключиться </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Структура, содержащая в себе настройки для подключения</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structport__config.html">port_config</a> config;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">baud_rate</a> = BAUD_115200;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">byte_size</a> = 8;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a15dfef1d17723095f344d529498d158f">stop_bits</a> = ONESTOPBIT;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">parity</a> = NOPARITY;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus(<span class="stringliteral">&quot;COM1&quot;</span>, config);</div>
+<div class="ttc" id="astructport__config_html"><div class="ttname"><a href="structport__config.html">port_config</a></div><div class="ttdef"><b>Definition</b> serial.hpp:33</div></div>
+<div class="ttc" id="astructport__config_html_a110d2bd9e1e6ad1b99325072b43da5aa"><div class="ttname"><a href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">port_config::baud_rate</a></div><div class="ttdeci">DWORD baud_rate</div><div class="ttdoc">Скорость передачи данных</div><div class="ttdef"><b>Definition</b> serial.hpp:34</div></div>
+<div class="ttc" id="astructport__config_html_a15dfef1d17723095f344d529498d158f"><div class="ttname"><a href="structport__config.html#a15dfef1d17723095f344d529498d158f">port_config::stop_bits</a></div><div class="ttdeci">DWORD stop_bits</div><div class="ttdoc">Количество стоп-битов</div><div class="ttdef"><b>Definition</b> serial.hpp:36</div></div>
+<div class="ttc" id="astructport__config_html_a1f051b2ced88656882d9cb0f17d0affe"><div class="ttname"><a href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">port_config::byte_size</a></div><div class="ttdeci">DWORD byte_size</div><div class="ttdoc">Размер байта</div><div class="ttdef"><b>Definition</b> serial.hpp:35</div></div>
+<div class="ttc" id="astructport__config_html_a3ced652683c9b90e2b4bb331f0ccf786"><div class="ttname"><a href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">port_config::parity</a></div><div class="ttdeci">DWORD parity</div><div class="ttdoc">Бит чётности</div><div class="ttdef"><b>Definition</b> serial.hpp:37</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aa87bfd9aae65c56c2f9944329c4a4533" name="aa87bfd9aae65c56c2f9944329c4a4533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87bfd9aae65c56c2f9944329c4a4533">&#9670;&#160;</a></span>read_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> Serial::read_byte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Считывает один байт типа byte_t, отправленный устройством.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает байт типа byte_t. </dd></dl>
+
+</div>
+</div>
+<a id="a092c16d293ab0431d46aad36c27c6146" name="a092c16d293ab0431d46aad36c27c6146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092c16d293ab0431d46aad36c27c6146">&#9670;&#160;</a></span>read_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serial::read_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
+          <td class="paramname"><em>buffer_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Считывает массив байтов типа byte_t, отправленный устройством.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Указатель на буфер, в который записываются принятые байты. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_length</td><td>Размер буфера </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a07339f65a29949df9b5949d26bd63113" name="a07339f65a29949df9b5949d26bd63113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07339f65a29949df9b5949d26bd63113">&#9670;&#160;</a></span>read_u_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> Serial::read_u_byte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Считывает один байт типа u_byte_t, отправленный устройством.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает байт типа u_byte_t. </dd></dl>
+
+</div>
+</div>
+<a id="acd3b5133a1bb28da5c5d7e1b811aff3e" name="acd3b5133a1bb28da5c5d7e1b811aff3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3b5133a1bb28da5c5d7e1b811aff3e">&#9670;&#160;</a></span>read_u_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serial::read_u_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
+          <td class="paramname"><em>buffer_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Считывает массив байтов типа u_byte_t, отправленный устройством.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Указатель на буфер, в который записываются принятые байты. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_length</td><td>Размер буфера </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b9a3e346a804a9257dc57edd9668eac" name="a2b9a3e346a804a9257dc57edd9668eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9a3e346a804a9257dc57edd9668eac">&#9670;&#160;</a></span>write_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serial::write_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a>&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Отправляет на подключенное устройство один байт типа byte_t</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Отправляемый байт </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если байт был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
+
+</div>
+</div>
+<a id="a8e1ddf3dab93186584bef4addd72870c" name="a8e1ddf3dab93186584bef4addd72870c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1ddf3dab93186584bef4addd72870c">&#9670;&#160;</a></span>write_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serial::write_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Отправляет на подключенное устройство массив байтов типа byte_t</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Отправляемый массив </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Размер отправляемого массива </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если массив был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
+
+</div>
+</div>
+<a id="a4e04973bb83284ce74689a16c9018c9c" name="a4e04973bb83284ce74689a16c9018c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e04973bb83284ce74689a16c9018c9c">&#9670;&#160;</a></span>write_u_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serial::write_u_byte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Отправляет на подключенное устройство один байт типа u_byte_t</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Отправляемый байт </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если байт был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
+
+</div>
+</div>
+<a id="a29ef8d7663e7c90420c7c982be42e557" name="a29ef8d7663e7c90420c7c982be42e557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ef8d7663e7c90420c7c982be42e557">&#9670;&#160;</a></span>write_u_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Serial::write_u_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Отправляет на подключенное устройство массив байтов типа u_byte_t</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Отправляемый массив </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Размер отправляемого массива </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если массив был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/<a class="el" href="serial_8hpp_source.html">serial.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

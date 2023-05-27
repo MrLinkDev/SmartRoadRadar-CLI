@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Файл src/utils.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Макросы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл utils.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк  
+<a href="#details">Подробнее...</a></p>
+
+<p><a href="utils_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a23195218eef2cf21e2beae685a041783"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#a23195218eef2cf21e2beae685a041783">DELIMITER</a>&#160;&#160;&#160;&quot; &quot;</td></tr>
+<tr class="memdesc:a23195218eef2cf21e2beae685a041783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стандартный делитель  <br /></td></tr>
+<tr class="separator:a23195218eef2cf21e2beae685a041783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:af75c7dace519331229c114089553590b"><td class="memItemLeft" align="right" valign="top">typedef unsigned long long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a></td></tr>
+<tr class="memdesc:af75c7dace519331229c114089553590b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определение типа size_t на случай, если его нет по-умолчанию  <br /></td></tr>
+<tr class="separator:af75c7dace519331229c114089553590b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f045fc129737ba472182df02d418db"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a></td></tr>
+<tr class="memdesc:af0f045fc129737ba472182df02d418db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип данных byte_t размером 1 байт  <br /></td></tr>
+<tr class="separator:af0f045fc129737ba472182df02d418db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3662a5e2b349ba1b8498db3aa36a27"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a></td></tr>
+<tr class="memdesc:aef3662a5e2b349ba1b8498db3aa36a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип данных u_byte_t размером 1 байт  <br /></td></tr>
+<tr class="separator:aef3662a5e2b349ba1b8498db3aa36a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c2f5b8699de28357fbcb4a61679695"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a></td></tr>
+<tr class="memdesc:a04c2f5b8699de28357fbcb4a61679695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип данных u_short_t размером 2 байта  <br /></td></tr>
+<tr class="separator:a04c2f5b8699de28357fbcb4a61679695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a0215e438772ad9bfebf68557fded5c95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#a0215e438772ad9bfebf68557fded5c95">append</a> (char *dest, const <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> *length, char symbol)</td></tr>
+<tr class="separator:a0215e438772ad9bfebf68557fded5c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad282532b86b2d2e201dab744a0571bdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#ad282532b86b2d2e201dab744a0571bdc">append</a> (unsigned char *dest, const <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> *length, unsigned char symbol)</td></tr>
+<tr class="separator:ad282532b86b2d2e201dab744a0571bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea91c2d1e65cdd095e4c1dc452c598a4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#aea91c2d1e65cdd095e4c1dc452c598a4">get_first_item</a> (std::string *line)</td></tr>
+<tr class="separator:aea91c2d1e65cdd095e4c1dc452c598a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad456b7b4e0cfe5442ca16ad348348e24"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8hpp.html#ad456b7b4e0cfe5442ca16ad348348e24">get_first_item</a> (std::string *line, std::string *delimiter)</td></tr>
+<tr class="separator:ad456b7b4e0cfe5442ca16ad348348e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк </p>
+<dl class="section author"><dt>Авторы</dt><dd>Александр Горбунов </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>11 марта 2023 </dd></dl>
+</div><h2 class="groupheader">Макросы</h2>
+<a id="a23195218eef2cf21e2beae685a041783" name="a23195218eef2cf21e2beae685a041783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23195218eef2cf21e2beae685a041783">&#9670;&#160;</a></span>DELIMITER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DELIMITER&#160;&#160;&#160;&quot; &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Стандартный делитель </p>
+
+</div>
+</div>
+<h2 class="groupheader">Типы</h2>
+<a id="af0f045fc129737ba472182df02d418db" name="af0f045fc129737ba472182df02d418db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f045fc129737ba472182df02d418db">&#9670;&#160;</a></span>byte_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char <a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Тип данных byte_t размером 1 байт </p>
+
+</div>
+</div>
+<a id="af75c7dace519331229c114089553590b" name="af75c7dace519331229c114089553590b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af75c7dace519331229c114089553590b">&#9670;&#160;</a></span>size_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long long int <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Определение типа size_t на случай, если его нет по-умолчанию </p>
+
+</div>
+</div>
+<a id="aef3662a5e2b349ba1b8498db3aa36a27" name="aef3662a5e2b349ba1b8498db3aa36a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef3662a5e2b349ba1b8498db3aa36a27">&#9670;&#160;</a></span>u_byte_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Тип данных u_byte_t размером 1 байт </p>
+
+</div>
+</div>
+<a id="a04c2f5b8699de28357fbcb4a61679695" name="a04c2f5b8699de28357fbcb4a61679695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04c2f5b8699de28357fbcb4a61679695">&#9670;&#160;</a></span>u_short_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Тип данных u_short_t размером 2 байта </p>
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="a0215e438772ad9bfebf68557fded5c95" name="a0215e438772ad9bfebf68557fded5c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0215e438772ad9bfebf68557fded5c95">&#9670;&#160;</a></span>append() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void append </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> *&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>symbol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Добавляет символ типа char (byte_t) в строку</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dest</td><td>Строка, в которую будет добавлен символ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Длина строки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">symbol</td><td>Добавляемый символ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad282532b86b2d2e201dab744a0571bdc" name="ad282532b86b2d2e201dab744a0571bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad282532b86b2d2e201dab744a0571bdc">&#9670;&#160;</a></span>append() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void append </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> *&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>symbol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Добавляет символ типа unsigned char (u_byte_t) в строку</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dest</td><td>Строка, в которую будет добавлен символ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Длина строки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">symbol</td><td>Добавляемый символ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aea91c2d1e65cdd095e4c1dc452c598a4" name="aea91c2d1e65cdd095e4c1dc452c598a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea91c2d1e65cdd095e4c1dc452c598a4">&#9670;&#160;</a></span>get_first_item() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string get_first_item </td>
+          <td>(</td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Из принимаемой строки выделяет содержимое до первого делителя</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dest</td><td>Строка, из которой будет выделено содержимое до делителя (пробела). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Выделенное содержимое до делителя (пробела) </dd></dl>
+
+</div>
+</div>
+<a id="ad456b7b4e0cfe5442ca16ad348348e24" name="ad456b7b4e0cfe5442ca16ad348348e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad456b7b4e0cfe5442ca16ad348348e24">&#9670;&#160;</a></span>get_first_item() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string get_first_item </td>
+          <td>(</td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string *&#160;</td>
+          <td class="paramname"><em>delimiter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Из принимаемой строки выделяет содержимое до первого делителя</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dest</td><td>Строка, из которой будет выделено содержимое до делителя. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delimiter</td><td>Делитель, до которого выделяется содержимое. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Выделенное содержимое до делителя. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

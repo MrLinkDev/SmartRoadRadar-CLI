@@ -1,0 +1,215 @@
+\doxysection{serial.\+hpp}
+\hypertarget{serial_8hpp_source}{}\label{serial_8hpp_source}\index{src/serial.hpp@{src/serial.hpp}}
+\mbox{\hyperlink{serial_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SMART\_ROAD\_SERIAL\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SMART\_ROAD\_SERIAL\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{utils.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BYTE\_SIZE\ 8}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ SYMBOL\_NULL\ '\(\backslash\)0'}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ SYMBOL\_CR\ \ \ '\(\backslash\)r'}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ SYMBOL\_LF\ \ \ '\(\backslash\)n'}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SERIAL\_OK\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ SERIAL\_ERROR\ \ \ \ 1}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structport__config}{port\_config}}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ DWORD\ \mbox{\hyperlink{structport__config_a110d2bd9e1e6ad1b99325072b43da5aa}{baud\_rate}};\ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ DWORD\ \mbox{\hyperlink{structport__config_a1f051b2ced88656882d9cb0f17d0affe}{byte\_size}};\ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ DWORD\ \mbox{\hyperlink{structport__config_a15dfef1d17723095f344d529498d158f}{stop\_bits}};\ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ DWORD\ \mbox{\hyperlink{structport__config_a3ced652683c9b90e2b4bb331f0ccf786}{parity}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_serial}{Serial}}\ \{}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ HANDLE\ h\_serial;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_serial_a0b74d4e3978870dff84e883f0ed1748c}{Serial}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_serial_a713ae640ac110caf66367c89ad568ea0}{Serial}}(LPTSTR\ address)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ h\_serial\ =\ ::CreateFile(}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ address,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GENERIC\_READ\ |\ GENERIC\_WRITE,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OPEN\_EXISTING,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FILE\_ATTRIBUTE\_NORMAL,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h\_serial\ ==\ INVALID\_HANDLE\_VALUE)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Can't\ open\ port\ \%s\(\backslash\)n"{}},\ address);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ DCB\ dcbSerialParameters\ =\ \{0\};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ dcbSerialParameters.DCBlength\ =\ \textcolor{keyword}{sizeof}\ dcbSerialParameters;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ dcbSerialParameters.BaudRate\ =\ BAUD\_115200;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ dcbSerialParameters.ByteSize\ =\ \mbox{\hyperlink{serial_8hpp_a86fd4404b140711fdb77326609c0f393}{BYTE\_SIZE}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ dcbSerialParameters.StopBits\ =\ ONESTOPBIT;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ dcbSerialParameters.Parity\ =\ NOPARITY;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ SetCommState(h\_serial,\ \&dcbSerialParameters);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_serial_a8dace505e018f8253a296f28f03c9a0f}{Serial}}(LPTSTR\ address,\ \mbox{\hyperlink{structport__config}{port\_config}}\ config)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ h\_serial\ =\ ::CreateFile(}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ address,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GENERIC\_READ\ |\ GENERIC\_WRITE,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OPEN\_EXISTING,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FILE\_ATTRIBUTE\_NORMAL,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (h\_serial\ ==\ INVALID\_HANDLE\_VALUE)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Can't\ open\ port\ \%s\(\backslash\)n"{}},\ address);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ DCB\ dcbSerialParameters\ =\ \{0\};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ dcbSerialParameters.DCBlength\ =\ \textcolor{keyword}{sizeof}\ dcbSerialParameters;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ dcbSerialParameters.BaudRate\ =\ config.\mbox{\hyperlink{structport__config_a110d2bd9e1e6ad1b99325072b43da5aa}{baud\_rate}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ dcbSerialParameters.ByteSize\ =\ config.\mbox{\hyperlink{structport__config_a1f051b2ced88656882d9cb0f17d0affe}{byte\_size}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ dcbSerialParameters.StopBits\ =\ config.\mbox{\hyperlink{structport__config_a15dfef1d17723095f344d529498d158f}{stop\_bits}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ dcbSerialParameters.Parity\ =\ config.\mbox{\hyperlink{structport__config_a3ced652683c9b90e2b4bb331f0ccf786}{parity}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ SetCommState(h\_serial,\ \&dcbSerialParameters);}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_serial_a2b9a3e346a804a9257dc57edd9668eac}{write\_byte}}(\mbox{\hyperlink{utils_8hpp_af0f045fc129737ba472182df02d418db}{byte\_t}}\ data)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ DWORD\ dw\_size\ =\ 1;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ DWORD\ dw\_bytes\_written;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ WriteFile(}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\_serial,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&data,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dw\_size,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&dw\_bytes\_written,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dw\_size\ ==\ dw\_bytes\_written)\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_a6950cf86087877bb855d1c7c848fc2a9}{SERIAL\_OK}};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_aa510e9a815c3fb95877501fdaa5bbc64}{SERIAL\_ERROR}};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_serial_a8e1ddf3dab93186584bef4addd72870c}{write\_bytes}}(\mbox{\hyperlink{utils_8hpp_af0f045fc129737ba472182df02d418db}{byte\_t}}\ *data,\ \textcolor{keywordtype}{size\_t}\ length)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ DWORD\ dw\_bytes\_written;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ WriteFile(}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\_serial,}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&dw\_bytes\_written,}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ ==\ dw\_bytes\_written)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_a6950cf86087877bb855d1c7c848fc2a9}{SERIAL\_OK}};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_aa510e9a815c3fb95877501fdaa5bbc64}{SERIAL\_ERROR}};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_serial_a4e04973bb83284ce74689a16c9018c9c}{write\_u\_byte}}(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ data)\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ DWORD\ dw\_size\ =\ 1;}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ DWORD\ dw\_bytes\_written;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ WriteFile(}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\_serial,}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&data,}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dw\_size,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&dw\_bytes\_written,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dw\_size\ ==\ dw\_bytes\_written)\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_a6950cf86087877bb855d1c7c848fc2a9}{SERIAL\_OK}};}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_aa510e9a815c3fb95877501fdaa5bbc64}{SERIAL\_ERROR}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_serial_a29ef8d7663e7c90420c7c982be42e557}{write\_u\_bytes}}(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ *data,\ \textcolor{keywordtype}{size\_t}\ length)\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ DWORD\ dw\_bytes\_written;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ WriteFile(}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\_serial,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ length,}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&dw\_bytes\_written,}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (length\ ==\ dw\_bytes\_written)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_a6950cf86087877bb855d1c7c848fc2a9}{SERIAL\_OK}};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{serial_8hpp_aa510e9a815c3fb95877501fdaa5bbc64}{SERIAL\_ERROR}};}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{utils_8hpp_af0f045fc129737ba472182df02d418db}{byte\_t}}\ \mbox{\hyperlink{class_serial_aa87bfd9aae65c56c2f9944329c4a4533}{read\_byte}}()\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ DWORD\ size;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_af0f045fc129737ba472182df02d418db}{byte\_t}}\ received\_byte;}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ ReadFile(}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\_serial,}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&received\_byte,}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&size,}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ >\ 0)\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ received\_byte;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serial_a092c16d293ab0431d46aad36c27c6146}{read\_bytes}}(\mbox{\hyperlink{utils_8hpp_af0f045fc129737ba472182df02d418db}{byte\_t}}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ buffer\_length)\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_af0f045fc129737ba472182df02d418db}{byte\_t}}\ received\_byte;}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ pos\ =\ 0;\ pos\ <\ buffer\_length;\ ++pos)\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ received\_byte\ =\ \mbox{\hyperlink{class_serial_aa87bfd9aae65c56c2f9944329c4a4533}{read\_byte}}();}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ buffer[pos]\ =\ received\_byte;}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ \mbox{\hyperlink{class_serial_a07339f65a29949df9b5949d26bd63113}{read\_u\_byte}}()\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ DWORD\ size;}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ received\_byte;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ ReadFile(}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ h\_serial,}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&received\_byte,}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&size,}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ >\ 0)\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ received\_byte;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_serial_acd3b5133a1bb28da5c5d7e1b811aff3e}{read\_u\_bytes}}(\mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ buffer\_length)\ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{utils_8hpp_aef3662a5e2b349ba1b8498db3aa36a27}{u\_byte\_t}}\ received\_byte;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ pos\ =\ 0;\ pos\ <\ buffer\_length;\ ++pos)\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ received\_byte\ =\ \mbox{\hyperlink{class_serial_aa87bfd9aae65c56c2f9944329c4a4533}{read\_byte}}();}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ buffer[pos]\ =\ received\_byte;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \};}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SMART\_ROAD\_SERIAL\_HPP}}
+
+\end{DoxyCode}

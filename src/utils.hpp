@@ -9,16 +9,18 @@
 #ifndef SMART_ROAD_UTILS_HPP
 #define SMART_ROAD_UTILS_HPP
 
+/// Стандартный делитель
 #define DELIMITER   " "
 
+/// Определение типа size_t на случай, если его нет по-умолчанию
 typedef unsigned long long int size_t;
 
-/** Тип данных byte_t размером 1 байт */
+/// Тип данных byte_t размером 1 байт
 typedef char byte_t;
-/** Тип данных u_byte_t размером 1 байт */
+/// Тип данных u_byte_t размером 1 байт
 typedef unsigned char u_byte_t;
 
-/** Тип данных u_short_t размером 2 байта */
+/// Тип данных u_short_t размером 2 байта
 typedef unsigned short u_short_t;
 
 /**

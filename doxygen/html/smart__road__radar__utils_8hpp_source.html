@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Исходный файл src/smart_road_radar_utils.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">smart_road_radar_utils.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="smart__road__radar__utils_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SMART_ROAD_SMART_ROAD_RADAR_UTILS_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SMART_ROAD_SMART_ROAD_RADAR_UTILS_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="serial_8hpp.html">serial.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">   15</a></span><span class="preprocessor">#define SMART_ROAD_RADAR_OK     0</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a7f0a0abaf0c95c4b000c4f45fa68d66a">   17</a></span><span class="preprocessor">#define SMART_ROAD_RADAR_ERROR  1</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#aa90cac659d18e8ef6294c7ae337f6b58">   20</a></span><span class="preprocessor">#define SUCCESS     0x0A</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a6d58f9ac447476b4e084d7ca383f5183">   22</a></span><span class="preprocessor">#define FAILURE     0xFF</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a3331c73fb55f8661ec20d938a7b51e52">   25</a></span><span class="preprocessor">#define CMD_REQUEST_VERSION     0x10</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a1065194adfb50317a6f35d21e4743a95">   27</a></span><span class="preprocessor">#define CMD_READ_VERSION        0x11</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ac923a560b17091042852a8ed814ba9b3">   30</a></span><span class="preprocessor">#define CMD_SET_PARAMETERS      0x36</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a439e1efba763e0adcc50a5d6fab662de">   32</a></span><span class="preprocessor">#define CMD_GET_PARAMETERS      0x37</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#aae049aa2b369731b2a4318d81fb8013a">   35</a></span><span class="preprocessor">#define CMD_READ_PARAMETERS     0x38</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ab92354d3de6ea5c18a0c2764ddf9ba08">   38</a></span><span class="preprocessor">#define CMD_SET_TARGET_NUM      0x12</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a9e6939d67b2c530299b8df6bb5534b77">   41</a></span><span class="preprocessor">#define CMD_READ_STATUS         0x50</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a1026cf94d88089bc8f1a0df146fa82ea">   44</a></span><span class="preprocessor">#define CMD_READ_TARGET_DATA    0x42</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#afbb3143ce5ad5064004a047eafba86a0">   47</a></span><span class="preprocessor">#define CMD_ENABLE_TRANSMIT     0x20</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ac990cbe9e81bd9f88ca2defbff442f1b">   49</a></span><span class="preprocessor">#define CMD_DISABLE_TRANSMIT    0x21</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a935426bff7bab3e9cf61e02d16b25b76">   52</a></span><span class="preprocessor">#define CMD_SET_DATA_FREQ       0x18</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ae137a784e3103151ea36ed30bf040ab6">   55</a></span><span class="preprocessor">#define CMD_SET_ZERO_REPORT     0x19</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a0c9d10cc0518130783d38ec26c63265d">   58</a></span><span class="preprocessor">#define HEADER_DATA_FRAME_1     0x55</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#acd4fc33a59923e4f329c8763fecdf9be">   60</a></span><span class="preprocessor">#define HEADER_DATA_FRAME_2     0xAA</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#aa1747ccd379d1fb2ff470490ba6c7f79">   63</a></span><span class="preprocessor">#define LENGTH_HEADER           2</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a3e0f086c4ff108dc4889876fa0d3f8c9">   65</a></span><span class="preprocessor">#define LENGTH_DATA_LENGTH      2</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a850ad5f9f2f225f0fcdb21c09b899cbf">   67</a></span><span class="preprocessor">#define LENGTH_COMMAND_WORD     1</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ab0ab3548513de192164efc1eaa495cb3">   69</a></span><span class="preprocessor">#define LENGTH_CHECKSUM         1</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a549d41dcf9444ed7d6df1da3c73e7d16">   72</a></span><span class="preprocessor">#define MIN_DISTANCE    0.0f</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a08e4da5f3d0c7936fa52467f40e4b6aa">   74</a></span><span class="preprocessor">#define MAX_DISTANCE    13.0f</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ad5f5efaa5cb771bd06da4bfe6046809e">   77</a></span><span class="preprocessor">#define MIN_SPEED       0.0f</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ac2cd96d53dd3ba6407db6766c3d92b26">   79</a></span><span class="preprocessor">#define MAX_SPEED       5.0f</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#af5cc136dbc86df89de56c3aa421c12ee">   82</a></span><span class="preprocessor">#define MIN_ANGLE      -60.0f</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#af3c82099d63a2d91d68bd62d954059c7">   84</a></span><span class="preprocessor">#define MAX_ANGLE       60.0f</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ae6e962f28cfd687ce25f22ba2fae8ac3">   87</a></span><span class="preprocessor">#define LEFT_BORDER    -6.0f</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a45beb644780106cc600331ec3e784218">   89</a></span><span class="preprocessor">#define RIGHT_BORDER    6.0f</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a0cbea62f1ce2043dd08108e65ed8de1d">   92</a></span><span class="preprocessor">#define SCALE   0.01f</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a1e9818102f2730d9b7af567451f06820">   95</a></span><span class="preprocessor">#define TARGET_DATA_BYTE_LENGTH 9</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#aca105d80c88c1cfee26c72f0e5703dc1">   98</a></span><span class="preprocessor">#define DATA_FREQ_1     0x01</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a59f51c78775c9cd515c117b3350dd0ea">  100</a></span><span class="preprocessor">#define DATA_FREQ_2     0x02</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a40ec92ffce9a1cda315e9046aa0736c6">  102</a></span><span class="preprocessor">#define DATA_FREQ_3     0x03</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#aa7c5b2589aed4fda4cc04d753c673771">  104</a></span><span class="preprocessor">#define DATA_FREQ_4     0x04</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#acfba04e82788f3401a6d74d9157efd2a">  106</a></span><span class="preprocessor">#define DATA_FREQ_5     0x05</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a21745c118f601f93c6adca9c0e06466b">  108</a></span><span class="preprocessor">#define DATA_FREQ_10    0x0A</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#aa0fe60a59acb839fed4f4ca6e7cd304b">  110</a></span><span class="preprocessor">#define DATA_FREQ_15    0x0F</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a16fe9ffceba487c561a112be969ebe28">  112</a></span><span class="preprocessor">#define DATA_FREQ_20    0x14</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a664e7b856d048814a9d9f1426a8556d2">  115</a></span><span class="preprocessor">#define ZERO_DATA_REPORT        0x0A</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a97fb3faa8735921a3071ac2701c962a4">  117</a></span><span class="preprocessor">#define ZERO_DATA_NOT_REPORT    0xFF</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structframe.html">  120</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structframe.html">frame</a> {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="structframe.html#a7643bc1c782ec65f470465969395cb2f">  121</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structframe.html#a7643bc1c782ec65f470465969395cb2f">is_valid</a> = <span class="keyword">false</span>;      </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="structframe.html#a40cccfb84cd780d83397425dae57b1b6">  123</a></span>    <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structframe.html#a40cccfb84cd780d83397425dae57b1b6">header</a>[2] = {<a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a0c9d10cc0518130783d38ec26c63265d">HEADER_DATA_FRAME_1</a>, <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#acd4fc33a59923e4f329c8763fecdf9be">HEADER_DATA_FRAME_2</a>};    </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="structframe.html#a37c2bcbe917d6d59ba90baef324a164d">  126</a></span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structframe.html#a37c2bcbe917d6d59ba90baef324a164d">b</a>[2];</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">  127</a></span>        <a class="code hl_typedef" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a> <a class="code hl_variable" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">s</a>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">  128</a></span>    } <a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>{};            </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structframe.html#a2cf0c0eb9410df0d4b83340561dac748">  130</a></span>    <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structframe.html#a2cf0c0eb9410df0d4b83340561dac748">word</a>{};            </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="structframe.html#a7818808ac0ce266a28f447781db0c5eb">  131</a></span>    <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *<a class="code hl_variable" href="structframe.html#a7818808ac0ce266a28f447781db0c5eb">data</a> = <span class="keyword">nullptr</span>;   </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="structframe.html#a0d86c626252120c9871139a50cd5a1a3">  132</a></span>    <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structframe.html#a0d86c626252120c9871139a50cd5a1a3">checksum</a>{};        </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="structparameters.html">  136</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structparameters.html">parameters</a> {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">  138</a></span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a549d41dcf9444ed7d6df1da3c73e7d16">MIN_DISTANCE</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">  139</a></span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">  140</a></span>    } <a class="code hl_variable" href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">min_dist</a>;                 </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a08e4da5f3d0c7936fa52467f40e4b6aa">MAX_DISTANCE</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">  145</a></span>    } <a class="code hl_variable" href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">max_dist</a>;                 </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#ad5f5efaa5cb771bd06da4bfe6046809e">MIN_SPEED</a>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">  150</a></span>    } <a class="code hl_variable" href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">min_speed</a>;                </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#ac2cd96d53dd3ba6407db6766c3d92b26">MAX_SPEED</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">  155</a></span>    } <a class="code hl_variable" href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">max_speed</a>;                </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#af5cc136dbc86df89de56c3aa421c12ee">MIN_ANGLE</a>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">  160</a></span>    } <a class="code hl_variable" href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">min_angle</a>;                </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#af3c82099d63a2d91d68bd62d954059c7">MAX_ANGLE</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">  165</a></span>    } <a class="code hl_variable" href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">max_angle</a>;                </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#ae6e962f28cfd687ce25f22ba2fae8ac3">LEFT_BORDER</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">  170</a></span>    } <a class="code hl_variable" href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">left_border</a>;              </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">union </span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a45beb644780106cc600331ec3e784218">RIGHT_BORDER</a>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">b</a>[4];</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">  175</a></span>    } <a class="code hl_variable" href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">right_border</a>;             </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>};</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="structtarget__data.html">  179</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtarget__data.html">target_data</a> {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="structtarget__data.html#a5660f037bc7e8ea5689832d076437db5">  180</a></span>    <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_variable" href="structtarget__data.html#a5660f037bc7e8ea5689832d076437db5">num</a>{};             </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="structtarget__data.html#a3635c3c8c54d622ab6cf18b0df1d22a8">  182</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structtarget__data.html#a3635c3c8c54d622ab6cf18b0df1d22a8">distance</a>{};           </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="structtarget__data.html#a8d92f7c474abce43f5ebf82f0e044441">  183</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structtarget__data.html#a8d92f7c474abce43f5ebf82f0e044441">speed</a>{};              </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="structtarget__data.html#ac2ad3e57b31c868d28822e6564b04e2c">  184</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structtarget__data.html#ac2ad3e57b31c868d28822e6564b04e2c">angle</a>{};              </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="structtarget__data.html#a1a81a6dc721f221efdaac15a859a84d7">  185</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structtarget__data.html#a1a81a6dc721f221efdaac15a859a84d7">snr</a>{};                </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>};</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac">  194</a></span><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac">calculate_checksum</a>(<a class="code hl_struct" href="structframe.html">frame</a> target_frame) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> checksum = 0x00;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    checksum += target_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#a37c2bcbe917d6d59ba90baef324a164d">b</a>[0];</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    checksum += target_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#a37c2bcbe917d6d59ba90baef324a164d">b</a>[1];</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    checksum += target_frame.<a class="code hl_variable" href="structframe.html#a2cf0c0eb9410df0d4b83340561dac748">word</a>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">if</span> (target_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">s</a> &gt; 1) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = 0; i &lt; target_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">s</a> - 1; ++i) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            checksum += target_frame.<a class="code hl_variable" href="structframe.html#a7818808ac0ce266a28f447781db0c5eb">data</a>[i];</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">return</span> checksum;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57">  217</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57">u_byte_to_float</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> u_bytes[2]) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordtype">short</span> data = (u_bytes[1] &lt;&lt; 8) | u_bytes[0];</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordflow">return</span> (<span class="keywordtype">float</span>) data * <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a0cbea62f1ce2043dd08108e65ed8de1d">SCALE</a>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126">  228</a></span><a class="code hl_struct" href="structframe.html">frame</a> <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126">configure_frame</a>(<a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> word) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_struct" href="structframe.html">frame</a> configured_frame{};</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    configured_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">s</a> = (<a class="code hl_typedef" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a>) 1;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    configured_frame.word = word;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    configured_frame.checksum = <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac">calculate_checksum</a>(configured_frame);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordflow">return</span> configured_frame;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>}</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#ac1095088fd374269de55a495fc60c539">  246</a></span><a class="code hl_struct" href="structframe.html">frame</a> <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126">configure_frame</a>(<a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> word, <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> data) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_struct" href="structframe.html">frame</a> configured_frame{};</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    configured_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">s</a> = (<a class="code hl_typedef" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a>) 2;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    configured_frame.word = word;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    configured_frame.data = <span class="keyword">new</span> <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>[1];</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    configured_frame.data[0] = data;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    configured_frame.checksum = <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac">calculate_checksum</a>(configured_frame);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">return</span> configured_frame;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="smart__road__radar__utils_8hpp.html#a74bc38a43debb8aff620d3b24bc4b875">  268</a></span><a class="code hl_struct" href="structframe.html">frame</a> <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126">configure_frame</a>(<a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> word, <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *data, <a class="code hl_typedef" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a> length) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <a class="code hl_struct" href="structframe.html">frame</a> configured_frame{};</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    configured_frame.<a class="code hl_variable" href="structframe.html#af1bdbc369c0f20174d8e10895383c791">data_length</a>.<a class="code hl_variable" href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">s</a> = (<a class="code hl_typedef" href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a>) (length + 1);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    configured_frame.word = word;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    configured_frame.data = <span class="keyword">new</span> <a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>[length];</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    configured_frame.data = data;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    configured_frame.checksum = <a class="code hl_function" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac">calculate_checksum</a>(configured_frame);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordflow">return</span> configured_frame;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#endif </span><span class="comment">//SMART_ROAD_SMART_ROAD_RADAR_UTILS_HPP</span></div>
+<div class="ttc" id="aserial_8hpp_html"><div class="ttname"><a href="serial_8hpp.html">serial.hpp</a></div><div class="ttdoc">Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a08e4da5f3d0c7936fa52467f40e4b6aa"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a08e4da5f3d0c7936fa52467f40e4b6aa">MAX_DISTANCE</a></div><div class="ttdeci">#define MAX_DISTANCE</div><div class="ttdoc">Максимальная дальность</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:74</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a0c9d10cc0518130783d38ec26c63265d"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a0c9d10cc0518130783d38ec26c63265d">HEADER_DATA_FRAME_1</a></div><div class="ttdeci">#define HEADER_DATA_FRAME_1</div><div class="ttdoc">Первый байт заголовка пакета</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:58</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a0cbea62f1ce2043dd08108e65ed8de1d"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a0cbea62f1ce2043dd08108e65ed8de1d">SCALE</a></div><div class="ttdeci">#define SCALE</div><div class="ttdoc">Масштабный коэффициент для пересчёта принятых данных о целях</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:92</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a45beb644780106cc600331ec3e784218"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a45beb644780106cc600331ec3e784218">RIGHT_BORDER</a></div><div class="ttdeci">#define RIGHT_BORDER</div><div class="ttdoc">Правая граница</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:89</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a4bba85313252440393bd850c559cf126"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126">configure_frame</a></div><div class="ttdeci">frame configure_frame(u_byte_t word)</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:228</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a549d41dcf9444ed7d6df1da3c73e7d16"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a549d41dcf9444ed7d6df1da3c73e7d16">MIN_DISTANCE</a></div><div class="ttdeci">#define MIN_DISTANCE</div><div class="ttdoc">Минимальная дальность</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:72</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_abcd974e8aaebad5eec9f1530e88a4b57"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57">u_byte_to_float</a></div><div class="ttdeci">float u_byte_to_float(const u_byte_t u_bytes[2])</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:217</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_ac2cd96d53dd3ba6407db6766c3d92b26"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#ac2cd96d53dd3ba6407db6766c3d92b26">MAX_SPEED</a></div><div class="ttdeci">#define MAX_SPEED</div><div class="ttdoc">Максимальная скорость</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:79</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_ac95cbfca74bef5fb7d0ebe516fe72cac"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac">calculate_checksum</a></div><div class="ttdeci">u_byte_t calculate_checksum(frame target_frame)</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:194</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_acd4fc33a59923e4f329c8763fecdf9be"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#acd4fc33a59923e4f329c8763fecdf9be">HEADER_DATA_FRAME_2</a></div><div class="ttdeci">#define HEADER_DATA_FRAME_2</div><div class="ttdoc">Второй байт заголовка пакета</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:60</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_ad5f5efaa5cb771bd06da4bfe6046809e"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#ad5f5efaa5cb771bd06da4bfe6046809e">MIN_SPEED</a></div><div class="ttdeci">#define MIN_SPEED</div><div class="ttdoc">Минимальная скорость</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:77</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_ae6e962f28cfd687ce25f22ba2fae8ac3"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#ae6e962f28cfd687ce25f22ba2fae8ac3">LEFT_BORDER</a></div><div class="ttdeci">#define LEFT_BORDER</div><div class="ttdoc">Левая граница</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:87</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_af3c82099d63a2d91d68bd62d954059c7"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#af3c82099d63a2d91d68bd62d954059c7">MAX_ANGLE</a></div><div class="ttdeci">#define MAX_ANGLE</div><div class="ttdoc">Максимальный угол</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:84</div></div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_af5cc136dbc86df89de56c3aa421c12ee"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#af5cc136dbc86df89de56c3aa421c12ee">MIN_ANGLE</a></div><div class="ttdeci">#define MIN_ANGLE</div><div class="ttdoc">Минимальный угол</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:82</div></div>
+<div class="ttc" id="astructframe_html"><div class="ttname"><a href="structframe.html">frame</a></div><div class="ttdoc">Структура кадра</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:120</div></div>
+<div class="ttc" id="astructframe_html_a0d86c626252120c9871139a50cd5a1a3"><div class="ttname"><a href="structframe.html#a0d86c626252120c9871139a50cd5a1a3">frame::checksum</a></div><div class="ttdeci">u_byte_t checksum</div><div class="ttdoc">Контрольная сумма</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:132</div></div>
+<div class="ttc" id="astructframe_html_a2cf0c0eb9410df0d4b83340561dac748"><div class="ttname"><a href="structframe.html#a2cf0c0eb9410df0d4b83340561dac748">frame::word</a></div><div class="ttdeci">u_byte_t word</div><div class="ttdoc">Командное слово</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:130</div></div>
+<div class="ttc" id="astructframe_html_a37c2bcbe917d6d59ba90baef324a164d"><div class="ttname"><a href="structframe.html#a37c2bcbe917d6d59ba90baef324a164d">frame::b</a></div><div class="ttdeci">u_byte_t b[2]</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:126</div></div>
+<div class="ttc" id="astructframe_html_a40cccfb84cd780d83397425dae57b1b6"><div class="ttname"><a href="structframe.html#a40cccfb84cd780d83397425dae57b1b6">frame::header</a></div><div class="ttdeci">u_byte_t header[2]</div><div class="ttdoc">Заголовок</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:123</div></div>
+<div class="ttc" id="astructframe_html_a7643bc1c782ec65f470465969395cb2f"><div class="ttname"><a href="structframe.html#a7643bc1c782ec65f470465969395cb2f">frame::is_valid</a></div><div class="ttdeci">bool is_valid</div><div class="ttdoc">Флаг целости кадра</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:121</div></div>
+<div class="ttc" id="astructframe_html_a7818808ac0ce266a28f447781db0c5eb"><div class="ttname"><a href="structframe.html#a7818808ac0ce266a28f447781db0c5eb">frame::data</a></div><div class="ttdeci">u_byte_t * data</div><div class="ttdoc">Данные</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:131</div></div>
+<div class="ttc" id="astructframe_html_af1bdbc369c0f20174d8e10895383c791"><div class="ttname"><a href="structframe.html#af1bdbc369c0f20174d8e10895383c791">frame::data_length</a></div><div class="ttdeci">union frame::@0 data_length</div><div class="ttdoc">Размер данных</div></div>
+<div class="ttc" id="astructframe_html_af434fcc36cb95c0b0dcbe13e6c7d2cfd"><div class="ttname"><a href="structframe.html#af434fcc36cb95c0b0dcbe13e6c7d2cfd">frame::s</a></div><div class="ttdeci">u_short_t s</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:127</div></div>
+<div class="ttc" id="astructparameters_html"><div class="ttname"><a href="structparameters.html">parameters</a></div><div class="ttdoc">Структура параметров радара</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:136</div></div>
+<div class="ttc" id="astructparameters_html_a0c2b999fd504fbe696a9fcaa62a655aa"><div class="ttname"><a href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">parameters::left_border</a></div><div class="ttdeci">union parameters::@7 left_border</div><div class="ttdoc">Левая граница</div></div>
+<div class="ttc" id="astructparameters_html_a2382032b45a30b806eb318a0c6f02836"><div class="ttname"><a href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">parameters::f</a></div><div class="ttdeci">float f</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:138</div></div>
+<div class="ttc" id="astructparameters_html_a58ae8654fd2b67ed5fd628131b796107"><div class="ttname"><a href="structparameters.html#a58ae8654fd2b67ed5fd628131b796107">parameters::b</a></div><div class="ttdeci">u_byte_t b[4]</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:139</div></div>
+<div class="ttc" id="astructparameters_html_a5cce04e60033009e1c789713624d9ab0"><div class="ttname"><a href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">parameters::max_dist</a></div><div class="ttdeci">union parameters::@2 max_dist</div><div class="ttdoc">Максимальное расстояние</div></div>
+<div class="ttc" id="astructparameters_html_a7c24e021bde3819ffcca5c6cb29e98ed"><div class="ttname"><a href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">parameters::right_border</a></div><div class="ttdeci">union parameters::@8 right_border</div><div class="ttdoc">Правая граница</div></div>
+<div class="ttc" id="astructparameters_html_abf61e6b0aebd4f8a1bb759999ae4820b"><div class="ttname"><a href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">parameters::min_dist</a></div><div class="ttdeci">union parameters::@1 min_dist</div><div class="ttdoc">Минимальное расстояние</div></div>
+<div class="ttc" id="astructparameters_html_ac27388a3ab29077c4a35a57c39395546"><div class="ttname"><a href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">parameters::max_angle</a></div><div class="ttdeci">union parameters::@6 max_angle</div><div class="ttdoc">Максимальный угол</div></div>
+<div class="ttc" id="astructparameters_html_ac863cbc146e1fd27f0b853d757346ac5"><div class="ttname"><a href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">parameters::max_speed</a></div><div class="ttdeci">union parameters::@4 max_speed</div><div class="ttdoc">Максимальная скорость</div></div>
+<div class="ttc" id="astructparameters_html_ad6991b63b32058dbd1228fc47e7ce7d7"><div class="ttname"><a href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">parameters::min_angle</a></div><div class="ttdeci">union parameters::@5 min_angle</div><div class="ttdoc">Минимальный угол</div></div>
+<div class="ttc" id="astructparameters_html_af3dd3caff17f6a7c5ff02265c66a890e"><div class="ttname"><a href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">parameters::min_speed</a></div><div class="ttdeci">union parameters::@3 min_speed</div><div class="ttdoc">Минимальная скорость</div></div>
+<div class="ttc" id="astructtarget__data_html"><div class="ttname"><a href="structtarget__data.html">target_data</a></div><div class="ttdoc">Структура данных о цели</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:179</div></div>
+<div class="ttc" id="astructtarget__data_html_a1a81a6dc721f221efdaac15a859a84d7"><div class="ttname"><a href="structtarget__data.html#a1a81a6dc721f221efdaac15a859a84d7">target_data::snr</a></div><div class="ttdeci">float snr</div><div class="ttdoc">Отношение сигнал-шум</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:185</div></div>
+<div class="ttc" id="astructtarget__data_html_a3635c3c8c54d622ab6cf18b0df1d22a8"><div class="ttname"><a href="structtarget__data.html#a3635c3c8c54d622ab6cf18b0df1d22a8">target_data::distance</a></div><div class="ttdeci">float distance</div><div class="ttdoc">Расстояние</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:182</div></div>
+<div class="ttc" id="astructtarget__data_html_a5660f037bc7e8ea5689832d076437db5"><div class="ttname"><a href="structtarget__data.html#a5660f037bc7e8ea5689832d076437db5">target_data::num</a></div><div class="ttdeci">u_byte_t num</div><div class="ttdoc">Номер цели</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:180</div></div>
+<div class="ttc" id="astructtarget__data_html_a8d92f7c474abce43f5ebf82f0e044441"><div class="ttname"><a href="structtarget__data.html#a8d92f7c474abce43f5ebf82f0e044441">target_data::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Скорость</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:183</div></div>
+<div class="ttc" id="astructtarget__data_html_ac2ad3e57b31c868d28822e6564b04e2c"><div class="ttname"><a href="structtarget__data.html#ac2ad3e57b31c868d28822e6564b04e2c">target_data::angle</a></div><div class="ttdeci">float angle</div><div class="ttdoc">Угол</div><div class="ttdef"><b>Definition</b> smart_road_radar_utils.hpp:184</div></div>
+<div class="ttc" id="autils_8hpp_html_a04c2f5b8699de28357fbcb4a61679695"><div class="ttname"><a href="utils_8hpp.html#a04c2f5b8699de28357fbcb4a61679695">u_short_t</a></div><div class="ttdeci">unsigned short u_short_t</div><div class="ttdoc">Тип данных u_short_t размером 2 байта</div><div class="ttdef"><b>Definition</b> utils.hpp:24</div></div>
+<div class="ttc" id="autils_8hpp_html_aef3662a5e2b349ba1b8498db3aa36a27"><div class="ttname"><a href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a></div><div class="ttdeci">unsigned char u_byte_t</div><div class="ttdoc">Тип данных u_byte_t размером 1 байт</div><div class="ttdef"><b>Definition</b> utils.hpp:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>
