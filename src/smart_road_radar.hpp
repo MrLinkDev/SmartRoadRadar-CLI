@@ -142,7 +142,7 @@ public:
     /**
      * \brief Стандартный конструктор
      *
-     * **Пример:**
+     * **Пример**
      * \code
      * SmartRoadRadar radar;
      * \endcode
@@ -160,7 +160,7 @@ public:
      *
      * \param [in] address Адрес радара
      *
-     * **Пример:**
+     * **Пример**
      * \code
      * SmartRoadRadar radar("COM1");
      * \endcode
@@ -184,7 +184,7 @@ public:
      * \param [in] address Адрес радара
      * \param [in] config Структура, содержащая в себе настройки для подключения
      *
-     * **Пример:**
+     * **Пример**
      * \code
      * port_config config;
      * config.baud_rate = BAUD_115200;
@@ -206,6 +206,7 @@ public:
      * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * u_byte_t version_buffer[3];
      *
@@ -245,6 +246,7 @@ public:
      * \return Если изменение настроек прошло успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * parameters target_parameters;
      * if (*args != "default") {
@@ -328,6 +330,7 @@ public:
      * \return Если запрос настроек выполнен успешно, то возвращает SMART_ROAD_RADAR_OK/
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * parameters received_parameters;
      * if (radar.get_parameters(&received_parameters) == SMART_ROAD_RADAR_OK)
@@ -408,6 +411,7 @@ public:
      * \return Если команда выполнена успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * u_byte_t target_num = std::stoi(num);
      * if (radar.set_target_number(target_num) == SMART_ROAD_RADAR_OK) {
@@ -436,6 +440,7 @@ public:
      * \return Если чтение кадра выполнено успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * target_data data[35];
      *
@@ -502,6 +507,7 @@ public:
      * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * if (radar.enable_data_transmit() == SMART_ROAD_RADAR_OK) {
      *     printf("Data transmit enabled\n");
@@ -526,6 +532,7 @@ public:
      * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      * if (radar.disable_data_transmit() == SMART_ROAD_RADAR_OK) {
      *     printf("Data transmit disabled\n");
@@ -561,6 +568,7 @@ public:
      * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
      *
+     * **Пример**
      * \code
      *  u_byte_t data_freq = DATA_FREQ_1
      *
@@ -586,6 +594,15 @@ public:
      *
      * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * **Пример**
+     * \code
+     * if (radar.enable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
+     *     printf("Zero data reporting enabled\n");
+     * } else {
+     *     printf("Can't enable zero data reporting\n");
+     * }
+     * \endcode
      */
     int enable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_REPORT);
@@ -602,6 +619,15 @@ public:
      *
      * \return Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK.
      * В противном случае - SMART_ROAD_RADAR_ERROR.
+     *
+     * **Пример**
+     * \code
+     * if (radar.disable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
+     *     printf("Zero data reporting disabled\n");
+     * } else {
+     *     printf("Can't disable zero data reporting\n");
+     * }
+     * \endcode
      */
     int disable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_NOT_REPORT);
