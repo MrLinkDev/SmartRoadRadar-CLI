@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['wait_5fexc_5fchar_0',['wait_exc_char',['../class_smart_road_radar_c_l_i.html#ae85126e775f388d03ef0909399ecfe9c',1,'SmartRoadRadarCLI']]],
-  ['write_5fbyte_1',['write_byte',['../class_serial.html#a2b9a3e346a804a9257dc57edd9668eac',1,'Serial']]],
-  ['write_5fbytes_2',['write_bytes',['../class_serial.html#a8e1ddf3dab93186584bef4addd72870c',1,'Serial']]],
-  ['write_5fu_5fbyte_3',['write_u_byte',['../class_serial.html#a4e04973bb83284ce74689a16c9018c9c',1,'Serial']]],
-  ['write_5fu_5fbytes_4',['write_u_bytes',['../class_serial.html#a29ef8d7663e7c90420c7c982be42e557',1,'Serial']]]
+  ['u_5fbyte_5fto_5ffloat_0',['u_byte_to_float',['../smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57',1,'smart_road_radar_utils.hpp']]],
+  ['usage_1',['usage',['../class_smart_road_radar_c_l_i.html#ad6310deb786f35f80677218ae800816c',1,'SmartRoadRadarCLI::usage()'],['../main_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0',1,'usage():&#160;main.cpp']]]
 ];

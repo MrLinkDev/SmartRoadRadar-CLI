@@ -9,10 +9,16 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,6 +52,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_serial.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +90,10 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Открытые члены</a> &#124;
-<a href="class_serial-members.html">Полный список членов класса</a>  </div>
+<a href="#pri-attribs">Закрытые данные</a>  </div>
   <div class="headertitle"><div class="title">Класс Serial</div></div>
 </div><!--header-->
 <div class="contents">
@@ -84,31 +106,49 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a0b74d4e3978870dff84e883f0ed1748c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a0b74d4e3978870dff84e883f0ed1748c">Serial</a> ()=default</td></tr>
+<tr class="memdesc:a0b74d4e3978870dff84e883f0ed1748c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стандартный конструктор  <br /></td></tr>
 <tr class="separator:a0b74d4e3978870dff84e883f0ed1748c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a713ae640ac110caf66367c89ad568ea0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a713ae640ac110caf66367c89ad568ea0">Serial</a> (LPTSTR address)</td></tr>
+<tr class="memdesc:a713ae640ac110caf66367c89ad568ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с одним аргументом - портом устройства.  <br /></td></tr>
 <tr class="separator:a713ae640ac110caf66367c89ad568ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dace505e018f8253a296f28f03c9a0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a8dace505e018f8253a296f28f03c9a0f">Serial</a> (LPTSTR address, <a class="el" href="structport__config.html">port_config</a> config)</td></tr>
+<tr class="memdesc:a8dace505e018f8253a296f28f03c9a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с двумя аргументами - портом устройства и настройками соединения.  <br /></td></tr>
 <tr class="separator:a8dace505e018f8253a296f28f03c9a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b9a3e346a804a9257dc57edd9668eac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a2b9a3e346a804a9257dc57edd9668eac">write_byte</a> (<a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> data)</td></tr>
+<tr class="memdesc:a2b9a3e346a804a9257dc57edd9668eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка одного байта на устройство.  <br /></td></tr>
 <tr class="separator:a2b9a3e346a804a9257dc57edd9668eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1ddf3dab93186584bef4addd72870c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a8e1ddf3dab93186584bef4addd72870c">write_bytes</a> (<a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *data, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> length)</td></tr>
+<tr class="memdesc:a8e1ddf3dab93186584bef4addd72870c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка массива байтов на устройство.  <br /></td></tr>
 <tr class="separator:a8e1ddf3dab93186584bef4addd72870c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e04973bb83284ce74689a16c9018c9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a4e04973bb83284ce74689a16c9018c9c">write_u_byte</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> data)</td></tr>
+<tr class="memdesc:a4e04973bb83284ce74689a16c9018c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка байта на устройство.  <br /></td></tr>
 <tr class="separator:a4e04973bb83284ce74689a16c9018c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29ef8d7663e7c90420c7c982be42e557"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557">write_u_bytes</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *data, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> length)</td></tr>
+<tr class="memdesc:a29ef8d7663e7c90420c7c982be42e557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка массива байтов на устройство.  <br /></td></tr>
 <tr class="separator:a29ef8d7663e7c90420c7c982be42e557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa87bfd9aae65c56c2f9944329c4a4533"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533">read_byte</a> ()</td></tr>
+<tr class="memdesc:aa87bfd9aae65c56c2f9944329c4a4533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение одного байта.  <br /></td></tr>
 <tr class="separator:aa87bfd9aae65c56c2f9944329c4a4533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092c16d293ab0431d46aad36c27c6146"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a092c16d293ab0431d46aad36c27c6146">read_bytes</a> (<a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *buffer, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> buffer_length)</td></tr>
+<tr class="memdesc:a092c16d293ab0431d46aad36c27c6146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение массива байтов.  <br /></td></tr>
 <tr class="separator:a092c16d293ab0431d46aad36c27c6146"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07339f65a29949df9b5949d26bd63113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a07339f65a29949df9b5949d26bd63113">read_u_byte</a> ()</td></tr>
+<tr class="memdesc:a07339f65a29949df9b5949d26bd63113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение одного байта.  <br /></td></tr>
 <tr class="separator:a07339f65a29949df9b5949d26bd63113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd3b5133a1bb28da5c5d7e1b811aff3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e">read_u_bytes</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *buffer, <a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a> buffer_length)</td></tr>
+<tr class="memdesc:acd3b5133a1bb28da5c5d7e1b811aff3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение массива байтов.  <br /></td></tr>
 <tr class="separator:acd3b5133a1bb28da5c5d7e1b811aff3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a9c47a19ee86a9be939793dd334fc23ef"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html#a9c47a19ee86a9be939793dd334fc23ef">h_serial</a></td></tr>
+<tr class="separator:a9c47a19ee86a9be939793dd334fc23ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Объект для общения с устройствами по последовательному интерфейсу </p>
 <p>Объект содержит в себе конструкторы для инициализации подключения и функции для отправки и чтения данных типа byte_t и u_byte_t </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00046">46</a></p>
 </div><h2 class="groupheader">Конструктор(ы)</h2>
 <a id="a0b74d4e3978870dff84e883f0ed1748c" name="a0b74d4e3978870dff84e883f0ed1748c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b74d4e3978870dff84e883f0ed1748c">&#9670;&#160;</a></span>Serial() <span class="overload">[1/3]</span></h2>
@@ -132,9 +172,10 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Стандартный конструктор</p>
-<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus;</div>
-<div class="ttc" id="aclass_serial_html"><div class="ttname"><a href="class_serial.html">Serial</a></div><div class="ttdoc">Объект для общения с устройствами по последовательному интерфейсу</div><div class="ttdef"><b>Definition</b> serial.hpp:46</div></div>
+
+<p>Стандартный конструктор </p>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus;</div>
+<div class="ttc" id="aclass_serial_html"><div class="ttname"><a href="class_serial.html">Serial</a></div><div class="ttdoc">Объект для общения с устройствами по последовательному интерфейсу</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00046">serial.hpp:46</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -157,11 +198,13 @@ $(function() {
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Конструктор, который создаёт подключение к устройству со следующими параметрами:</p><ul>
+
+<p>Конструктор с одним аргументом - портом устройства. </p>
+<p>Создаёт подключение к устройству со следующими параметрами:</p><ul>
 <li>baud_rate = 115200</li>
 <li>byte_size = 8</li>
 <li>stop_bits = ONESTOPBIT</li>
@@ -173,8 +216,10 @@ $(function() {
   </table>
   </dd>
 </dl>
-<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus(<span class="stringliteral">&quot;COM1&quot;</span>);</div>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus(<span class="stringliteral">&quot;COM1&quot;</span>);</div>
 </div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00077">77</a></p>
+
 </div>
 </div>
 <a id="a8dace505e018f8253a296f28f03c9a0f" name="a8dace505e018f8253a296f28f03c9a0f"></a>
@@ -182,9 +227,6 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Serial::Serial </td>
@@ -204,13 +246,10 @@ $(function() {
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Конструктор, который создаёт подключение к устройству с параметрами, которые передаются в структуре типа <a class="el" href="structport__config.html">port_config</a>.</p>
+
+<p>Конструктор с двумя аргументами - портом устройства и настройками соединения. </p>
+<p>Создаёт подключение к устройству с параметрами, которые передаются в структуре типа <a class="el" href="structport__config.html">port_config</a>.</p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес устройства, к которому требуется подключиться </td></tr>
@@ -218,172 +257,29 @@ $(function() {
   </table>
   </dd>
 </dl>
-<p><b>Пример:</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structport__config.html">port_config</a> config;</div>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structport__config.html">port_config</a> config;</div>
 <div class="line">config.<a class="code hl_variable" href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">baud_rate</a> = BAUD_115200;</div>
 <div class="line">config.<a class="code hl_variable" href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">byte_size</a> = 8;</div>
 <div class="line">config.<a class="code hl_variable" href="structport__config.html#a15dfef1d17723095f344d529498d158f">stop_bits</a> = ONESTOPBIT;</div>
 <div class="line">config.<a class="code hl_variable" href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">parity</a> = NOPARITY;</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_class" href="class_serial.html">Serial</a> data_bus(<span class="stringliteral">&quot;COM1&quot;</span>, config);</div>
-<div class="ttc" id="astructport__config_html"><div class="ttname"><a href="structport__config.html">port_config</a></div><div class="ttdef"><b>Definition</b> serial.hpp:33</div></div>
-<div class="ttc" id="astructport__config_html_a110d2bd9e1e6ad1b99325072b43da5aa"><div class="ttname"><a href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">port_config::baud_rate</a></div><div class="ttdeci">DWORD baud_rate</div><div class="ttdoc">Скорость передачи данных</div><div class="ttdef"><b>Definition</b> serial.hpp:34</div></div>
-<div class="ttc" id="astructport__config_html_a15dfef1d17723095f344d529498d158f"><div class="ttname"><a href="structport__config.html#a15dfef1d17723095f344d529498d158f">port_config::stop_bits</a></div><div class="ttdeci">DWORD stop_bits</div><div class="ttdoc">Количество стоп-битов</div><div class="ttdef"><b>Definition</b> serial.hpp:36</div></div>
-<div class="ttc" id="astructport__config_html_a1f051b2ced88656882d9cb0f17d0affe"><div class="ttname"><a href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">port_config::byte_size</a></div><div class="ttdeci">DWORD byte_size</div><div class="ttdoc">Размер байта</div><div class="ttdef"><b>Definition</b> serial.hpp:35</div></div>
-<div class="ttc" id="astructport__config_html_a3ced652683c9b90e2b4bb331f0ccf786"><div class="ttname"><a href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">port_config::parity</a></div><div class="ttdeci">DWORD parity</div><div class="ttdoc">Бит чётности</div><div class="ttdef"><b>Definition</b> serial.hpp:37</div></div>
+<div class="ttc" id="astructport__config_html"><div class="ttname"><a href="structport__config.html">port_config</a></div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00033">serial.hpp:33</a></div></div>
+<div class="ttc" id="astructport__config_html_a110d2bd9e1e6ad1b99325072b43da5aa"><div class="ttname"><a href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">port_config::baud_rate</a></div><div class="ttdeci">DWORD baud_rate</div><div class="ttdoc">Скорость передачи данных</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00034">serial.hpp:34</a></div></div>
+<div class="ttc" id="astructport__config_html_a15dfef1d17723095f344d529498d158f"><div class="ttname"><a href="structport__config.html#a15dfef1d17723095f344d529498d158f">port_config::stop_bits</a></div><div class="ttdeci">DWORD stop_bits</div><div class="ttdoc">Количество стоп-битов</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00036">serial.hpp:36</a></div></div>
+<div class="ttc" id="astructport__config_html_a1f051b2ced88656882d9cb0f17d0affe"><div class="ttname"><a href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">port_config::byte_size</a></div><div class="ttdeci">DWORD byte_size</div><div class="ttdoc">Размер байта</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00035">serial.hpp:35</a></div></div>
+<div class="ttc" id="astructport__config_html_a3ced652683c9b90e2b4bb331f0ccf786"><div class="ttname"><a href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">port_config::parity</a></div><div class="ttdeci">DWORD parity</div><div class="ttdoc">Бит чётности</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00037">serial.hpp:37</a></div></div>
 </div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00123">123</a></p>
+
 </div>
 </div>
 <h2 class="groupheader">Методы</h2>
-<a id="aa87bfd9aae65c56c2f9944329c4a4533" name="aa87bfd9aae65c56c2f9944329c4a4533"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87bfd9aae65c56c2f9944329c4a4533">&#9670;&#160;</a></span>read_byte()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> Serial::read_byte </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Считывает один байт типа byte_t, отправленный устройством.</p>
-<dl class="section return"><dt>Возвращает</dt><dd>Возвращает байт типа byte_t. </dd></dl>
-
-</div>
-</div>
-<a id="a092c16d293ab0431d46aad36c27c6146" name="a092c16d293ab0431d46aad36c27c6146"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a092c16d293ab0431d46aad36c27c6146">&#9670;&#160;</a></span>read_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Serial::read_bytes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
-          <td class="paramname"><em>buffer_length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Считывает массив байтов типа byte_t, отправленный устройством.</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Указатель на буфер, в который записываются принятые байты. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_length</td><td>Размер буфера </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a07339f65a29949df9b5949d26bd63113" name="a07339f65a29949df9b5949d26bd63113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07339f65a29949df9b5949d26bd63113">&#9670;&#160;</a></span>read_u_byte()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> Serial::read_u_byte </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Считывает один байт типа u_byte_t, отправленный устройством.</p>
-<dl class="section return"><dt>Возвращает</dt><dd>Возвращает байт типа u_byte_t. </dd></dl>
-
-</div>
-</div>
-<a id="acd3b5133a1bb28da5c5d7e1b811aff3e" name="acd3b5133a1bb28da5c5d7e1b811aff3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd3b5133a1bb28da5c5d7e1b811aff3e">&#9670;&#160;</a></span>read_u_bytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Serial::read_u_bytes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
-          <td class="paramname"><em>buffer_length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Считывает массив байтов типа u_byte_t, отправленный устройством.</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Указатель на буфер, в который записываются принятые байты. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_length</td><td>Размер буфера </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a2b9a3e346a804a9257dc57edd9668eac" name="a2b9a3e346a804a9257dc57edd9668eac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b9a3e346a804a9257dc57edd9668eac">&#9670;&#160;</a></span>write_byte()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Serial::write_byte </td>
@@ -393,12 +289,9 @@ $(function() {
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Отправка одного байта на устройство. </p>
 <p>Отправляет на подключенное устройство один байт типа byte_t</p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -408,6 +301,8 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если байт был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00157">157</a></p>
+
 </div>
 </div>
 <a id="a8e1ddf3dab93186584bef4addd72870c" name="a8e1ddf3dab93186584bef4addd72870c"></a>
@@ -415,9 +310,6 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Serial::write_bytes </td>
@@ -437,12 +329,9 @@ $(function() {
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Отправка массива байтов на устройство. </p>
 <p>Отправляет на подключенное устройство массив байтов типа byte_t</p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -453,6 +342,8 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если массив был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00184">184</a></p>
+
 </div>
 </div>
 <a id="a4e04973bb83284ce74689a16c9018c9c" name="a4e04973bb83284ce74689a16c9018c9c"></a>
@@ -460,9 +351,6 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Serial::write_u_byte </td>
@@ -472,12 +360,9 @@ $(function() {
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Отправка байта на устройство. </p>
 <p>Отправляет на подключенное устройство один байт типа u_byte_t</p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -487,6 +372,8 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если байт был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00209">209</a></p>
+
 </div>
 </div>
 <a id="a29ef8d7663e7c90420c7c982be42e557" name="a29ef8d7663e7c90420c7c982be42e557"></a>
@@ -494,9 +381,6 @@ $(function() {
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Serial::write_u_bytes </td>
@@ -516,12 +400,9 @@ $(function() {
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Отправка массива байтов на устройство. </p>
 <p>Отправляет на подключенное устройство массив байтов типа u_byte_t</p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
@@ -532,15 +413,192 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если массив был успешно передан. В противнм случае - SERIAL_ERROR. </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00236">236</a></p>
+
+</div>
+</div>
+<a id="aa87bfd9aae65c56c2f9944329c4a4533" name="aa87bfd9aae65c56c2f9944329c4a4533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87bfd9aae65c56c2f9944329c4a4533">&#9670;&#160;</a></span>read_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> Serial::read_byte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чтение одного байта. </p>
+<p>Считывает один байт типа byte_t, отправленный устройством.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает байт типа byte_t. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00260">260</a></p>
+
+</div>
+</div>
+<a id="a092c16d293ab0431d46aad36c27c6146" name="a092c16d293ab0431d46aad36c27c6146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092c16d293ab0431d46aad36c27c6146">&#9670;&#160;</a></span>read_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serial::read_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af0f045fc129737ba472182df02d418db">byte_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
+          <td class="paramname"><em>buffer_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чтение массива байтов. </p>
+<p>Считывает массив байтов типа byte_t, отправленный устройством.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Указатель на буфер, в который записываются принятые байты. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_length</td><td>Размер буфера </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00284">284</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_serial_a092c16d293ab0431d46aad36c27c6146_cgraph.png" border="0" usemap="#aclass_serial_a092c16d293ab0431d46aad36c27c6146_cgraph" alt=""/></div>
+<map name="aclass_serial_a092c16d293ab0431d46aad36c27c6146_cgraph" id="aclass_serial_a092c16d293ab0431d46aad36c27c6146_cgraph">
+<area shape="rect" title="Чтение массива байтов." alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="180,5,299,32"/>
+<area shape="poly" title=" " alt="" coords="132,16,165,16,165,21,132,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a07339f65a29949df9b5949d26bd63113" name="a07339f65a29949df9b5949d26bd63113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07339f65a29949df9b5949d26bd63113">&#9670;&#160;</a></span>read_u_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> Serial::read_u_byte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чтение одного байта. </p>
+<p>Считывает один байт типа u_byte_t, отправленный устройством.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает байт типа u_byte_t. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00300">300</a></p>
+
+</div>
+</div>
+<a id="acd3b5133a1bb28da5c5d7e1b811aff3e" name="acd3b5133a1bb28da5c5d7e1b811aff3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3b5133a1bb28da5c5d7e1b811aff3e">&#9670;&#160;</a></span>read_u_bytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Serial::read_u_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#af75c7dace519331229c114089553590b">size_t</a>&#160;</td>
+          <td class="paramname"><em>buffer_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чтение массива байтов. </p>
+<p>Считывает массив байтов типа u_byte_t, отправленный устройством.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>Указатель на буфер, в который записываются принятые байты. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer_length</td><td>Размер буфера </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00324">324</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_serial_acd3b5133a1bb28da5c5d7e1b811aff3e_cgraph.png" border="0" usemap="#aclass_serial_acd3b5133a1bb28da5c5d7e1b811aff3e_cgraph" alt=""/></div>
+<map name="aclass_serial_acd3b5133a1bb28da5c5d7e1b811aff3e_cgraph" id="aclass_serial_acd3b5133a1bb28da5c5d7e1b811aff3e_cgraph">
+<area shape="rect" title="Чтение массива байтов." alt="" coords="5,5,146,32"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="194,5,313,32"/>
+<area shape="poly" title=" " alt="" coords="146,16,179,16,179,21,146,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Поля</h2>
+<a id="a9c47a19ee86a9be939793dd334fc23ef" name="a9c47a19ee86a9be939793dd334fc23ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c47a19ee86a9be939793dd334fc23ef">&#9670;&#160;</a></span>h_serial</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE Serial::h_serial</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00049">49</a></p>
+
 </div>
 </div>
 <hr/>Объявления и описания членов класса находятся в файле:<ul>
 <li>src/<a class="el" href="serial_8hpp_source.html">serial.hpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_serial.html">Serial</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
 </body>
 </html>

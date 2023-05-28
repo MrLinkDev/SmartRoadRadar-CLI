@@ -134,10 +134,11 @@ struct frame {
 
 /// Структура параметров радара
 struct parameters {
+
     union {
         float f = MIN_DISTANCE;
         u_byte_t b[4];
-    } min_dist;                 ///< Минимальное расстояние
+    } min_dist;                ///< Минимальное расстояние
 
     union {
         float f = MAX_DISTANCE;

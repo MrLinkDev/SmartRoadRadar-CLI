@@ -7,4 +7,8 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 add_executable(
         smart_road_radar
         src/main.cpp
-        src/serial.hpp src/utils.hpp src/smart_road_radar.hpp src/smart_road_radar_utils.hpp src/smart_road_radar_cli.hpp)
+        src/serial.hpp
+        src/utils.hpp
+        src/smart_road_radar.hpp
+        src/smart_road_radar_utils.hpp
+        src/smart_road_radar_cli.hpp)

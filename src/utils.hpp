@@ -9,6 +9,8 @@
 #ifndef SMART_ROAD_UTILS_HPP
 #define SMART_ROAD_UTILS_HPP
 
+#include <string>
+
 /// Стандартный делитель
 #define DELIMITER   " "
 
@@ -24,7 +26,7 @@ typedef unsigned char u_byte_t;
 typedef unsigned short u_short_t;
 
 /**
- * Добавляет символ типа char (byte_t) в строку
+ * \brief Добавляет символ типа char (byte_t) в строку
  *
  * \param [in,out] dest Строка, в которую будет добавлен символ
  * \param [in] length Длина строки
@@ -36,7 +38,7 @@ void append(char *dest, const size_t *length, char symbol) {
 }
 
 /**
- * Добавляет символ типа unsigned char (u_byte_t) в строку
+ * \brief Добавляет символ типа unsigned char (u_byte_t) в строку
  *
  * \param [in,out] dest Строка, в которую будет добавлен символ
  * \param [in] length Длина строки
@@ -48,7 +50,7 @@ void append(unsigned char *dest, const size_t *length, unsigned char symbol) {
 }
 
 /**
- * Из принимаемой строки выделяет содержимое до первого делителя
+ * \brief Из принимаемой строки выделяет содержимое до первого делителя
  *
  * \param [in,out] dest Строка, из которой будет выделено содержимое до делителя (пробела).
  * \return Выделенное содержимое до делителя (пробела)
@@ -69,7 +71,7 @@ std::string get_first_item(std::string *line) {
 }
 
 /**
- * Из принимаемой строки выделяет содержимое до первого делителя
+ * \brief Из принимаемой строки выделяет содержимое до первого делителя
  *
  * \param [in,out] dest Строка, из которой будет выделено содержимое до делителя.
  * \param [in] delimiter Делитель, до которого выделяется содержимое.

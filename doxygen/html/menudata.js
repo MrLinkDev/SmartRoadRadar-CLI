@@ -24,10 +24,9 @@
 */
 var menudata={children:[
 {text:"Титульная страница",url:"index.html"},
-{text:"Классы",url:"annotated.html",children:[
-{text:"Классы",url:"annotated.html"},
-{text:"Алфавитный указатель классов",url:"classes.html"},
-{text:"Члены классов",url:"functions.html",children:[
+{text:"Структуры данных",url:"annotated.html",children:[
+{text:"Структуры данных",url:"annotated.html"},
+{text:"Поля структур",url:"functions.html",children:[
 {text:"Указатель",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
 {text:"b",url:"functions.html#index_b"},
@@ -44,9 +43,34 @@ var menudata={children:[
 {text:"p",url:"functions.html#index_p"},
 {text:"r",url:"functions.html#index_r"},
 {text:"s",url:"functions.html#index_s"},
+{text:"u",url:"functions.html#index_u"},
 {text:"w",url:"functions.html#index_w"}]},
-{text:"Функции",url:"functions_func.html"},
-{text:"Переменные",url:"functions_vars.html"}]}]},
+{text:"Функции",url:"functions_func.html",children:[
+{text:"d",url:"functions_func.html#index_d"},
+{text:"e",url:"functions_func.html#index_e"},
+{text:"g",url:"functions_func.html#index_g"},
+{text:"m",url:"functions_func.html#index_m"},
+{text:"p",url:"functions_func.html#index_p"},
+{text:"r",url:"functions_func.html#index_r"},
+{text:"s",url:"functions_func.html#index_s"},
+{text:"u",url:"functions_func.html#index_u"},
+{text:"w",url:"functions_func.html#index_w"}]},
+{text:"Переменные",url:"functions_vars.html",children:[
+{text:"a",url:"functions_vars.html#index_a"},
+{text:"b",url:"functions_vars.html#index_b"},
+{text:"c",url:"functions_vars.html#index_c"},
+{text:"d",url:"functions_vars.html#index_d"},
+{text:"e",url:"functions_vars.html#index_e"},
+{text:"f",url:"functions_vars.html#index_f"},
+{text:"h",url:"functions_vars.html#index_h"},
+{text:"i",url:"functions_vars.html#index_i"},
+{text:"l",url:"functions_vars.html#index_l"},
+{text:"m",url:"functions_vars.html#index_m"},
+{text:"n",url:"functions_vars.html#index_n"},
+{text:"p",url:"functions_vars.html#index_p"},
+{text:"r",url:"functions_vars.html#index_r"},
+{text:"s",url:"functions_vars.html#index_s"},
+{text:"w",url:"functions_vars.html#index_w"}]}]}]},
 {text:"Файлы",url:"files.html",children:[
 {text:"Файлы",url:"files.html"},
 {text:"Список членов всех файлов",url:"globals.html",children:[

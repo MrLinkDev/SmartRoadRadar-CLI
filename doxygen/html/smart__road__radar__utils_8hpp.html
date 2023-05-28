@@ -9,10 +9,16 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -46,6 +52,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('smart__road__radar__utils_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,14 +90,9 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Классы</a> &#124;
+<a href="#nested-classes">Структуры данных</a> &#124;
 <a href="#define-members">Макросы</a> &#124;
 <a href="#func-members">Функции</a>  </div>
   <div class="headertitle"><div class="title">Файл smart_road_radar_utils.hpp</div></div>
@@ -84,11 +102,43 @@ $(function() {
 <p>Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы <a class="el" href="class_smart_road_radar.html" title="Объект для взаимодействия с радаром">SmartRoadRadar</a>.  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="serial_8hpp_source.html">serial.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для smart_road_radar_utils.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__utils_8hpp__incl.png" border="0" usemap="#asrc_2smart__road__radar__utils_8hpp" alt=""/></div>
+<map name="asrc_2smart__road__radar__utils_8hpp" id="asrc_2smart__road__radar__utils_8hpp">
+<area shape="rect" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="74,5,218,48"/>
+<area shape="rect" href="serial_8hpp.html" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="107,96,185,123"/>
+<area shape="poly" title=" " alt="" coords="149,49,149,81,143,81,143,49"/>
+<area shape="rect" title=" " alt="" coords="5,171,87,197"/>
+<area shape="poly" title=" " alt="" coords="130,125,77,164,74,159,127,121"/>
+<area shape="rect" title=" " alt="" coords="110,171,182,197"/>
+<area shape="poly" title=" " alt="" coords="149,123,149,156,143,156,143,123"/>
+<area shape="rect" href="utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="206,171,276,197"/>
+<area shape="poly" title=" " alt="" coords="164,121,214,159,211,164,161,125"/>
+<area shape="rect" title=" " alt="" coords="214,245,267,272"/>
+<area shape="poly" title=" " alt="" coords="243,198,243,230,238,230,238,198"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__utils_8hpp__dep__incl.png" border="0" usemap="#asrc_2smart__road__radar__utils_8hppdep" alt=""/></div>
+<map name="asrc_2smart__road__radar__utils_8hppdep" id="asrc_2smart__road__radar__utils_8hppdep">
+<area shape="rect" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="18,5,162,48"/>
+<area shape="rect" href="smart__road__radar_8hpp.html" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="5,96,175,123"/>
+<area shape="poly" title=" " alt="" coords="93,63,93,95,87,95,87,63"/>
+<area shape="rect" href="smart__road__radar__cli_8hpp.html" title=" " alt="" coords="18,171,162,213"/>
+<area shape="poly" title=" " alt="" coords="93,138,93,170,87,170,87,138"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="42,261,138,288"/>
+<area shape="poly" title=" " alt="" coords="93,228,93,261,87,261,87,228"/>
+</map>
+</div>
 </div>
 <p><a href="smart__road__radar__utils_8hpp_source.html">См. исходные тексты.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Классы</h2></td></tr>
+Структуры данных</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structframe.html">frame</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура кадра  <a href="structframe.html#details">Подробнее...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,580 +295,24 @@ $(function() {
 <div class="textblock"><p>Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы <a class="el" href="class_smart_road_radar.html" title="Объект для взаимодействия с радаром">SmartRoadRadar</a>. </p>
 <dl class="section author"><dt>Авторы</dt><dd>Александр Горбунов </dd></dl>
 <dl class="section date"><dt>Дата</dt><dd>11 марта 2023 </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a></p>
 </div><h2 class="groupheader">Макросы</h2>
-<a id="ac990cbe9e81bd9f88ca2defbff442f1b" name="ac990cbe9e81bd9f88ca2defbff442f1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac990cbe9e81bd9f88ca2defbff442f1b">&#9670;&#160;</a></span>CMD_DISABLE_TRANSMIT</h2>
+<a id="a19cd20d00719b9df76dc42a44fc45371" name="a19cd20d00719b9df76dc42a44fc45371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19cd20d00719b9df76dc42a44fc45371">&#9670;&#160;</a></span>SMART_ROAD_RADAR_OK</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CMD_DISABLE_TRANSMIT&#160;&#160;&#160;0x21</td>
+          <td class="memname">#define SMART_ROAD_RADAR_OK&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Команда остановки передачи </p>
+<p>Возвращаемое значение при успешно выполненном действии </p>
 
-</div>
-</div>
-<a id="afbb3143ce5ad5064004a047eafba86a0" name="afbb3143ce5ad5064004a047eafba86a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbb3143ce5ad5064004a047eafba86a0">&#9670;&#160;</a></span>CMD_ENABLE_TRANSMIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_ENABLE_TRANSMIT&#160;&#160;&#160;0x20</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда запуска передачи </p>
-
-</div>
-</div>
-<a id="a439e1efba763e0adcc50a5d6fab662de" name="a439e1efba763e0adcc50a5d6fab662de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a439e1efba763e0adcc50a5d6fab662de">&#9670;&#160;</a></span>CMD_GET_PARAMETERS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_GET_PARAMETERS&#160;&#160;&#160;0x37</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда запроса параметров </p>
-
-</div>
-</div>
-<a id="aae049aa2b369731b2a4318d81fb8013a" name="aae049aa2b369731b2a4318d81fb8013a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae049aa2b369731b2a4318d81fb8013a">&#9670;&#160;</a></span>CMD_READ_PARAMETERS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_READ_PARAMETERS&#160;&#160;&#160;0x38</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда ответа радара на запрос параметров </p>
-
-</div>
-</div>
-<a id="a9e6939d67b2c530299b8df6bb5534b77" name="a9e6939d67b2c530299b8df6bb5534b77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e6939d67b2c530299b8df6bb5534b77">&#9670;&#160;</a></span>CMD_READ_STATUS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_READ_STATUS&#160;&#160;&#160;0x50</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда ответа радара на действия </p>
-
-</div>
-</div>
-<a id="a1026cf94d88089bc8f1a0df146fa82ea" name="a1026cf94d88089bc8f1a0df146fa82ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1026cf94d88089bc8f1a0df146fa82ea">&#9670;&#160;</a></span>CMD_READ_TARGET_DATA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_READ_TARGET_DATA&#160;&#160;&#160;0x42</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда считывания данных от радара </p>
-
-</div>
-</div>
-<a id="a1065194adfb50317a6f35d21e4743a95" name="a1065194adfb50317a6f35d21e4743a95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1065194adfb50317a6f35d21e4743a95">&#9670;&#160;</a></span>CMD_READ_VERSION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_READ_VERSION&#160;&#160;&#160;0x11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда ответа радара на запрос версии ПО </p>
-
-</div>
-</div>
-<a id="a3331c73fb55f8661ec20d938a7b51e52" name="a3331c73fb55f8661ec20d938a7b51e52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3331c73fb55f8661ec20d938a7b51e52">&#9670;&#160;</a></span>CMD_REQUEST_VERSION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_REQUEST_VERSION&#160;&#160;&#160;0x10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда запроса версии ПО радара </p>
-
-</div>
-</div>
-<a id="a935426bff7bab3e9cf61e02d16b25b76" name="a935426bff7bab3e9cf61e02d16b25b76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a935426bff7bab3e9cf61e02d16b25b76">&#9670;&#160;</a></span>CMD_SET_DATA_FREQ</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_SET_DATA_FREQ&#160;&#160;&#160;0x18</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда установки частоты передачи данных о целях </p>
-
-</div>
-</div>
-<a id="ac923a560b17091042852a8ed814ba9b3" name="ac923a560b17091042852a8ed814ba9b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac923a560b17091042852a8ed814ba9b3">&#9670;&#160;</a></span>CMD_SET_PARAMETERS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_SET_PARAMETERS&#160;&#160;&#160;0x36</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда установки параметров </p>
-
-</div>
-</div>
-<a id="ab92354d3de6ea5c18a0c2764ddf9ba08" name="ab92354d3de6ea5c18a0c2764ddf9ba08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab92354d3de6ea5c18a0c2764ddf9ba08">&#9670;&#160;</a></span>CMD_SET_TARGET_NUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_SET_TARGET_NUM&#160;&#160;&#160;0x12</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда установки максимального числа целей </p>
-
-</div>
-</div>
-<a id="ae137a784e3103151ea36ed30bf040ab6" name="ae137a784e3103151ea36ed30bf040ab6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae137a784e3103151ea36ed30bf040ab6">&#9670;&#160;</a></span>CMD_SET_ZERO_REPORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CMD_SET_ZERO_REPORT&#160;&#160;&#160;0x19</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Команда установки передачи нулевых данных </p>
-
-</div>
-</div>
-<a id="aca105d80c88c1cfee26c72f0e5703dc1" name="aca105d80c88c1cfee26c72f0e5703dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca105d80c88c1cfee26c72f0e5703dc1">&#9670;&#160;</a></span>DATA_FREQ_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_1&#160;&#160;&#160;0x01</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (1 раз в секунду) </p>
-
-</div>
-</div>
-<a id="a21745c118f601f93c6adca9c0e06466b" name="a21745c118f601f93c6adca9c0e06466b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21745c118f601f93c6adca9c0e06466b">&#9670;&#160;</a></span>DATA_FREQ_10</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_10&#160;&#160;&#160;0x0A</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (10 раз в секунду) </p>
-
-</div>
-</div>
-<a id="aa0fe60a59acb839fed4f4ca6e7cd304b" name="aa0fe60a59acb839fed4f4ca6e7cd304b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0fe60a59acb839fed4f4ca6e7cd304b">&#9670;&#160;</a></span>DATA_FREQ_15</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_15&#160;&#160;&#160;0x0F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (15 раз в секунду) </p>
-
-</div>
-</div>
-<a id="a59f51c78775c9cd515c117b3350dd0ea" name="a59f51c78775c9cd515c117b3350dd0ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59f51c78775c9cd515c117b3350dd0ea">&#9670;&#160;</a></span>DATA_FREQ_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_2&#160;&#160;&#160;0x02</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (2 раза в секунду) </p>
-
-</div>
-</div>
-<a id="a16fe9ffceba487c561a112be969ebe28" name="a16fe9ffceba487c561a112be969ebe28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16fe9ffceba487c561a112be969ebe28">&#9670;&#160;</a></span>DATA_FREQ_20</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_20&#160;&#160;&#160;0x14</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (20 раз в секунду) </p>
-
-</div>
-</div>
-<a id="a40ec92ffce9a1cda315e9046aa0736c6" name="a40ec92ffce9a1cda315e9046aa0736c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ec92ffce9a1cda315e9046aa0736c6">&#9670;&#160;</a></span>DATA_FREQ_3</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_3&#160;&#160;&#160;0x03</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (3 раза в секунду) </p>
-
-</div>
-</div>
-<a id="aa7c5b2589aed4fda4cc04d753c673771" name="aa7c5b2589aed4fda4cc04d753c673771"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7c5b2589aed4fda4cc04d753c673771">&#9670;&#160;</a></span>DATA_FREQ_4</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_4&#160;&#160;&#160;0x04</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (4 раза в секунду) </p>
-
-</div>
-</div>
-<a id="acfba04e82788f3401a6d74d9157efd2a" name="acfba04e82788f3401a6d74d9157efd2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfba04e82788f3401a6d74d9157efd2a">&#9670;&#160;</a></span>DATA_FREQ_5</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DATA_FREQ_5&#160;&#160;&#160;0x05</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Частота передачи данных (5 раз в секунду) </p>
-
-</div>
-</div>
-<a id="a6d58f9ac447476b4e084d7ca383f5183" name="a6d58f9ac447476b4e084d7ca383f5183"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d58f9ac447476b4e084d7ca383f5183">&#9670;&#160;</a></span>FAILURE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FAILURE&#160;&#160;&#160;0xFF</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Байт в пакете данных, если действие не было выполнено </p>
-
-</div>
-</div>
-<a id="a0c9d10cc0518130783d38ec26c63265d" name="a0c9d10cc0518130783d38ec26c63265d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c9d10cc0518130783d38ec26c63265d">&#9670;&#160;</a></span>HEADER_DATA_FRAME_1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HEADER_DATA_FRAME_1&#160;&#160;&#160;0x55</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Первый байт заголовка пакета </p>
-
-</div>
-</div>
-<a id="acd4fc33a59923e4f329c8763fecdf9be" name="acd4fc33a59923e4f329c8763fecdf9be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd4fc33a59923e4f329c8763fecdf9be">&#9670;&#160;</a></span>HEADER_DATA_FRAME_2</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HEADER_DATA_FRAME_2&#160;&#160;&#160;0xAA</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Второй байт заголовка пакета </p>
-
-</div>
-</div>
-<a id="ae6e962f28cfd687ce25f22ba2fae8ac3" name="ae6e962f28cfd687ce25f22ba2fae8ac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6e962f28cfd687ce25f22ba2fae8ac3">&#9670;&#160;</a></span>LEFT_BORDER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LEFT_BORDER&#160;&#160;&#160;-6.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Левая граница </p>
-
-</div>
-</div>
-<a id="ab0ab3548513de192164efc1eaa495cb3" name="ab0ab3548513de192164efc1eaa495cb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0ab3548513de192164efc1eaa495cb3">&#9670;&#160;</a></span>LENGTH_CHECKSUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LENGTH_CHECKSUM&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Длина контрольной суммы </p>
-
-</div>
-</div>
-<a id="a850ad5f9f2f225f0fcdb21c09b899cbf" name="a850ad5f9f2f225f0fcdb21c09b899cbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a850ad5f9f2f225f0fcdb21c09b899cbf">&#9670;&#160;</a></span>LENGTH_COMMAND_WORD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LENGTH_COMMAND_WORD&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Длина команды </p>
-
-</div>
-</div>
-<a id="a3e0f086c4ff108dc4889876fa0d3f8c9" name="a3e0f086c4ff108dc4889876fa0d3f8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e0f086c4ff108dc4889876fa0d3f8c9">&#9670;&#160;</a></span>LENGTH_DATA_LENGTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LENGTH_DATA_LENGTH&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Длина числа, характеризующего размер данных </p>
-
-</div>
-</div>
-<a id="aa1747ccd379d1fb2ff470490ba6c7f79" name="aa1747ccd379d1fb2ff470490ba6c7f79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1747ccd379d1fb2ff470490ba6c7f79">&#9670;&#160;</a></span>LENGTH_HEADER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LENGTH_HEADER&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Длина заголовка </p>
-
-</div>
-</div>
-<a id="af3c82099d63a2d91d68bd62d954059c7" name="af3c82099d63a2d91d68bd62d954059c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3c82099d63a2d91d68bd62d954059c7">&#9670;&#160;</a></span>MAX_ANGLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_ANGLE&#160;&#160;&#160;60.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Максимальный угол </p>
-
-</div>
-</div>
-<a id="a08e4da5f3d0c7936fa52467f40e4b6aa" name="a08e4da5f3d0c7936fa52467f40e4b6aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08e4da5f3d0c7936fa52467f40e4b6aa">&#9670;&#160;</a></span>MAX_DISTANCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_DISTANCE&#160;&#160;&#160;13.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Максимальная дальность </p>
-
-</div>
-</div>
-<a id="ac2cd96d53dd3ba6407db6766c3d92b26" name="ac2cd96d53dd3ba6407db6766c3d92b26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2cd96d53dd3ba6407db6766c3d92b26">&#9670;&#160;</a></span>MAX_SPEED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_SPEED&#160;&#160;&#160;5.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Максимальная скорость </p>
-
-</div>
-</div>
-<a id="af5cc136dbc86df89de56c3aa421c12ee" name="af5cc136dbc86df89de56c3aa421c12ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5cc136dbc86df89de56c3aa421c12ee">&#9670;&#160;</a></span>MIN_ANGLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_ANGLE&#160;&#160;&#160;-60.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Минимальный угол </p>
-
-</div>
-</div>
-<a id="a549d41dcf9444ed7d6df1da3c73e7d16" name="a549d41dcf9444ed7d6df1da3c73e7d16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a549d41dcf9444ed7d6df1da3c73e7d16">&#9670;&#160;</a></span>MIN_DISTANCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_DISTANCE&#160;&#160;&#160;0.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Минимальная дальность </p>
-
-</div>
-</div>
-<a id="ad5f5efaa5cb771bd06da4bfe6046809e" name="ad5f5efaa5cb771bd06da4bfe6046809e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5f5efaa5cb771bd06da4bfe6046809e">&#9670;&#160;</a></span>MIN_SPEED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_SPEED&#160;&#160;&#160;0.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Минимальная скорость </p>
-
-</div>
-</div>
-<a id="a45beb644780106cc600331ec3e784218" name="a45beb644780106cc600331ec3e784218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45beb644780106cc600331ec3e784218">&#9670;&#160;</a></span>RIGHT_BORDER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RIGHT_BORDER&#160;&#160;&#160;6.0f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Правая граница </p>
-
-</div>
-</div>
-<a id="a0cbea62f1ce2043dd08108e65ed8de1d" name="a0cbea62f1ce2043dd08108e65ed8de1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cbea62f1ce2043dd08108e65ed8de1d">&#9670;&#160;</a></span>SCALE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCALE&#160;&#160;&#160;0.01f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Масштабный коэффициент для пересчёта принятых данных о целях </p>
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00015">15</a></p>
 
 </div>
 </div>
@@ -836,21 +330,7 @@ $(function() {
 
 <p>Возвращаемое значение при невыполненном действии </p>
 
-</div>
-</div>
-<a id="a19cd20d00719b9df76dc42a44fc45371" name="a19cd20d00719b9df76dc42a44fc45371"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19cd20d00719b9df76dc42a44fc45371">&#9670;&#160;</a></span>SMART_ROAD_RADAR_OK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SMART_ROAD_RADAR_OK&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Возвращаемое значение при успешно выполненном действии </p>
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00017">17</a></p>
 
 </div>
 </div>
@@ -868,6 +348,512 @@ $(function() {
 
 <p>Байт в пакете данных при успешном действии </p>
 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a id="a6d58f9ac447476b4e084d7ca383f5183" name="a6d58f9ac447476b4e084d7ca383f5183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d58f9ac447476b4e084d7ca383f5183">&#9670;&#160;</a></span>FAILURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAILURE&#160;&#160;&#160;0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Байт в пакете данных, если действие не было выполнено </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a id="a3331c73fb55f8661ec20d938a7b51e52" name="a3331c73fb55f8661ec20d938a7b51e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3331c73fb55f8661ec20d938a7b51e52">&#9670;&#160;</a></span>CMD_REQUEST_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_REQUEST_VERSION&#160;&#160;&#160;0x10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда запроса версии ПО радара </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a id="a1065194adfb50317a6f35d21e4743a95" name="a1065194adfb50317a6f35d21e4743a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1065194adfb50317a6f35d21e4743a95">&#9670;&#160;</a></span>CMD_READ_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_READ_VERSION&#160;&#160;&#160;0x11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда ответа радара на запрос версии ПО </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="ac923a560b17091042852a8ed814ba9b3" name="ac923a560b17091042852a8ed814ba9b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac923a560b17091042852a8ed814ba9b3">&#9670;&#160;</a></span>CMD_SET_PARAMETERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_PARAMETERS&#160;&#160;&#160;0x36</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда установки параметров </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a id="a439e1efba763e0adcc50a5d6fab662de" name="a439e1efba763e0adcc50a5d6fab662de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439e1efba763e0adcc50a5d6fab662de">&#9670;&#160;</a></span>CMD_GET_PARAMETERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_GET_PARAMETERS&#160;&#160;&#160;0x37</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда запроса параметров </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00032">32</a></p>
+
+</div>
+</div>
+<a id="aae049aa2b369731b2a4318d81fb8013a" name="aae049aa2b369731b2a4318d81fb8013a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae049aa2b369731b2a4318d81fb8013a">&#9670;&#160;</a></span>CMD_READ_PARAMETERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_READ_PARAMETERS&#160;&#160;&#160;0x38</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда ответа радара на запрос параметров </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00035">35</a></p>
+
+</div>
+</div>
+<a id="ab92354d3de6ea5c18a0c2764ddf9ba08" name="ab92354d3de6ea5c18a0c2764ddf9ba08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab92354d3de6ea5c18a0c2764ddf9ba08">&#9670;&#160;</a></span>CMD_SET_TARGET_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_TARGET_NUM&#160;&#160;&#160;0x12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда установки максимального числа целей </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<a id="a9e6939d67b2c530299b8df6bb5534b77" name="a9e6939d67b2c530299b8df6bb5534b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6939d67b2c530299b8df6bb5534b77">&#9670;&#160;</a></span>CMD_READ_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_READ_STATUS&#160;&#160;&#160;0x50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда ответа радара на действия </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00041">41</a></p>
+
+</div>
+</div>
+<a id="a1026cf94d88089bc8f1a0df146fa82ea" name="a1026cf94d88089bc8f1a0df146fa82ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1026cf94d88089bc8f1a0df146fa82ea">&#9670;&#160;</a></span>CMD_READ_TARGET_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_READ_TARGET_DATA&#160;&#160;&#160;0x42</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда считывания данных от радара </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a id="afbb3143ce5ad5064004a047eafba86a0" name="afbb3143ce5ad5064004a047eafba86a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbb3143ce5ad5064004a047eafba86a0">&#9670;&#160;</a></span>CMD_ENABLE_TRANSMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_ENABLE_TRANSMIT&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда запуска передачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00047">47</a></p>
+
+</div>
+</div>
+<a id="ac990cbe9e81bd9f88ca2defbff442f1b" name="ac990cbe9e81bd9f88ca2defbff442f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac990cbe9e81bd9f88ca2defbff442f1b">&#9670;&#160;</a></span>CMD_DISABLE_TRANSMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_DISABLE_TRANSMIT&#160;&#160;&#160;0x21</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда остановки передачи </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00049">49</a></p>
+
+</div>
+</div>
+<a id="a935426bff7bab3e9cf61e02d16b25b76" name="a935426bff7bab3e9cf61e02d16b25b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935426bff7bab3e9cf61e02d16b25b76">&#9670;&#160;</a></span>CMD_SET_DATA_FREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_DATA_FREQ&#160;&#160;&#160;0x18</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда установки частоты передачи данных о целях </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a id="ae137a784e3103151ea36ed30bf040ab6" name="ae137a784e3103151ea36ed30bf040ab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae137a784e3103151ea36ed30bf040ab6">&#9670;&#160;</a></span>CMD_SET_ZERO_REPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_ZERO_REPORT&#160;&#160;&#160;0x19</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Команда установки передачи нулевых данных </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00055">55</a></p>
+
+</div>
+</div>
+<a id="a0c9d10cc0518130783d38ec26c63265d" name="a0c9d10cc0518130783d38ec26c63265d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9d10cc0518130783d38ec26c63265d">&#9670;&#160;</a></span>HEADER_DATA_FRAME_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HEADER_DATA_FRAME_1&#160;&#160;&#160;0x55</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Первый байт заголовка пакета </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00058">58</a></p>
+
+</div>
+</div>
+<a id="acd4fc33a59923e4f329c8763fecdf9be" name="acd4fc33a59923e4f329c8763fecdf9be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd4fc33a59923e4f329c8763fecdf9be">&#9670;&#160;</a></span>HEADER_DATA_FRAME_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HEADER_DATA_FRAME_2&#160;&#160;&#160;0xAA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Второй байт заголовка пакета </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a id="aa1747ccd379d1fb2ff470490ba6c7f79" name="aa1747ccd379d1fb2ff470490ba6c7f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1747ccd379d1fb2ff470490ba6c7f79">&#9670;&#160;</a></span>LENGTH_HEADER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LENGTH_HEADER&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Длина заголовка </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00063">63</a></p>
+
+</div>
+</div>
+<a id="a3e0f086c4ff108dc4889876fa0d3f8c9" name="a3e0f086c4ff108dc4889876fa0d3f8c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0f086c4ff108dc4889876fa0d3f8c9">&#9670;&#160;</a></span>LENGTH_DATA_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LENGTH_DATA_LENGTH&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Длина числа, характеризующего размер данных </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<a id="a850ad5f9f2f225f0fcdb21c09b899cbf" name="a850ad5f9f2f225f0fcdb21c09b899cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a850ad5f9f2f225f0fcdb21c09b899cbf">&#9670;&#160;</a></span>LENGTH_COMMAND_WORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LENGTH_COMMAND_WORD&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Длина команды </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00067">67</a></p>
+
+</div>
+</div>
+<a id="ab0ab3548513de192164efc1eaa495cb3" name="ab0ab3548513de192164efc1eaa495cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ab3548513de192164efc1eaa495cb3">&#9670;&#160;</a></span>LENGTH_CHECKSUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LENGTH_CHECKSUM&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Длина контрольной суммы </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00069">69</a></p>
+
+</div>
+</div>
+<a id="a549d41dcf9444ed7d6df1da3c73e7d16" name="a549d41dcf9444ed7d6df1da3c73e7d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a549d41dcf9444ed7d6df1da3c73e7d16">&#9670;&#160;</a></span>MIN_DISTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_DISTANCE&#160;&#160;&#160;0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Минимальная дальность </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00072">72</a></p>
+
+</div>
+</div>
+<a id="a08e4da5f3d0c7936fa52467f40e4b6aa" name="a08e4da5f3d0c7936fa52467f40e4b6aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08e4da5f3d0c7936fa52467f40e4b6aa">&#9670;&#160;</a></span>MAX_DISTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_DISTANCE&#160;&#160;&#160;13.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Максимальная дальность </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00074">74</a></p>
+
+</div>
+</div>
+<a id="ad5f5efaa5cb771bd06da4bfe6046809e" name="ad5f5efaa5cb771bd06da4bfe6046809e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f5efaa5cb771bd06da4bfe6046809e">&#9670;&#160;</a></span>MIN_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_SPEED&#160;&#160;&#160;0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Минимальная скорость </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00077">77</a></p>
+
+</div>
+</div>
+<a id="ac2cd96d53dd3ba6407db6766c3d92b26" name="ac2cd96d53dd3ba6407db6766c3d92b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2cd96d53dd3ba6407db6766c3d92b26">&#9670;&#160;</a></span>MAX_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SPEED&#160;&#160;&#160;5.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Максимальная скорость </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00079">79</a></p>
+
+</div>
+</div>
+<a id="af5cc136dbc86df89de56c3aa421c12ee" name="af5cc136dbc86df89de56c3aa421c12ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5cc136dbc86df89de56c3aa421c12ee">&#9670;&#160;</a></span>MIN_ANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_ANGLE&#160;&#160;&#160;-60.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Минимальный угол </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00082">82</a></p>
+
+</div>
+</div>
+<a id="af3c82099d63a2d91d68bd62d954059c7" name="af3c82099d63a2d91d68bd62d954059c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c82099d63a2d91d68bd62d954059c7">&#9670;&#160;</a></span>MAX_ANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_ANGLE&#160;&#160;&#160;60.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Максимальный угол </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00084">84</a></p>
+
+</div>
+</div>
+<a id="ae6e962f28cfd687ce25f22ba2fae8ac3" name="ae6e962f28cfd687ce25f22ba2fae8ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e962f28cfd687ce25f22ba2fae8ac3">&#9670;&#160;</a></span>LEFT_BORDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEFT_BORDER&#160;&#160;&#160;-6.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Левая граница </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00087">87</a></p>
+
+</div>
+</div>
+<a id="a45beb644780106cc600331ec3e784218" name="a45beb644780106cc600331ec3e784218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45beb644780106cc600331ec3e784218">&#9670;&#160;</a></span>RIGHT_BORDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIGHT_BORDER&#160;&#160;&#160;6.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Правая граница </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00089">89</a></p>
+
+</div>
+</div>
+<a id="a0cbea62f1ce2043dd08108e65ed8de1d" name="a0cbea62f1ce2043dd08108e65ed8de1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cbea62f1ce2043dd08108e65ed8de1d">&#9670;&#160;</a></span>SCALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCALE&#160;&#160;&#160;0.01f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Масштабный коэффициент для пересчёта принятых данных о целях </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00092">92</a></p>
+
 </div>
 </div>
 <a id="a1e9818102f2730d9b7af567451f06820" name="a1e9818102f2730d9b7af567451f06820"></a>
@@ -883,6 +869,170 @@ $(function() {
 </div><div class="memdoc">
 
 <p>Размер данных об одной цели </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00095">95</a></p>
+
+</div>
+</div>
+<a id="aca105d80c88c1cfee26c72f0e5703dc1" name="aca105d80c88c1cfee26c72f0e5703dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca105d80c88c1cfee26c72f0e5703dc1">&#9670;&#160;</a></span>DATA_FREQ_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_1&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (1 раз в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00098">98</a></p>
+
+</div>
+</div>
+<a id="a59f51c78775c9cd515c117b3350dd0ea" name="a59f51c78775c9cd515c117b3350dd0ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f51c78775c9cd515c117b3350dd0ea">&#9670;&#160;</a></span>DATA_FREQ_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_2&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (2 раза в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00100">100</a></p>
+
+</div>
+</div>
+<a id="a40ec92ffce9a1cda315e9046aa0736c6" name="a40ec92ffce9a1cda315e9046aa0736c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ec92ffce9a1cda315e9046aa0736c6">&#9670;&#160;</a></span>DATA_FREQ_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_3&#160;&#160;&#160;0x03</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (3 раза в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00102">102</a></p>
+
+</div>
+</div>
+<a id="aa7c5b2589aed4fda4cc04d753c673771" name="aa7c5b2589aed4fda4cc04d753c673771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c5b2589aed4fda4cc04d753c673771">&#9670;&#160;</a></span>DATA_FREQ_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_4&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (4 раза в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a id="acfba04e82788f3401a6d74d9157efd2a" name="acfba04e82788f3401a6d74d9157efd2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfba04e82788f3401a6d74d9157efd2a">&#9670;&#160;</a></span>DATA_FREQ_5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_5&#160;&#160;&#160;0x05</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (5 раз в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00106">106</a></p>
+
+</div>
+</div>
+<a id="a21745c118f601f93c6adca9c0e06466b" name="a21745c118f601f93c6adca9c0e06466b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21745c118f601f93c6adca9c0e06466b">&#9670;&#160;</a></span>DATA_FREQ_10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_10&#160;&#160;&#160;0x0A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (10 раз в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00108">108</a></p>
+
+</div>
+</div>
+<a id="aa0fe60a59acb839fed4f4ca6e7cd304b" name="aa0fe60a59acb839fed4f4ca6e7cd304b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0fe60a59acb839fed4f4ca6e7cd304b">&#9670;&#160;</a></span>DATA_FREQ_15</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_15&#160;&#160;&#160;0x0F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (15 раз в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00110">110</a></p>
+
+</div>
+</div>
+<a id="a16fe9ffceba487c561a112be969ebe28" name="a16fe9ffceba487c561a112be969ebe28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fe9ffceba487c561a112be969ebe28">&#9670;&#160;</a></span>DATA_FREQ_20</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DATA_FREQ_20&#160;&#160;&#160;0x14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Частота передачи данных (20 раз в секунду) </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00112">112</a></p>
+
+</div>
+</div>
+<a id="a664e7b856d048814a9d9f1426a8556d2" name="a664e7b856d048814a9d9f1426a8556d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664e7b856d048814a9d9f1426a8556d2">&#9670;&#160;</a></span>ZERO_DATA_REPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZERO_DATA_REPORT&#160;&#160;&#160;0x0A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Передача нулевых данных </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00115">115</a></p>
 
 </div>
 </div>
@@ -900,21 +1050,7 @@ $(function() {
 
 <p>Передача только ненулевых данных </p>
 
-</div>
-</div>
-<a id="a664e7b856d048814a9d9f1426a8556d2" name="a664e7b856d048814a9d9f1426a8556d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a664e7b856d048814a9d9f1426a8556d2">&#9670;&#160;</a></span>ZERO_DATA_REPORT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ZERO_DATA_REPORT&#160;&#160;&#160;0x0A</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Передача нулевых данных </p>
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00117">117</a></p>
 
 </div>
 </div>
@@ -943,6 +1079,36 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Контрольная сумма в формате одного байта типа u_byte_t </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00195">195</a></p>
+
+</div>
+</div>
+<a id="abcd974e8aaebad5eec9f1530e88a4b57" name="abcd974e8aaebad5eec9f1530e88a4b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd974e8aaebad5eec9f1530e88a4b57">&#9670;&#160;</a></span>u_byte_to_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float u_byte_to_float </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>u_bytes</em>[2]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Метод для перевода двух байт типа u_byte_t в число типа float</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_bytes</td><td>Массив, состоящий из двух байт </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>число типа float </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00218">218</a></p>
+
 </div>
 </div>
 <a id="a4bba85313252440393bd850c559cf126" name="a4bba85313252440393bd850c559cf126"></a>
@@ -969,10 +1135,71 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Готовый кадр с рассчитанной контрольной суммой </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00229">229</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126_cgraph.png" border="0" usemap="#asmart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126_cgraph" alt=""/></div>
+<map name="asmart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126_cgraph" id="asmart__road__radar__utils_8hpp_a4bba85313252440393bd850c559cf126_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,118,32"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="166,5,306,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,151,16,151,21,118,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1095088fd374269de55a495fc60c539" name="ac1095088fd374269de55a495fc60c539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1095088fd374269de55a495fc60c539">&#9670;&#160;</a></span>configure_frame() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structframe.html">frame</a> configure_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>word</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Метод формирующий кадр, который состоит из командного слова и одного байта данных</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">word</td><td>Командное слово </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Один байт данных </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Готовый кадр с рассчитанной контрольной суммой </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00247">247</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__utils_8hpp_ac1095088fd374269de55a495fc60c539_cgraph.png" border="0" usemap="#asmart__road__radar__utils_8hpp_ac1095088fd374269de55a495fc60c539_cgraph" alt=""/></div>
+<map name="asmart__road__radar__utils_8hpp_ac1095088fd374269de55a495fc60c539_cgraph" id="asmart__road__radar__utils_8hpp_ac1095088fd374269de55a495fc60c539_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,118,32"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="166,5,306,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,151,16,151,21,118,21"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a74bc38a43debb8aff620d3b24bc4b875" name="a74bc38a43debb8aff620d3b24bc4b875"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74bc38a43debb8aff620d3b24bc4b875">&#9670;&#160;</a></span>configure_frame() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a74bc38a43debb8aff620d3b24bc4b875">&#9670;&#160;</a></span>configure_frame() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1013,75 +1240,28 @@ $(function() {
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd>Готовый кадр с рассчитанной контрольной суммой </dd></dl>
 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__utils_8hpp_source.html">smart_road_radar_utils.hpp</a> строка <a class="el" href="smart__road__radar__utils_8hpp_source.html#l00269">269</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__utils_8hpp_a74bc38a43debb8aff620d3b24bc4b875_cgraph.png" border="0" usemap="#asmart__road__radar__utils_8hpp_a74bc38a43debb8aff620d3b24bc4b875_cgraph" alt=""/></div>
+<map name="asmart__road__radar__utils_8hpp_a74bc38a43debb8aff620d3b24bc4b875_cgraph" id="asmart__road__radar__utils_8hpp_a74bc38a43debb8aff620d3b24bc4b875_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,118,32"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="166,5,306,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,151,16,151,21,118,21"/>
+</map>
 </div>
-</div>
-<a id="ac1095088fd374269de55a495fc60c539" name="ac1095088fd374269de55a495fc60c539"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1095088fd374269de55a495fc60c539">&#9670;&#160;</a></span>configure_frame() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structframe.html">frame</a> configure_frame </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
-          <td class="paramname"><em>word</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Метод формирующий кадр, который состоит из командного слова и одного байта данных</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">word</td><td>Командное слово </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Один байт данных </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Возвращает</dt><dd>Готовый кадр с рассчитанной контрольной суммой </dd></dl>
-
-</div>
-</div>
-<a id="abcd974e8aaebad5eec9f1530e88a4b57" name="abcd974e8aaebad5eec9f1530e88a4b57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcd974e8aaebad5eec9f1530e88a4b57">&#9670;&#160;</a></span>u_byte_to_float()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float u_byte_to_float </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
-          <td class="paramname"><em>u_bytes</em>[2]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Метод для перевода двух байт типа u_byte_t в число типа float</p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">u_bytes</td><td>Массив, состоящий из двух байт </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Возвращает</dt><dd>число типа float </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="smart__road__radar__utils_8hpp.html">smart_road_radar_utils.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
 </body>
 </html>
