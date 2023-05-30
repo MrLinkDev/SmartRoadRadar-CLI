@@ -1,0 +1,43 @@
+<map id="SmartRoadRadar::read_status" name="SmartRoadRadar::read_status">
+<area shape="rect" id="Node000001" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="939,205,1092,248"/>
+<area shape="rect" id="Node000002" href="$class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858" title="Остановка передачи данных." alt="" coords="722,5,891,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="994,194,951,127,922,93,889,62,871,51,874,46,893,58,926,89,956,124,999,191"/>
+<area shape="rect" id="Node000007" href="$class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c" title="Выключение передачи нулевых данных." alt="" coords="722,72,891,115"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="980,198,938,163,890,129,868,118,870,113,892,124,941,158,983,193"/>
+<area shape="rect" id="Node000009" href="$class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0" title="Запуск передачи данных." alt="" coords="723,139,890,181"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="932,203,875,185,877,179,934,198"/>
+<area shape="rect" id="Node000011" href="$class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906" title="Включение передачи нулевых данных." alt="" coords="723,205,890,248"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="924,229,890,229,890,224,924,224"/>
+<area shape="rect" id="Node000013" href="$class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124" title="Установка частоты отправки данных." alt="" coords="733,272,880,315"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="934,255,877,274,875,269,932,250"/>
+<area shape="rect" id="Node000015" href="$class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025" title="Изменение настроек радара." alt="" coords="733,339,880,381"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="983,260,941,295,892,329,870,340,868,336,890,324,938,291,980,256"/>
+<area shape="rect" id="Node000017" href="$class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb" title="Установка числа целей." alt="" coords="733,405,880,448"/>
+<area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="999,263,956,329,926,364,893,395,874,407,871,403,889,391,922,361,951,326,994,260"/>
+<area shape="rect" id="Node000003" href="$class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="509,5,658,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="707,29,658,29,658,24,707,24"/>
+<area shape="rect" id="Node000004" href="$class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,205,445,248"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="501,58,495,62,458,97,427,136,386,206,381,204,423,133,454,93,492,58,498,54"/>
+<area shape="rect" id="Node000005" href="$class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,205,250,248"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="283,229,251,229,251,224,283,224"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,213,55,240"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="88,229,55,229,55,224,88,224"/>
+<area shape="rect" id="Node000008" href="$class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,72,674,115"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="707,96,674,96,674,91,707,91"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="504,124,495,129,440,168,396,207,393,203,436,164,492,124,502,119"/>
+<area shape="rect" id="Node000010" href="$class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="510,139,657,181"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="709,163,658,163,658,157,709,157"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="501,189,443,207,441,202,499,184"/>
+<area shape="rect" id="Node000012" href="$class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="495,205,672,248"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="709,229,673,229,673,224,709,224"/>
+<area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="480,229,446,229,446,224,480,224"/>
+<area shape="rect" id="Node000014" href="$class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="510,272,657,315"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="718,296,657,296,657,291,718,291"/>
+<area shape="poly" id="edge17_Node000014_Node000004" title=" " alt="" coords="499,270,441,251,443,246,501,265"/>
+<area shape="rect" id="Node000016" href="$class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="510,339,657,381"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="718,363,657,363,657,357,718,357"/>
+<area shape="poly" id="edge20_Node000016_Node000004" title=" " alt="" coords="502,334,492,329,436,290,393,250,396,246,440,285,495,324,504,330"/>
+<area shape="rect" id="Node000018" href="$class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="510,405,657,448"/>
+<area shape="poly" id="edge22_Node000017_Node000018" title=" " alt="" coords="718,429,657,429,657,424,718,424"/>
+<area shape="poly" id="edge23_Node000018_Node000004" title=" " alt="" coords="498,400,492,395,454,360,423,320,381,250,386,247,427,317,458,357,495,391,501,395"/>
+</map>

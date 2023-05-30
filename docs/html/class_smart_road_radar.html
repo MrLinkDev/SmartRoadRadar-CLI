@@ -1,0 +1,1609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Класс SmartRoadRadar</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_smart_road_radar.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a>  </div>
+  <div class="headertitle"><div class="title">Класс SmartRoadRadar</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Объект для взаимодействия с радаром  
+ <a href="class_smart_road_radar.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса SmartRoadRadar:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar__coll__graph.png" border="0" usemap="#a_smart_road_radar_coll__map" alt="Collaboration graph"/></div>
+<map name="a_smart_road_radar_coll__map" id="a_smart_road_radar_coll__map">
+<area shape="rect" title="Объект для взаимодействия с радаром" alt="" coords="5,96,126,123"/>
+<area shape="rect" href="class_serial.html" title="Объект для общения с устройствами по последовательному интерфейсу" alt="" coords="38,5,93,32"/>
+<area shape="poly" title=" " alt="" coords="68,47,68,95,63,95,63,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:afaa4b7fa9189e635d5785bf63c1130bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#afaa4b7fa9189e635d5785bf63c1130bd">SmartRoadRadar</a> ()=default</td></tr>
+<tr class="memdesc:afaa4b7fa9189e635d5785bf63c1130bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стандартный конструктор  <br /></td></tr>
+<tr class="separator:afaa4b7fa9189e635d5785bf63c1130bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa38be22598c8e0eb76b240f40e3128bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aa38be22598c8e0eb76b240f40e3128bc">SmartRoadRadar</a> (LPTSTR address)</td></tr>
+<tr class="memdesc:aa38be22598c8e0eb76b240f40e3128bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор, в который передаётся порт радара.  <br /></td></tr>
+<tr class="separator:aa38be22598c8e0eb76b240f40e3128bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e03c46dae52b480301492b5a2364384"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a4e03c46dae52b480301492b5a2364384">SmartRoadRadar</a> (LPTSTR address, <a class="el" href="structport__config.html">port_config</a> config)</td></tr>
+<tr class="memdesc:a4e03c46dae52b480301492b5a2364384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор, в который передаётся порт радара и настройки подключения.  <br /></td></tr>
+<tr class="separator:a4e03c46dae52b480301492b5a2364384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e02fefc0c401668114ce41ec9eda7e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a2e02fefc0c401668114ce41ec9eda7e8">get_firmware_version</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *version_buffer)</td></tr>
+<tr class="memdesc:a2e02fefc0c401668114ce41ec9eda7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрос версии ПО у радара.  <br /></td></tr>
+<tr class="separator:a2e02fefc0c401668114ce41ec9eda7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3975a1a1681946f74e24328ea10b7025"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025">set_parameters</a> (<a class="el" href="structparameters.html">parameters</a> target_parameters)</td></tr>
+<tr class="memdesc:a3975a1a1681946f74e24328ea10b7025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменение настроек радара.  <br /></td></tr>
+<tr class="separator:a3975a1a1681946f74e24328ea10b7025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ebab995997fd2d4cf91b72297c3bef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#ab6ebab995997fd2d4cf91b72297c3bef">get_parameters</a> (<a class="el" href="structparameters.html">parameters</a> *received_parameters)</td></tr>
+<tr class="memdesc:ab6ebab995997fd2d4cf91b72297c3bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение настроек с радара.  <br /></td></tr>
+<tr class="separator:ab6ebab995997fd2d4cf91b72297c3bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68582d046bc01ac72bbc0dbec366deb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb">set_target_number</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> number)</td></tr>
+<tr class="memdesc:ac68582d046bc01ac72bbc0dbec366deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка числа целей.  <br /></td></tr>
+<tr class="separator:ac68582d046bc01ac72bbc0dbec366deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb34ccb7999a4f6a67eb77121c4d7a93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aeb34ccb7999a4f6a67eb77121c4d7a93">get_target_data</a> (<a class="el" href="structtarget__data.html">target_data</a> *data)</td></tr>
+<tr class="memdesc:aeb34ccb7999a4f6a67eb77121c4d7a93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение данных о целях.  <br /></td></tr>
+<tr class="separator:aeb34ccb7999a4f6a67eb77121c4d7a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c359504214e8d6796df36308ce344c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0">enable_data_transmit</a> ()</td></tr>
+<tr class="memdesc:a4c359504214e8d6796df36308ce344c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запуск передачи данных.  <br /></td></tr>
+<tr class="separator:a4c359504214e8d6796df36308ce344c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955c0ffc54498e77b42323c5b6d7c858"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858">disable_data_transmit</a> ()</td></tr>
+<tr class="memdesc:a955c0ffc54498e77b42323c5b6d7c858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Остановка передачи данных.  <br /></td></tr>
+<tr class="separator:a955c0ffc54498e77b42323c5b6d7c858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66f8c64c85119620bae8380b8856124"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124">set_data_transmit_freq</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> freq)</td></tr>
+<tr class="memdesc:aa66f8c64c85119620bae8380b8856124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Установка частоты отправки данных.  <br /></td></tr>
+<tr class="separator:aa66f8c64c85119620bae8380b8856124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d1fe3f83ba38b5a1fb0eeb76f72c906"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906">enable_zero_data_reporting</a> ()</td></tr>
+<tr class="memdesc:a2d1fe3f83ba38b5a1fb0eeb76f72c906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Включение передачи нулевых данных.  <br /></td></tr>
+<tr class="separator:a2d1fe3f83ba38b5a1fb0eeb76f72c906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fb7d07156913963a6b9abd20b07e1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c">disable_zero_data_reporting</a> ()</td></tr>
+<tr class="memdesc:a85fb7d07156913963a6b9abd20b07e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выключение передачи нулевых данных.  <br /></td></tr>
+<tr class="separator:a85fb7d07156913963a6b9abd20b07e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a4702da64442130c81fba68dbe04d922c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structframe.html">frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c">read_frame</a> ()</td></tr>
+<tr class="memdesc:a4702da64442130c81fba68dbe04d922c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр  <br /></td></tr>
+<tr class="separator:a4702da64442130c81fba68dbe04d922c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb148a052a0219478442e555457e4776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structframe.html">frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776">read_expected_frame</a> (<a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> expected_word)</td></tr>
+<tr class="memdesc:aeb148a052a0219478442e555457e4776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение данных с радара с требуемым командным словом.  <br /></td></tr>
+<tr class="separator:aeb148a052a0219478442e555457e4776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c2eff65015669baf6dcd63a7f42631"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631">read_status</a> ()</td></tr>
+<tr class="memdesc:a62c2eff65015669baf6dcd63a7f42631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара  <br /></td></tr>
+<tr class="separator:a62c2eff65015669baf6dcd63a7f42631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd796778567dee18eb6256c71aaaceb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb">write_frame</a> (<a class="el" href="structframe.html">frame</a> target_frame)</td></tr>
+<tr class="memdesc:a7dd796778567dee18eb6256c71aaaceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t, который затем передаётся на устройство.  <br /></td></tr>
+<tr class="separator:a7dd796778567dee18eb6256c71aaaceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a2848c79817447018f57ccd211c03a06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_serial.html">Serial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar.html#a2848c79817447018f57ccd211c03a06f">data_bus</a> {}</td></tr>
+<tr class="memdesc:a2848c79817447018f57ccd211c03a06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект для подключения к радару по последовательному интерфейсу  <br /></td></tr>
+<tr class="separator:a2848c79817447018f57ccd211c03a06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Объект для взаимодействия с радаром </p>
+<p>Объект содержит в себе конструкторы для инициализации подключения к радару, функции чтения и отправки кадров в радар, также, содержит функции для отправки определённых протоколом команд. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00020">20</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="afaa4b7fa9189e635d5785bf63c1130bd" name="afaa4b7fa9189e635d5785bf63c1130bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa4b7fa9189e635d5785bf63c1130bd">&#9670;&#160;</a></span>SmartRoadRadar() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartRoadRadar::SmartRoadRadar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Стандартный конструктор </p>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_smart_road_radar.html">SmartRoadRadar</a> radar;</div>
+<div class="ttc" id="aclass_smart_road_radar_html"><div class="ttname"><a href="class_smart_road_radar.html">SmartRoadRadar</a></div><div class="ttdoc">Объект для взаимодействия с радаром</div><div class="ttdef"><b>Definition</b> <a href="smart__road__radar_8hpp_source.html#l00020">smart_road_radar.hpp:20</a></div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa38be22598c8e0eb76b240f40e3128bc" name="aa38be22598c8e0eb76b240f40e3128bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38be22598c8e0eb76b240f40e3128bc">&#9670;&#160;</a></span>SmartRoadRadar() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartRoadRadar::SmartRoadRadar </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор, в который передаётся порт радара. </p>
+<p>Создаётся подключение к радару со следующими параметрами:</p><ul>
+<li>baud_rate = 115200</li>
+<li>byte_size = 8</li>
+<li>stop_bits = ONESTOPBIT</li>
+<li>parity = NOPARITY</li>
+</ul>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес радара</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_smart_road_radar.html">SmartRoadRadar</a> radar(<span class="stringliteral">&quot;COM1&quot;</span>);</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00168">168</a></p>
+
+</div>
+</div>
+<a id="a4e03c46dae52b480301492b5a2364384" name="a4e03c46dae52b480301492b5a2364384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e03c46dae52b480301492b5a2364384">&#9670;&#160;</a></span>SmartRoadRadar() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SmartRoadRadar::SmartRoadRadar </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structport__config.html">port_config</a>&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор, в который передаётся порт радара и настройки подключения. </p>
+<p>Создаёт подключение к радару с параметрами, которые передаются в структуре типа <a class="el" href="structport__config.html">port_config</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>Адрес радара </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Структура, содержащая в себе настройки для подключения</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structport__config.html">port_config</a> config;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">baud_rate</a> = BAUD_115200;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">byte_size</a> = 8;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a15dfef1d17723095f344d529498d158f">stop_bits</a> = ONESTOPBIT;</div>
+<div class="line">config.<a class="code hl_variable" href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">parity</a> = NOPARITY;</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_smart_road_radar.html">SmartRoadRadar</a> radar(<span class="stringliteral">&quot;COM1&quot;</span>, config);</div>
+<div class="ttc" id="astructport__config_html"><div class="ttname"><a href="structport__config.html">port_config</a></div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00033">serial.hpp:33</a></div></div>
+<div class="ttc" id="astructport__config_html_a110d2bd9e1e6ad1b99325072b43da5aa"><div class="ttname"><a href="structport__config.html#a110d2bd9e1e6ad1b99325072b43da5aa">port_config::baud_rate</a></div><div class="ttdeci">DWORD baud_rate</div><div class="ttdoc">Скорость передачи данных</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00034">serial.hpp:34</a></div></div>
+<div class="ttc" id="astructport__config_html_a15dfef1d17723095f344d529498d158f"><div class="ttname"><a href="structport__config.html#a15dfef1d17723095f344d529498d158f">port_config::stop_bits</a></div><div class="ttdeci">DWORD stop_bits</div><div class="ttdoc">Количество стоп-битов</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00036">serial.hpp:36</a></div></div>
+<div class="ttc" id="astructport__config_html_a1f051b2ced88656882d9cb0f17d0affe"><div class="ttname"><a href="structport__config.html#a1f051b2ced88656882d9cb0f17d0affe">port_config::byte_size</a></div><div class="ttdeci">DWORD byte_size</div><div class="ttdoc">Размер байта</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00035">serial.hpp:35</a></div></div>
+<div class="ttc" id="astructport__config_html_a3ced652683c9b90e2b4bb331f0ccf786"><div class="ttname"><a href="structport__config.html#a3ced652683c9b90e2b4bb331f0ccf786">port_config::parity</a></div><div class="ttdeci">DWORD parity</div><div class="ttdoc">Бит чётности</div><div class="ttdef"><b>Definition</b> <a href="serial_8hpp_source.html#l00037">serial.hpp:37</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00198">198</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a4702da64442130c81fba68dbe04d922c" name="a4702da64442130c81fba68dbe04d922c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4702da64442130c81fba68dbe04d922c">&#9670;&#160;</a></span>read_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structframe.html">frame</a> SmartRoadRadar::read_frame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает сформированный кадр </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00033">33</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a4702da64442130c81fba68dbe04d922c_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a4702da64442130c81fba68dbe04d922c_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a4702da64442130c81fba68dbe04d922c_cgraph" id="aclass_smart_road_radar_a4702da64442130c81fba68dbe04d922c_cgraph">
+<area shape="rect" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="5,48,159,91"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="207,5,347,32"/>
+<area shape="poly" title=" " alt="" coords="159,47,208,34,210,39,160,52"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="210,56,344,83"/>
+<area shape="poly" title=" " alt="" coords="159,67,196,67,196,72,159,72"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="207,107,347,133"/>
+<area shape="poly" title=" " alt="" coords="160,87,210,100,208,105,159,92"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="395,107,514,133"/>
+<area shape="poly" title=" " alt="" coords="347,117,380,117,380,123,347,123"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a4702da64442130c81fba68dbe04d922c_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a4702da64442130c81fba68dbe04d922c_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a4702da64442130c81fba68dbe04d922c_icgraph" id="aclass_smart_road_radar_a4702da64442130c81fba68dbe04d922c_icgraph">
+<area shape="rect" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="1342,105,1495,148"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="1140,105,1294,148"/>
+<area shape="poly" title=" " alt="" coords="1327,129,1294,129,1294,124,1327,124"/>
+<area shape="rect" href="class_smart_road_radar.html#a2e02fefc0c401668114ce41ec9eda7e8" title="Запрос версии ПО у радара." alt="" coords="943,5,1089,48"/>
+<area shape="poly" title=" " alt="" coords="1164,100,1091,62,1067,51,1069,46,1094,58,1166,96"/>
+<area shape="rect" href="class_smart_road_radar.html#ab6ebab995997fd2d4cf91b72297c3bef" title="Чтение настроек с радара." alt="" coords="943,72,1089,115"/>
+<area shape="poly" title=" " alt="" coords="1125,114,1089,108,1090,103,1126,109"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb34ccb7999a4f6a67eb77121c4d7a93" title="Чтение данных о целях." alt="" coords="943,139,1089,181"/>
+<area shape="poly" title=" " alt="" coords="1126,144,1090,151,1089,145,1125,139"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="939,368,1092,411"/>
+<area shape="poly" title=" " alt="" coords="1193,162,1036,369,1031,366,1188,158"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a8f14dcb67c699434b4dc692ae414bf69" title=" " alt="" coords="733,9,880,52"/>
+<area shape="poly" title=" " alt="" coords="928,31,881,32,881,27,928,26"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,301,445,344"/>
+<area shape="poly" title=" " alt="" coords="718,18,664,15,605,19,547,32,520,43,495,58,466,83,443,113,423,147,408,182,388,249,378,301,373,300,383,248,403,180,419,145,438,110,462,80,492,54,518,38,546,27,604,13,664,10,718,13"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,301,250,344"/>
+<area shape="poly" title=" " alt="" coords="283,325,251,325,251,320,283,320"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,309,55,336"/>
+<area shape="poly" title=" " alt="" coords="88,325,55,325,55,320,88,320"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae298cebd441105bbf24255d7d312c581" title=" " alt="" coords="510,68,657,111"/>
+<area shape="poly" title=" " alt="" coords="928,95,657,93,658,87,928,90"/>
+<area shape="poly" title=" " alt="" coords="500,121,495,125,455,167,423,216,399,264,383,302,378,300,394,262,418,214,451,164,492,121,497,117"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae784ac22ae75a7483ff193f9704d38b7" title=" " alt="" coords="510,135,657,177"/>
+<area shape="poly" title=" " alt="" coords="928,162,657,159,658,154,928,157"/>
+<area shape="poly" title=" " alt="" coords="502,187,495,192,462,218,433,247,390,302,386,299,429,244,459,214,492,187,499,182"/>
+<area shape="rect" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858" title="Остановка передачи данных." alt="" coords="722,201,891,244"/>
+<area shape="poly" title=" " alt="" coords="989,358,945,307,919,281,890,258,870,247,872,242,892,254,922,277,949,304,993,354"/>
+<area shape="rect" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c" title="Выключение передачи нулевых данных." alt="" coords="722,268,891,311"/>
+<area shape="poly" title=" " alt="" coords="963,363,890,325,864,314,866,309,892,320,965,358"/>
+<area shape="rect" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0" title="Запуск передачи данных." alt="" coords="723,335,890,377"/>
+<area shape="poly" title=" " alt="" coords="924,377,890,372,890,367,925,372"/>
+<area shape="rect" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906" title="Включение передачи нулевых данных." alt="" coords="723,401,890,444"/>
+<area shape="poly" title=" " alt="" coords="925,406,890,412,890,407,924,401"/>
+<area shape="rect" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124" title="Установка частоты отправки данных." alt="" coords="733,468,880,511"/>
+<area shape="poly" title=" " alt="" coords="965,421,892,458,866,470,864,465,890,454,963,416"/>
+<area shape="rect" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025" title="Изменение настроек радара." alt="" coords="733,535,880,577"/>
+<area shape="poly" title=" " alt="" coords="993,424,949,475,922,502,892,525,872,536,870,532,890,520,919,498,945,471,989,421"/>
+<area shape="rect" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb" title="Установка числа целей." alt="" coords="733,601,880,644"/>
+<area shape="poly" title=" " alt="" coords="1003,425,986,463,962,508,930,552,893,591,876,603,873,599,889,587,926,549,957,505,981,461,999,423"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="509,201,658,244"/>
+<area shape="poly" title=" " alt="" coords="707,225,658,225,658,220,707,220"/>
+<area shape="poly" title=" " alt="" coords="508,253,494,258,410,303,408,298,492,254,505,248"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,268,674,311"/>
+<area shape="poly" title=" " alt="" coords="707,292,674,292,674,287,707,287"/>
+<area shape="poly" title=" " alt="" coords="479,308,446,314,445,308,478,303"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="510,335,657,377"/>
+<area shape="poly" title=" " alt="" coords="709,359,658,359,658,353,709,353"/>
+<area shape="poly" title=" " alt="" coords="495,345,445,337,446,332,496,340"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="495,401,672,444"/>
+<area shape="poly" title=" " alt="" coords="709,425,673,425,673,420,709,420"/>
+<area shape="poly" title=" " alt="" coords="505,398,492,392,408,347,410,342,494,387,508,393"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="510,468,657,511"/>
+<area shape="poly" title=" " alt="" coords="718,492,657,492,657,487,718,487"/>
+<area shape="poly" title=" " alt="" coords="499,463,492,458,459,432,429,401,386,346,390,343,433,398,462,428,495,454,502,458"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="510,535,657,577"/>
+<area shape="poly" title=" " alt="" coords="718,559,657,559,657,553,718,553"/>
+<area shape="poly" title=" " alt="" coords="497,529,492,525,451,481,418,432,394,384,378,346,383,344,399,381,423,429,455,478,495,521,500,524"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="510,601,657,644"/>
+<area shape="poly" title=" " alt="" coords="718,625,657,625,657,620,718,620"/>
+<area shape="poly" title=" " alt="" coords="496,595,491,591,465,563,443,530,409,461,386,395,374,345,380,344,392,394,413,459,447,527,469,559,495,587,499,591"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeb148a052a0219478442e555457e4776" name="aeb148a052a0219478442e555457e4776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb148a052a0219478442e555457e4776">&#9670;&#160;</a></span>read_expected_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structframe.html">frame</a> SmartRoadRadar::read_expected_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>expected_word</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение данных с радара с требуемым командным словом. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">expected_word</td><td>Командное слово, ожидаемое в кадре </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает кадр с требуемым командным словом </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00072">72</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_aeb148a052a0219478442e555457e4776_cgraph.png" border="0" usemap="#aclass_smart_road_radar_aeb148a052a0219478442e555457e4776_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_aeb148a052a0219478442e555457e4776_cgraph" id="aclass_smart_road_radar_aeb148a052a0219478442e555457e4776_cgraph">
+<area shape="rect" title="Чтение данных с радара с требуемым командным словом." alt="" coords="5,48,159,91"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="207,48,360,91"/>
+<area shape="poly" title=" " alt="" coords="159,67,192,67,192,72,159,72"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="408,5,548,32"/>
+<area shape="poly" title=" " alt="" coords="360,47,410,34,411,39,361,52"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="412,56,545,83"/>
+<area shape="poly" title=" " alt="" coords="361,67,397,67,397,72,361,72"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="408,107,548,133"/>
+<area shape="poly" title=" " alt="" coords="361,87,411,100,410,105,360,92"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="596,107,716,133"/>
+<area shape="poly" title=" " alt="" coords="549,117,582,117,582,123,549,123"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_aeb148a052a0219478442e555457e4776_icgraph.png" border="0" usemap="#aclass_smart_road_radar_aeb148a052a0219478442e555457e4776_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_aeb148a052a0219478442e555457e4776_icgraph" id="aclass_smart_road_radar_aeb148a052a0219478442e555457e4776_icgraph">
+<area shape="rect" title="Чтение данных с радара с требуемым командным словом." alt="" coords="1140,105,1294,148"/>
+<area shape="rect" href="class_smart_road_radar.html#a2e02fefc0c401668114ce41ec9eda7e8" title="Запрос версии ПО у радара." alt="" coords="943,5,1089,48"/>
+<area shape="poly" title=" " alt="" coords="1164,100,1091,62,1067,51,1069,46,1094,58,1166,96"/>
+<area shape="rect" href="class_smart_road_radar.html#ab6ebab995997fd2d4cf91b72297c3bef" title="Чтение настроек с радара." alt="" coords="943,72,1089,115"/>
+<area shape="poly" title=" " alt="" coords="1125,114,1089,108,1090,103,1126,109"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb34ccb7999a4f6a67eb77121c4d7a93" title="Чтение данных о целях." alt="" coords="943,139,1089,181"/>
+<area shape="poly" title=" " alt="" coords="1126,144,1090,151,1089,145,1125,139"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="939,368,1092,411"/>
+<area shape="poly" title=" " alt="" coords="1193,162,1036,369,1031,366,1188,158"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a8f14dcb67c699434b4dc692ae414bf69" title=" " alt="" coords="733,9,880,52"/>
+<area shape="poly" title=" " alt="" coords="928,31,881,32,881,27,928,26"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,301,445,344"/>
+<area shape="poly" title=" " alt="" coords="718,18,664,15,605,19,547,32,520,43,495,58,466,83,443,113,423,147,408,182,388,249,378,301,373,300,383,248,403,180,419,145,438,110,462,80,492,54,518,38,546,27,604,13,664,10,718,13"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,301,250,344"/>
+<area shape="poly" title=" " alt="" coords="283,325,251,325,251,320,283,320"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,309,55,336"/>
+<area shape="poly" title=" " alt="" coords="88,325,55,325,55,320,88,320"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae298cebd441105bbf24255d7d312c581" title=" " alt="" coords="510,68,657,111"/>
+<area shape="poly" title=" " alt="" coords="928,95,657,93,658,87,928,90"/>
+<area shape="poly" title=" " alt="" coords="500,121,495,125,455,167,423,216,399,264,383,302,378,300,394,262,418,214,451,164,492,121,497,117"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae784ac22ae75a7483ff193f9704d38b7" title=" " alt="" coords="510,135,657,177"/>
+<area shape="poly" title=" " alt="" coords="928,162,657,159,658,154,928,157"/>
+<area shape="poly" title=" " alt="" coords="502,187,495,192,462,218,433,247,390,302,386,299,429,244,459,214,492,187,499,182"/>
+<area shape="rect" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858" title="Остановка передачи данных." alt="" coords="722,201,891,244"/>
+<area shape="poly" title=" " alt="" coords="989,358,945,307,919,281,890,258,870,247,872,242,892,254,922,277,949,304,993,354"/>
+<area shape="rect" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c" title="Выключение передачи нулевых данных." alt="" coords="722,268,891,311"/>
+<area shape="poly" title=" " alt="" coords="963,363,890,325,864,314,866,309,892,320,965,358"/>
+<area shape="rect" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0" title="Запуск передачи данных." alt="" coords="723,335,890,377"/>
+<area shape="poly" title=" " alt="" coords="924,377,890,372,890,367,925,372"/>
+<area shape="rect" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906" title="Включение передачи нулевых данных." alt="" coords="723,401,890,444"/>
+<area shape="poly" title=" " alt="" coords="925,406,890,412,890,407,924,401"/>
+<area shape="rect" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124" title="Установка частоты отправки данных." alt="" coords="733,468,880,511"/>
+<area shape="poly" title=" " alt="" coords="965,421,892,458,866,470,864,465,890,454,963,416"/>
+<area shape="rect" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025" title="Изменение настроек радара." alt="" coords="733,535,880,577"/>
+<area shape="poly" title=" " alt="" coords="993,424,949,475,922,502,892,525,872,536,870,532,890,520,919,498,945,471,989,421"/>
+<area shape="rect" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb" title="Установка числа целей." alt="" coords="733,601,880,644"/>
+<area shape="poly" title=" " alt="" coords="1003,425,986,463,962,508,930,552,893,591,876,603,873,599,889,587,926,549,957,505,981,461,999,423"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="509,201,658,244"/>
+<area shape="poly" title=" " alt="" coords="707,225,658,225,658,220,707,220"/>
+<area shape="poly" title=" " alt="" coords="508,253,494,258,410,303,408,298,492,254,505,248"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,268,674,311"/>
+<area shape="poly" title=" " alt="" coords="707,292,674,292,674,287,707,287"/>
+<area shape="poly" title=" " alt="" coords="479,308,446,314,445,308,478,303"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="510,335,657,377"/>
+<area shape="poly" title=" " alt="" coords="709,359,658,359,658,353,709,353"/>
+<area shape="poly" title=" " alt="" coords="495,345,445,337,446,332,496,340"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="495,401,672,444"/>
+<area shape="poly" title=" " alt="" coords="709,425,673,425,673,420,709,420"/>
+<area shape="poly" title=" " alt="" coords="505,398,492,392,408,347,410,342,494,387,508,393"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="510,468,657,511"/>
+<area shape="poly" title=" " alt="" coords="718,492,657,492,657,487,718,487"/>
+<area shape="poly" title=" " alt="" coords="499,463,492,458,459,432,429,401,386,346,390,343,433,398,462,428,495,454,502,458"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="510,535,657,577"/>
+<area shape="poly" title=" " alt="" coords="718,559,657,559,657,553,718,553"/>
+<area shape="poly" title=" " alt="" coords="497,529,492,525,451,481,418,432,394,384,378,346,383,344,399,381,423,429,455,478,495,521,500,524"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="510,601,657,644"/>
+<area shape="poly" title=" " alt="" coords="718,625,657,625,657,620,718,620"/>
+<area shape="poly" title=" " alt="" coords="496,595,491,591,465,563,443,530,409,461,386,395,374,345,380,344,392,394,413,459,447,527,469,559,495,587,499,591"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a62c2eff65015669baf6dcd63a7f42631" name="a62c2eff65015669baf6dcd63a7f42631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62c2eff65015669baf6dcd63a7f42631">&#9670;&#160;</a></span>read_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::read_status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если от радара пришёл статус SUCCESS, то возвращается код SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00089">89</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_cgraph" id="aclass_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_cgraph">
+<area shape="rect" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="5,48,159,91"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="207,48,360,91"/>
+<area shape="poly" title=" " alt="" coords="159,67,192,67,192,72,159,72"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="408,48,561,91"/>
+<area shape="poly" title=" " alt="" coords="360,67,393,67,393,72,360,72"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="609,5,750,32"/>
+<area shape="poly" title=" " alt="" coords="561,47,611,34,612,39,563,52"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="613,56,746,83"/>
+<area shape="poly" title=" " alt="" coords="562,67,598,67,598,72,562,72"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="609,107,750,133"/>
+<area shape="poly" title=" " alt="" coords="563,87,612,100,611,105,561,92"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="798,107,917,133"/>
+<area shape="poly" title=" " alt="" coords="750,117,783,117,783,123,750,123"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_icgraph" id="aclass_smart_road_radar_a62c2eff65015669baf6dcd63a7f42631_icgraph">
+<area shape="rect" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="939,205,1092,248"/>
+<area shape="rect" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858" title="Остановка передачи данных." alt="" coords="722,5,891,48"/>
+<area shape="poly" title=" " alt="" coords="994,194,951,127,922,93,889,62,871,51,874,46,893,58,926,89,956,124,999,191"/>
+<area shape="rect" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c" title="Выключение передачи нулевых данных." alt="" coords="722,72,891,115"/>
+<area shape="poly" title=" " alt="" coords="980,198,938,163,890,129,868,118,870,113,892,124,941,158,983,193"/>
+<area shape="rect" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0" title="Запуск передачи данных." alt="" coords="723,139,890,181"/>
+<area shape="poly" title=" " alt="" coords="932,203,875,185,877,179,934,198"/>
+<area shape="rect" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906" title="Включение передачи нулевых данных." alt="" coords="723,205,890,248"/>
+<area shape="poly" title=" " alt="" coords="924,229,890,229,890,224,924,224"/>
+<area shape="rect" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124" title="Установка частоты отправки данных." alt="" coords="733,272,880,315"/>
+<area shape="poly" title=" " alt="" coords="934,255,877,274,875,269,932,250"/>
+<area shape="rect" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025" title="Изменение настроек радара." alt="" coords="733,339,880,381"/>
+<area shape="poly" title=" " alt="" coords="983,260,941,295,892,329,870,340,868,336,890,324,938,291,980,256"/>
+<area shape="rect" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb" title="Установка числа целей." alt="" coords="733,405,880,448"/>
+<area shape="poly" title=" " alt="" coords="999,263,956,329,926,364,893,395,874,407,871,403,889,391,922,361,951,326,994,260"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="509,5,658,48"/>
+<area shape="poly" title=" " alt="" coords="707,29,658,29,658,24,707,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,205,445,248"/>
+<area shape="poly" title=" " alt="" coords="501,58,495,62,458,97,427,136,386,206,381,204,423,133,454,93,492,58,498,54"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,205,250,248"/>
+<area shape="poly" title=" " alt="" coords="283,229,251,229,251,224,283,224"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,213,55,240"/>
+<area shape="poly" title=" " alt="" coords="88,229,55,229,55,224,88,224"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,72,674,115"/>
+<area shape="poly" title=" " alt="" coords="707,96,674,96,674,91,707,91"/>
+<area shape="poly" title=" " alt="" coords="504,124,495,129,440,168,396,207,393,203,436,164,492,124,502,119"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="510,139,657,181"/>
+<area shape="poly" title=" " alt="" coords="709,163,658,163,658,157,709,157"/>
+<area shape="poly" title=" " alt="" coords="501,189,443,207,441,202,499,184"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="495,205,672,248"/>
+<area shape="poly" title=" " alt="" coords="709,229,673,229,673,224,709,224"/>
+<area shape="poly" title=" " alt="" coords="480,229,446,229,446,224,480,224"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="510,272,657,315"/>
+<area shape="poly" title=" " alt="" coords="718,296,657,296,657,291,718,291"/>
+<area shape="poly" title=" " alt="" coords="499,270,441,251,443,246,501,265"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="510,339,657,381"/>
+<area shape="poly" title=" " alt="" coords="718,363,657,363,657,357,718,357"/>
+<area shape="poly" title=" " alt="" coords="502,334,492,329,436,290,393,250,396,246,440,285,495,324,504,330"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="510,405,657,448"/>
+<area shape="poly" title=" " alt="" coords="718,429,657,429,657,424,718,424"/>
+<area shape="poly" title=" " alt="" coords="498,400,492,395,454,360,423,320,381,250,386,247,427,317,458,357,495,391,501,395"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7dd796778567dee18eb6256c71aaaceb" name="a7dd796778567dee18eb6256c71aaaceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd796778567dee18eb6256c71aaaceb">&#9670;&#160;</a></span>write_frame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::write_frame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structframe.html">frame</a>&#160;</td>
+          <td class="paramname"><em>target_frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t, который затем передаётся на устройство. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">target_frame</td><td>Кадр, который требуется отправить </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает SERIAL_OK, если данные были успешно отправлены. В противном случае - SERIAL_ERROR </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00111">111</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_cgraph" id="aclass_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_cgraph">
+<area shape="rect" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="5,5,161,48"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="209,13,351,40"/>
+<area shape="poly" title=" " alt="" coords="161,24,194,24,194,29,161,29"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_icgraph" id="aclass_smart_road_radar_a7dd796778567dee18eb6256c71aaaceb_icgraph">
+<area shape="rect" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="939,272,1094,315"/>
+<area shape="rect" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858" title="Остановка передачи данных." alt="" coords="722,5,891,48"/>
+<area shape="poly" title=" " alt="" coords="1003,259,986,214,963,162,930,109,889,62,873,51,876,46,893,58,935,105,967,159,991,212,1008,257"/>
+<area shape="rect" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c" title="Выключение передачи нулевых данных." alt="" coords="722,72,891,115"/>
+<area shape="poly" title=" " alt="" coords="995,260,952,194,923,159,889,129,871,117,874,113,893,125,926,156,956,191,999,257"/>
+<area shape="rect" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0" title="Запуск передачи данных." alt="" coords="723,139,890,181"/>
+<area shape="poly" title=" " alt="" coords="981,264,939,229,890,196,868,184,870,180,892,191,942,225,984,260"/>
+<area shape="rect" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906" title="Включение передачи нулевых данных." alt="" coords="723,205,890,248"/>
+<area shape="poly" title=" " alt="" coords="933,270,875,251,877,246,935,265"/>
+<area shape="rect" href="class_smart_road_radar.html#a2e02fefc0c401668114ce41ec9eda7e8" title="Запрос версии ПО у радара." alt="" coords="733,272,880,315"/>
+<area shape="poly" title=" " alt="" coords="924,296,880,296,880,291,924,291"/>
+<area shape="rect" href="class_smart_road_radar.html#ab6ebab995997fd2d4cf91b72297c3bef" title="Чтение настроек с радара." alt="" coords="733,339,880,381"/>
+<area shape="poly" title=" " alt="" coords="935,322,877,341,875,335,933,317"/>
+<area shape="rect" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124" title="Установка частоты отправки данных." alt="" coords="733,405,880,448"/>
+<area shape="poly" title=" " alt="" coords="984,326,942,362,892,396,870,407,868,402,890,391,939,357,981,322"/>
+<area shape="rect" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025" title="Изменение настроек радара." alt="" coords="733,472,880,515"/>
+<area shape="poly" title=" " alt="" coords="999,329,956,396,926,431,893,462,874,474,871,469,889,458,923,427,952,393,995,326"/>
+<area shape="rect" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb" title="Установка числа целей." alt="" coords="733,539,880,581"/>
+<area shape="poly" title=" " alt="" coords="1008,330,991,374,967,427,935,481,893,529,876,540,873,536,889,525,930,478,963,425,986,372,1003,328"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="509,5,658,48"/>
+<area shape="poly" title=" " alt="" coords="707,29,658,29,658,24,707,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,272,445,315"/>
+<area shape="poly" title=" " alt="" coords="499,58,495,62,472,86,451,113,418,172,395,228,381,272,376,271,390,227,413,170,447,110,468,83,492,58,496,54"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,272,250,315"/>
+<area shape="poly" title=" " alt="" coords="283,296,251,296,251,291,283,291"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,280,55,307"/>
+<area shape="poly" title=" " alt="" coords="88,296,55,296,55,291,88,291"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,72,674,115"/>
+<area shape="poly" title=" " alt="" coords="707,96,674,96,674,91,707,91"/>
+<area shape="poly" title=" " alt="" coords="501,125,495,129,458,163,427,203,386,273,381,270,423,200,454,160,492,125,498,120"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="510,139,657,181"/>
+<area shape="poly" title=" " alt="" coords="709,163,658,163,658,157,709,157"/>
+<area shape="poly" title=" " alt="" coords="504,190,495,196,440,235,396,274,393,270,436,230,492,191,502,186"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="495,205,672,248"/>
+<area shape="poly" title=" " alt="" coords="709,229,673,229,673,224,709,224"/>
+<area shape="poly" title=" " alt="" coords="501,255,443,274,441,269,499,250"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a8f14dcb67c699434b4dc692ae414bf69" title=" " alt="" coords="510,272,657,315"/>
+<area shape="poly" title=" " alt="" coords="718,296,657,296,657,291,718,291"/>
+<area shape="poly" title=" " alt="" coords="495,296,446,296,446,291,495,291"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae298cebd441105bbf24255d7d312c581" title=" " alt="" coords="510,339,657,381"/>
+<area shape="poly" title=" " alt="" coords="718,363,657,363,657,357,718,357"/>
+<area shape="poly" title=" " alt="" coords="499,336,441,318,443,313,501,331"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="510,405,657,448"/>
+<area shape="poly" title=" " alt="" coords="718,429,657,429,657,424,718,424"/>
+<area shape="poly" title=" " alt="" coords="502,401,492,396,436,356,393,317,396,313,440,352,495,391,504,396"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="510,472,657,515"/>
+<area shape="poly" title=" " alt="" coords="718,496,657,496,657,491,718,491"/>
+<area shape="poly" title=" " alt="" coords="498,466,492,462,454,427,423,387,381,316,386,314,427,384,458,423,495,458,501,462"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="510,539,657,581"/>
+<area shape="poly" title=" " alt="" coords="718,563,657,563,657,557,718,557"/>
+<area shape="poly" title=" " alt="" coords="496,532,492,529,468,504,447,476,413,417,390,360,376,316,381,314,395,358,418,415,451,473,472,501,495,525,499,528"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2e02fefc0c401668114ce41ec9eda7e8" name="a2e02fefc0c401668114ce41ec9eda7e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e02fefc0c401668114ce41ec9eda7e8">&#9670;&#160;</a></span>get_firmware_version()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::get_firmware_version </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> *&#160;</td>
+          <td class="paramname"><em>version_buffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запрос версии ПО у радара. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">version_buffer</td><td>Указатель на буфер типа u_byte_t[3]. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> version_buffer[3];</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (radar.get_firmware_version(version_buffer) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Firmware version: V%d.%d.%d\n&quot;</span>,</div>
+<div class="line">            (<span class="keywordtype">int</span>) version_buffer[0],</div>
+<div class="line">            (<span class="keywordtype">int</span>) version_buffer[1],</div>
+<div class="line">            (<span class="keywordtype">int</span>) version_buffer[2]);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t get firmware version from radar\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_a19cd20d00719b9df76dc42a44fc45371"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a></div><div class="ttdeci">#define SMART_ROAD_RADAR_OK</div><div class="ttdoc">Возвращаемое значение при успешно выполненном действии</div><div class="ttdef"><b>Definition</b> <a href="smart__road__radar__utils_8hpp_source.html#l00015">smart_road_radar_utils.hpp:15</a></div></div>
+<div class="ttc" id="autils_8hpp_html_aef3662a5e2b349ba1b8498db3aa36a27"><div class="ttname"><a href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a></div><div class="ttdeci">unsigned char u_byte_t</div><div class="ttdoc">Тип данных u_byte_t размером 1 байт</div><div class="ttdef"><b>Definition</b> <a href="utils_8hpp_source.html#l00023">utils.hpp:23</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00223">223</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_cgraph" id="aclass_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_cgraph">
+<area shape="rect" title="Запрос версии ПО у радара." alt="" coords="5,56,152,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="424,5,536,32"/>
+<area shape="poly" title=" " alt="" coords="150,53,199,41,309,26,408,19,409,24,309,32,200,47,151,58"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="201,56,354,99"/>
+<area shape="poly" title=" " alt="" coords="152,75,186,75,186,80,152,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="200,123,355,165"/>
+<area shape="poly" title=" " alt="" coords="145,97,199,115,197,120,143,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="604,8,745,35"/>
+<area shape="poly" title=" " alt="" coords="536,17,589,18,589,23,536,22"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="403,56,556,99"/>
+<area shape="poly" title=" " alt="" coords="354,75,388,75,388,80,354,80"/>
+<area shape="poly" title=" " alt="" coords="556,53,611,37,613,42,557,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="608,60,741,87"/>
+<area shape="poly" title=" " alt="" coords="557,73,593,72,593,78,557,78"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="604,111,745,137"/>
+<area shape="poly" title=" " alt="" coords="558,93,602,104,601,109,556,98"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="793,111,912,137"/>
+<area shape="poly" title=" " alt="" coords="745,121,778,121,778,127,745,127"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="409,131,551,157"/>
+<area shape="poly" title=" " alt="" coords="355,141,394,141,394,147,355,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_icgraph" id="aclass_smart_road_radar_a2e02fefc0c401668114ce41ec9eda7e8_icgraph">
+<area shape="rect" title="Запрос версии ПО у радара." alt="" coords="689,5,835,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a8f14dcb67c699434b4dc692ae414bf69" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3975a1a1681946f74e24328ea10b7025" name="a3975a1a1681946f74e24328ea10b7025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3975a1a1681946f74e24328ea10b7025">&#9670;&#160;</a></span>set_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::set_parameters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structparameters.html">parameters</a>&#160;</td>
+          <td class="paramname"><em>target_parameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменение настроек радара. </p>
+<p>Желаемые настроки передаются в структуре parameters.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">target_parameters</td><td>Требуемые настройки радара </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если изменение настроек прошло успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structparameters.html">parameters</a> target_parameters;</div>
+<div class="line"><span class="keywordflow">if</span> (*args != <span class="stringliteral">&quot;default&quot;</span>) {</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">min_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>     = 0.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">max_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>     = 13.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">min_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = 0.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">max_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = 5.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">min_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = -60.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">max_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>    = 60.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">left_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>  = -6.0f;</div>
+<div class="line">    target_parameters.<a class="code hl_variable" href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">right_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a> = 6.0f;</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">if</span> (radar.set_parameters(target_parameters) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Parameters are loaded\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t load parameters into radar\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="astructparameters_html"><div class="ttname"><a href="structparameters.html">parameters</a></div><div class="ttdoc">Структура параметров радара</div><div class="ttdef"><b>Definition</b> <a href="smart__road__radar__utils_8hpp_source.html#l00136">smart_road_radar_utils.hpp:136</a></div></div>
+<div class="ttc" id="astructparameters_html_a0c2b999fd504fbe696a9fcaa62a655aa"><div class="ttname"><a href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">parameters::left_border</a></div><div class="ttdeci">union parameters::@7 left_border</div><div class="ttdoc">Левая граница</div></div>
+<div class="ttc" id="astructparameters_html_a2382032b45a30b806eb318a0c6f02836"><div class="ttname"><a href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">parameters::f</a></div><div class="ttdeci">float f</div><div class="ttdef"><b>Definition</b> <a href="smart__road__radar__utils_8hpp_source.html#l00139">smart_road_radar_utils.hpp:139</a></div></div>
+<div class="ttc" id="astructparameters_html_a5cce04e60033009e1c789713624d9ab0"><div class="ttname"><a href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">parameters::max_dist</a></div><div class="ttdeci">union parameters::@2 max_dist</div><div class="ttdoc">Максимальное расстояние</div></div>
+<div class="ttc" id="astructparameters_html_a7c24e021bde3819ffcca5c6cb29e98ed"><div class="ttname"><a href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">parameters::right_border</a></div><div class="ttdeci">union parameters::@8 right_border</div><div class="ttdoc">Правая граница</div></div>
+<div class="ttc" id="astructparameters_html_abf61e6b0aebd4f8a1bb759999ae4820b"><div class="ttname"><a href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">parameters::min_dist</a></div><div class="ttdeci">union parameters::@1 min_dist</div><div class="ttdoc">Минимальное расстояние</div></div>
+<div class="ttc" id="astructparameters_html_ac27388a3ab29077c4a35a57c39395546"><div class="ttname"><a href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">parameters::max_angle</a></div><div class="ttdeci">union parameters::@6 max_angle</div><div class="ttdoc">Максимальный угол</div></div>
+<div class="ttc" id="astructparameters_html_ac863cbc146e1fd27f0b853d757346ac5"><div class="ttname"><a href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">parameters::max_speed</a></div><div class="ttdeci">union parameters::@4 max_speed</div><div class="ttdoc">Максимальная скорость</div></div>
+<div class="ttc" id="astructparameters_html_ad6991b63b32058dbd1228fc47e7ce7d7"><div class="ttname"><a href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">parameters::min_angle</a></div><div class="ttdeci">union parameters::@5 min_angle</div><div class="ttdoc">Минимальный угол</div></div>
+<div class="ttc" id="astructparameters_html_af3dd3caff17f6a7c5ff02265c66a890e"><div class="ttname"><a href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">parameters::min_speed</a></div><div class="ttdeci">union parameters::@3 min_speed</div><div class="ttdoc">Минимальная скорость</div></div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00269">269</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_cgraph" id="aclass_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_cgraph">
+<area shape="rect" title="Изменение настроек радара." alt="" coords="5,56,152,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="625,5,737,32"/>
+<area shape="poly" title=" " alt="" coords="148,53,199,41,311,27,424,19,610,15,610,20,424,24,312,33,200,47,150,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="201,56,354,99"/>
+<area shape="poly" title=" " alt="" coords="152,75,186,75,186,80,152,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="200,123,355,165"/>
+<area shape="poly" title=" " alt="" coords="145,97,199,115,197,120,143,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="806,7,946,33"/>
+<area shape="poly" title=" " alt="" coords="737,16,791,17,791,22,737,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="403,56,556,99"/>
+<area shape="poly" title=" " alt="" coords="354,75,388,75,388,80,354,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="604,56,758,99"/>
+<area shape="poly" title=" " alt="" coords="557,75,590,75,590,80,557,80"/>
+<area shape="poly" title=" " alt="" coords="755,53,813,36,815,41,756,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="809,61,943,88"/>
+<area shape="poly" title=" " alt="" coords="758,74,795,73,795,78,758,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="806,112,946,139"/>
+<area shape="poly" title=" " alt="" coords="759,94,805,105,804,110,758,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="994,112,1113,139"/>
+<area shape="poly" title=" " alt="" coords="946,123,979,123,979,128,946,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="409,131,551,157"/>
+<area shape="poly" title=" " alt="" coords="355,141,394,141,394,147,355,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_icgraph" id="aclass_smart_road_radar_a3975a1a1681946f74e24328ea10b7025_icgraph">
+<area shape="rect" title="Изменение настроек радара." alt="" coords="689,5,835,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab6ebab995997fd2d4cf91b72297c3bef" name="ab6ebab995997fd2d4cf91b72297c3bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6ebab995997fd2d4cf91b72297c3bef">&#9670;&#160;</a></span>get_parameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::get_parameters </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structparameters.html">parameters</a> *&#160;</td>
+          <td class="paramname"><em>received_parameters</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чтение настроек с радара. </p>
+<p>При получении кадра данных от радара, функция выделяет из принятого кадра настройки радара и записывает их в структуру по переданному указателю.</p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Приходящие от радара минимальное и максимальное расстояния перепутаны местами. Также перепутаны местами и минимальная и максимальная скорости.</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">received_parameters</td><td>Указатель на структуру, в которую будут записаны принятые значения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос настроек выполнен успешно, то возвращает SMART_ROAD_RADAR_OK/ В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structparameters.html">parameters</a> received_parameters;</div>
+<div class="line"><span class="keywordflow">if</span> (radar.get_parameters(&amp;received_parameters) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>)</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Min distance = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#abf61e6b0aebd4f8a1bb759999ae4820b">min_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Max distance = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#a5cce04e60033009e1c789713624d9ab0">max_dist</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Min speed    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#af3dd3caff17f6a7c5ff02265c66a890e">min_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Max speed    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#ac863cbc146e1fd27f0b853d757346ac5">max_speed</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Min angle    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#ad6991b63b32058dbd1228fc47e7ce7d7">min_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;max angle    = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#ac27388a3ab29077c4a35a57c39395546">max_angle</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Left border  = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#a0c2b999fd504fbe696a9fcaa62a655aa">left_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Right border = %f\n&quot;</span>, received_parameters.<a class="code hl_variable" href="structparameters.html#a7c24e021bde3819ffcca5c6cb29e98ed">right_border</a>.<a class="code hl_variable" href="structparameters.html#a2382032b45a30b806eb318a0c6f02836">f</a>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t get parameters from radar\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00350">350</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_cgraph.png" border="0" usemap="#aclass_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_cgraph" id="aclass_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_cgraph">
+<area shape="rect" title="Чтение настроек с радара." alt="" coords="5,56,152,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="424,5,536,32"/>
+<area shape="poly" title=" " alt="" coords="150,53,199,41,309,26,408,19,409,24,309,32,200,47,151,58"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="201,56,354,99"/>
+<area shape="poly" title=" " alt="" coords="152,75,186,75,186,80,152,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="200,123,355,165"/>
+<area shape="poly" title=" " alt="" coords="145,97,199,115,197,120,143,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="604,8,745,35"/>
+<area shape="poly" title=" " alt="" coords="536,17,589,18,589,23,536,22"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="403,56,556,99"/>
+<area shape="poly" title=" " alt="" coords="354,75,388,75,388,80,354,80"/>
+<area shape="poly" title=" " alt="" coords="556,53,611,37,613,42,557,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="608,60,741,87"/>
+<area shape="poly" title=" " alt="" coords="557,73,593,72,593,78,557,78"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="604,111,745,137"/>
+<area shape="poly" title=" " alt="" coords="558,93,602,104,601,109,556,98"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="793,111,912,137"/>
+<area shape="poly" title=" " alt="" coords="745,121,778,121,778,127,745,127"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="409,131,551,157"/>
+<area shape="poly" title=" " alt="" coords="355,141,394,141,394,147,355,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_icgraph.png" border="0" usemap="#aclass_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_icgraph" id="aclass_smart_road_radar_ab6ebab995997fd2d4cf91b72297c3bef_icgraph">
+<area shape="rect" title="Чтение настроек с радара." alt="" coords="689,5,835,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae298cebd441105bbf24255d7d312c581" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac68582d046bc01ac72bbc0dbec366deb" name="ac68582d046bc01ac72bbc0dbec366deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68582d046bc01ac72bbc0dbec366deb">&#9670;&#160;</a></span>set_target_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::set_target_number </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Установка числа целей. </p>
+<p>Функция, позволяющая задать количество целей, которые будут распознаваться радаром.</p>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Возможно, не количество целей, а максимальный номер цели </dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>Количество целей</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если команда выполнена успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> target_num = std::stoi(num);</div>
+<div class="line"><span class="keywordflow">if</span> (radar.set_target_number(target_num) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Target number inserted\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t insert target number into radar\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00424">424</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_cgraph.png" border="0" usemap="#aclass_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_cgraph" id="aclass_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_cgraph">
+<area shape="rect" title="Установка числа целей." alt="" coords="5,56,152,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="625,5,737,32"/>
+<area shape="poly" title=" " alt="" coords="148,53,199,41,311,27,424,19,610,15,610,20,424,24,312,33,200,47,150,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="201,56,354,99"/>
+<area shape="poly" title=" " alt="" coords="152,75,186,75,186,80,152,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="200,123,355,165"/>
+<area shape="poly" title=" " alt="" coords="145,97,199,115,197,120,143,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="806,7,946,33"/>
+<area shape="poly" title=" " alt="" coords="737,16,791,17,791,22,737,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="403,56,556,99"/>
+<area shape="poly" title=" " alt="" coords="354,75,388,75,388,80,354,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="604,56,758,99"/>
+<area shape="poly" title=" " alt="" coords="557,75,590,75,590,80,557,80"/>
+<area shape="poly" title=" " alt="" coords="755,53,813,36,815,41,756,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="809,61,943,88"/>
+<area shape="poly" title=" " alt="" coords="758,74,795,73,795,78,758,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="806,112,946,139"/>
+<area shape="poly" title=" " alt="" coords="759,94,805,105,804,110,758,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="994,112,1113,139"/>
+<area shape="poly" title=" " alt="" coords="946,123,979,123,979,128,946,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="409,131,551,157"/>
+<area shape="poly" title=" " alt="" coords="355,141,394,141,394,147,355,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_icgraph.png" border="0" usemap="#aclass_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_icgraph" id="aclass_smart_road_radar_ac68582d046bc01ac72bbc0dbec366deb_icgraph">
+<area shape="rect" title="Установка числа целей." alt="" coords="689,5,835,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeb34ccb7999a4f6a67eb77121c4d7a93" name="aeb34ccb7999a4f6a67eb77121c4d7a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb34ccb7999a4f6a67eb77121c4d7a93">&#9670;&#160;</a></span>get_target_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::get_target_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtarget__data.html">target_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Чтение данных о целях. </p>
+<p>Функция преобразует полученные кадры в структуры <a class="el" href="structtarget__data.html" title="Структура данных о цели">target_data</a>, которые записываются в массив по переданному указателю</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Указатель на массив структур <a class="el" href="structtarget__data.html" title="Структура данных о цели">target_data</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если чтение кадра выполнено успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structtarget__data.html">target_data</a> data[35];</div>
+<div class="line"> </div>
+<div class="line">printf(<span class="stringliteral">&quot; # |  dist  |   speed  |  angle  \n&quot;</span>);</div>
+<div class="line">printf(<span class="stringliteral">&quot;---------------------------------\n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (radar.get_target_data(data) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; target_count; ++i) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n&quot;</span>,</div>
+<div class="line">               data[i].num,</div>
+<div class="line">               data[i].distance,</div>
+<div class="line">               data[i].speed,</div>
+<div class="line">               data[i].angle);</div>
+<div class="line">        data[i] = <a class="code hl_struct" href="structtarget__data.html">target_data</a>{};</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="astructtarget__data_html"><div class="ttname"><a href="structtarget__data.html">target_data</a></div><div class="ttdoc">Структура данных о цели</div><div class="ttdef"><b>Definition</b> <a href="smart__road__radar__utils_8hpp_source.html#l00180">smart_road_radar_utils.hpp:180</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00462">462</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_cgraph.png" border="0" usemap="#aclass_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_cgraph" id="aclass_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_cgraph">
+<area shape="rect" title="Чтение данных о целях." alt="" coords="5,77,152,120"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="200,48,353,91"/>
+<area shape="poly" title=" " alt="" coords="152,85,184,80,185,86,152,90"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57" title=" " alt="" coords="222,115,331,141"/>
+<area shape="poly" title=" " alt="" coords="152,107,208,115,207,120,152,112"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="401,48,554,91"/>
+<area shape="poly" title=" " alt="" coords="353,67,386,67,386,72,353,72"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="602,5,743,32"/>
+<area shape="poly" title=" " alt="" coords="554,47,604,34,605,39,556,52"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="606,56,739,83"/>
+<area shape="poly" title=" " alt="" coords="555,67,591,67,591,72,555,72"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="602,107,743,133"/>
+<area shape="poly" title=" " alt="" coords="556,87,605,100,604,105,554,92"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="791,107,910,133"/>
+<area shape="poly" title=" " alt="" coords="743,117,776,117,776,123,743,123"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_icgraph.png" border="0" usemap="#aclass_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_icgraph" id="aclass_smart_road_radar_aeb34ccb7999a4f6a67eb77121c4d7a93_icgraph">
+<area shape="rect" title="Чтение данных о целях." alt="" coords="689,5,835,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae784ac22ae75a7483ff193f9704d38b7" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4c359504214e8d6796df36308ce344c0" name="a4c359504214e8d6796df36308ce344c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c359504214e8d6796df36308ce344c0">&#9670;&#160;</a></span>enable_data_transmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::enable_data_transmit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запуск передачи данных. </p>
+<p>Функция отправляет запрос на радар о запуске передачи данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (radar.enable_data_transmit() == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Data transmit enabled\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t enable data transmit\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00519">519</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a4c359504214e8d6796df36308ce344c0_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a4c359504214e8d6796df36308ce344c0_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a4c359504214e8d6796df36308ce344c0_cgraph" id="aclass_smart_road_radar_a4c359504214e8d6796df36308ce344c0_cgraph">
+<area shape="rect" title="Запуск передачи данных." alt="" coords="5,56,172,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="645,5,757,32"/>
+<area shape="poly" title=" " alt="" coords="164,53,219,41,331,28,444,20,630,15,630,21,444,25,332,33,220,47,165,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="221,56,374,99"/>
+<area shape="poly" title=" " alt="" coords="172,75,206,75,206,80,172,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="220,123,375,165"/>
+<area shape="poly" title=" " alt="" coords="158,97,215,115,214,120,157,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="826,7,966,33"/>
+<area shape="poly" title=" " alt="" coords="757,16,811,17,811,22,757,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="423,56,576,99"/>
+<area shape="poly" title=" " alt="" coords="374,75,408,75,408,80,374,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="624,56,778,99"/>
+<area shape="poly" title=" " alt="" coords="577,75,610,75,610,80,577,80"/>
+<area shape="poly" title=" " alt="" coords="775,53,833,36,835,41,776,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="829,61,963,88"/>
+<area shape="poly" title=" " alt="" coords="778,74,815,73,815,78,778,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="826,112,966,139"/>
+<area shape="poly" title=" " alt="" coords="779,94,825,105,824,110,778,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="1014,112,1133,139"/>
+<area shape="poly" title=" " alt="" coords="966,123,999,123,999,128,966,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="429,131,571,157"/>
+<area shape="poly" title=" " alt="" coords="375,141,414,141,414,147,375,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a4c359504214e8d6796df36308ce344c0_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a4c359504214e8d6796df36308ce344c0_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a4c359504214e8d6796df36308ce344c0_icgraph" id="aclass_smart_road_radar_a4c359504214e8d6796df36308ce344c0_icgraph">
+<area shape="rect" title="Запуск передачи данных." alt="" coords="689,5,855,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a955c0ffc54498e77b42323c5b6d7c858" name="a955c0ffc54498e77b42323c5b6d7c858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955c0ffc54498e77b42323c5b6d7c858">&#9670;&#160;</a></span>disable_data_transmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::disable_data_transmit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Остановка передачи данных. </p>
+<p>Функция отправляет запрос на радар об остановке передачи данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (radar.disable_data_transmit() == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Data transmit disabled\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t disable data transmit\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00544">544</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_cgraph" id="aclass_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_cgraph">
+<area shape="rect" title="Остановка передачи данных." alt="" coords="5,56,175,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="648,5,760,32"/>
+<area shape="poly" title=" " alt="" coords="167,53,222,41,334,28,447,20,633,15,633,21,447,26,335,33,223,47,168,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="224,56,377,99"/>
+<area shape="poly" title=" " alt="" coords="175,75,209,75,209,80,175,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="223,123,378,165"/>
+<area shape="poly" title=" " alt="" coords="160,97,218,115,216,120,159,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="829,7,969,33"/>
+<area shape="poly" title=" " alt="" coords="760,16,814,17,814,22,760,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="426,56,579,99"/>
+<area shape="poly" title=" " alt="" coords="377,75,411,75,411,80,377,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="627,56,781,99"/>
+<area shape="poly" title=" " alt="" coords="580,75,613,75,613,80,580,80"/>
+<area shape="poly" title=" " alt="" coords="778,53,836,36,838,41,779,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="832,61,966,88"/>
+<area shape="poly" title=" " alt="" coords="781,74,818,73,818,78,781,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="829,112,969,139"/>
+<area shape="poly" title=" " alt="" coords="782,94,828,105,827,110,781,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="1017,112,1136,139"/>
+<area shape="poly" title=" " alt="" coords="969,123,1002,123,1002,128,969,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="432,131,574,157"/>
+<area shape="poly" title=" " alt="" coords="378,141,417,141,417,147,378,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_icgraph" id="aclass_smart_road_radar_a955c0ffc54498e77b42323c5b6d7c858_icgraph">
+<area shape="rect" title="Остановка передачи данных." alt="" coords="690,5,859,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="493,5,642,48"/>
+<area shape="poly" title=" " alt="" coords="675,29,642,29,642,24,675,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="479,29,445,29,445,24,479,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa66f8c64c85119620bae8380b8856124" name="aa66f8c64c85119620bae8380b8856124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa66f8c64c85119620bae8380b8856124">&#9670;&#160;</a></span>set_data_transmit_freq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::set_data_transmit_freq </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a>&#160;</td>
+          <td class="paramname"><em>freq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Установка частоты отправки данных. </p>
+<p>Функция устанавливает частоту передаваемы данных, которая передаётся в качестве аргумента. Возможные варианты частоты:</p><ul>
+<li>DATA_FREQ_1 - один раз в секунду</li>
+<li>DATA_FREQ_2 - два раза в секунду</li>
+<li>DATA_FREQ_3 - три раза в секунду</li>
+<li>DATA_FREQ_4 - четыре раза в секунду</li>
+<li>DATA_FREQ_5 - пять раз в секунду</li>
+<li>DATA_FREQ_10 - десять раз в секунду</li>
+<li>DATA_FREQ_15 - пятнадцать раз в секунду</li>
+<li>DATA_FREQ_20 - двадцать раз в секунду</li>
+</ul>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">freq</td><td>Частота передаваемых данных</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><a class="code hl_typedef" href="utils_8hpp.html#aef3662a5e2b349ba1b8498db3aa36a27">u_byte_t</a> data_freq = <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#aca105d80c88c1cfee26c72f0e5703dc1">DATA_FREQ_1</a></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (radar.set_data_transmit_freq(data_freq) == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Frequency value uploaded into radar\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t upload frequency value\n&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="asmart__road__radar__utils_8hpp_html_aca105d80c88c1cfee26c72f0e5703dc1"><div class="ttname"><a href="smart__road__radar__utils_8hpp.html#aca105d80c88c1cfee26c72f0e5703dc1">DATA_FREQ_1</a></div><div class="ttdeci">#define DATA_FREQ_1</div><div class="ttdoc">Частота передачи данных (1 раз в секунду)</div><div class="ttdef"><b>Definition</b> <a href="smart__road__radar__utils_8hpp_source.html#l00098">smart_road_radar_utils.hpp:98</a></div></div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00582">582</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_aa66f8c64c85119620bae8380b8856124_cgraph.png" border="0" usemap="#aclass_smart_road_radar_aa66f8c64c85119620bae8380b8856124_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_aa66f8c64c85119620bae8380b8856124_cgraph" id="aclass_smart_road_radar_aa66f8c64c85119620bae8380b8856124_cgraph">
+<area shape="rect" title="Установка частоты отправки данных." alt="" coords="5,56,152,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="625,5,737,32"/>
+<area shape="poly" title=" " alt="" coords="148,53,199,41,311,27,424,19,610,15,610,20,424,24,312,33,200,47,150,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="201,56,354,99"/>
+<area shape="poly" title=" " alt="" coords="152,75,186,75,186,80,152,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="200,123,355,165"/>
+<area shape="poly" title=" " alt="" coords="145,97,199,115,197,120,143,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="806,7,946,33"/>
+<area shape="poly" title=" " alt="" coords="737,16,791,17,791,22,737,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="403,56,556,99"/>
+<area shape="poly" title=" " alt="" coords="354,75,388,75,388,80,354,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="604,56,758,99"/>
+<area shape="poly" title=" " alt="" coords="557,75,590,75,590,80,557,80"/>
+<area shape="poly" title=" " alt="" coords="755,53,813,36,815,41,756,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="809,61,943,88"/>
+<area shape="poly" title=" " alt="" coords="758,74,795,73,795,78,758,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="806,112,946,139"/>
+<area shape="poly" title=" " alt="" coords="759,94,805,105,804,110,758,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="994,112,1113,139"/>
+<area shape="poly" title=" " alt="" coords="946,123,979,123,979,128,946,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="409,131,551,157"/>
+<area shape="poly" title=" " alt="" coords="355,141,394,141,394,147,355,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_aa66f8c64c85119620bae8380b8856124_icgraph.png" border="0" usemap="#aclass_smart_road_radar_aa66f8c64c85119620bae8380b8856124_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_aa66f8c64c85119620bae8380b8856124_icgraph" id="aclass_smart_road_radar_aa66f8c64c85119620bae8380b8856124_icgraph">
+<area shape="rect" title="Установка частоты отправки данных." alt="" coords="689,5,835,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="493,5,641,48"/>
+<area shape="poly" title=" " alt="" coords="674,29,641,29,641,24,674,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2d1fe3f83ba38b5a1fb0eeb76f72c906" name="a2d1fe3f83ba38b5a1fb0eeb76f72c906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d1fe3f83ba38b5a1fb0eeb76f72c906">&#9670;&#160;</a></span>enable_zero_data_reporting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::enable_zero_data_reporting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Включение передачи нулевых данных. </p>
+<p>Функция позволяет включить передачу нулевых данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (radar.enable_zero_data_reporting() == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Zero data reporting enabled\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t enable zero data reporting\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00607">607</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_cgraph" id="aclass_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_cgraph">
+<area shape="rect" title="Включение передачи нулевых данных." alt="" coords="5,56,172,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="645,5,757,32"/>
+<area shape="poly" title=" " alt="" coords="164,53,219,41,331,28,444,20,630,15,630,21,444,25,332,33,220,47,165,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="221,56,374,99"/>
+<area shape="poly" title=" " alt="" coords="172,75,206,75,206,80,172,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="220,123,375,165"/>
+<area shape="poly" title=" " alt="" coords="158,97,215,115,214,120,157,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="826,7,966,33"/>
+<area shape="poly" title=" " alt="" coords="757,16,811,17,811,22,757,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="423,56,576,99"/>
+<area shape="poly" title=" " alt="" coords="374,75,408,75,408,80,374,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="624,56,778,99"/>
+<area shape="poly" title=" " alt="" coords="577,75,610,75,610,80,577,80"/>
+<area shape="poly" title=" " alt="" coords="775,53,833,36,835,41,776,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="829,61,963,88"/>
+<area shape="poly" title=" " alt="" coords="778,74,815,73,815,78,778,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="826,112,966,139"/>
+<area shape="poly" title=" " alt="" coords="779,94,825,105,824,110,778,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="1014,112,1133,139"/>
+<area shape="poly" title=" " alt="" coords="966,123,999,123,999,128,966,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="429,131,571,157"/>
+<area shape="poly" title=" " alt="" coords="375,141,414,141,414,147,375,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_icgraph" id="aclass_smart_road_radar_a2d1fe3f83ba38b5a1fb0eeb76f72c906_icgraph">
+<area shape="rect" title="Включение передачи нулевых данных." alt="" coords="719,5,885,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="493,5,671,48"/>
+<area shape="poly" title=" " alt="" coords="704,29,671,29,671,24,704,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="479,29,446,29,446,24,479,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a85fb7d07156913963a6b9abd20b07e1c" name="a85fb7d07156913963a6b9abd20b07e1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85fb7d07156913963a6b9abd20b07e1c">&#9670;&#160;</a></span>disable_zero_data_reporting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SmartRoadRadar::disable_zero_data_reporting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выключение передачи нулевых данных. </p>
+<p>Функция позволяет выключить передачу нулевых данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Если запрос выполнен успешно, то возвращает SMART_ROAD_RADAR_OK. В противном случае - SMART_ROAD_RADAR_ERROR.</dd></dl>
+<p><b>Пример</b> </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (radar.disable_zero_data_reporting() == <a class="code hl_define" href="smart__road__radar__utils_8hpp.html#a19cd20d00719b9df76dc42a44fc45371">SMART_ROAD_RADAR_OK</a>) {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Zero data reporting disabled\n&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Can&#39;t disable zero data reporting\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00632">632</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_cgraph.png" border="0" usemap="#aclass_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_cgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_cgraph" id="aclass_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_cgraph">
+<area shape="rect" title="Выключение передачи нулевых данных." alt="" coords="5,56,175,99"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="648,5,760,32"/>
+<area shape="poly" title=" " alt="" coords="167,53,222,41,334,28,447,20,633,15,633,21,447,26,335,33,223,47,168,58"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="224,56,377,99"/>
+<area shape="poly" title=" " alt="" coords="175,75,209,75,209,80,175,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="223,123,378,165"/>
+<area shape="poly" title=" " alt="" coords="160,97,218,115,216,120,159,102"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="829,7,969,33"/>
+<area shape="poly" title=" " alt="" coords="760,16,814,17,814,22,760,22"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="426,56,579,99"/>
+<area shape="poly" title=" " alt="" coords="377,75,411,75,411,80,377,80"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="627,56,781,99"/>
+<area shape="poly" title=" " alt="" coords="580,75,613,75,613,80,580,80"/>
+<area shape="poly" title=" " alt="" coords="778,53,836,36,838,41,779,58"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="832,61,966,88"/>
+<area shape="poly" title=" " alt="" coords="781,74,818,73,818,78,781,79"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="829,112,969,139"/>
+<area shape="poly" title=" " alt="" coords="782,94,828,105,827,110,781,99"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="1017,112,1136,139"/>
+<area shape="poly" title=" " alt="" coords="969,123,1002,123,1002,128,969,128"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="432,131,574,157"/>
+<area shape="poly" title=" " alt="" coords="378,141,417,141,417,147,378,147"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_icgraph.png" border="0" usemap="#aclass_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_icgraph" alt=""/></div>
+<map name="aclass_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_icgraph" id="aclass_smart_road_radar_a85fb7d07156913963a6b9abd20b07e1c_icgraph">
+<area shape="rect" title="Выключение передачи нулевых данных." alt="" coords="722,5,891,48"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,5,674,48"/>
+<area shape="poly" title=" " alt="" coords="707,29,674,29,674,24,707,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,5,445,48"/>
+<area shape="poly" title=" " alt="" coords="478,29,446,29,446,24,478,24"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,5,250,48"/>
+<area shape="poly" title=" " alt="" coords="283,29,251,29,251,24,283,24"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="88,29,55,29,55,24,88,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Поля</h2>
+<a id="a2848c79817447018f57ccd211c03a06f" name="a2848c79817447018f57ccd211c03a06f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2848c79817447018f57ccd211c03a06f">&#9670;&#160;</a></span>data_bus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_serial.html">Serial</a> SmartRoadRadar::data_bus {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Объект для подключения к радару по последовательному интерфейсу </p>
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a> строка <a class="el" href="smart__road__radar_8hpp_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/<a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_smart_road_radar.html">SmartRoadRadar</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

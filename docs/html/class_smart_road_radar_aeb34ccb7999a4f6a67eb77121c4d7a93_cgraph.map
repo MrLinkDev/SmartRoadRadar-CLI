@@ -1,0 +1,17 @@
+<map id="SmartRoadRadar::get_target_data" name="SmartRoadRadar::get_target_data">
+<area shape="rect" id="Node000001" title="Чтение данных о целях." alt="" coords="5,77,152,120"/>
+<area shape="rect" id="Node000002" href="$class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="200,48,353,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,85,184,80,185,86,152,90"/>
+<area shape="rect" id="Node000008" href="$smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57" title=" " alt="" coords="222,115,331,141"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="152,107,208,115,207,120,152,112"/>
+<area shape="rect" id="Node000003" href="$class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="401,48,554,91"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,67,386,67,386,72,353,72"/>
+<area shape="rect" id="Node000004" href="$smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="602,5,743,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="554,47,604,34,605,39,556,52"/>
+<area shape="rect" id="Node000005" href="$class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="606,56,739,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="555,67,591,67,591,72,555,72"/>
+<area shape="rect" id="Node000006" href="$class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="602,107,743,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="556,87,605,100,604,105,554,92"/>
+<area shape="rect" id="Node000007" href="$class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="791,107,910,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="743,117,776,117,776,123,743,123"/>
+</map>

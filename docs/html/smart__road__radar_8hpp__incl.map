@@ -1,0 +1,15 @@
+<map id="src/smart_road_radar.hpp" name="src/smart_road_radar.hpp">
+<area shape="rect" id="Node000001" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="61,5,231,32"/>
+<area shape="rect" id="Node000002" href="$smart__road__radar__utils_8hpp.html" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="57,80,235,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,33,149,65,143,65,143,33"/>
+<area shape="rect" id="Node000003" href="$serial_8hpp.html" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="107,155,185,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,107,149,140,143,140,143,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,229,87,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="130,184,77,222,74,218,127,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="110,229,182,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="149,182,149,214,143,214,143,182"/>
+<area shape="rect" id="Node000006" href="$utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="206,229,276,256"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="164,180,214,218,211,222,161,184"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="214,304,267,331"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="243,257,243,289,238,289,238,257"/>
+</map>

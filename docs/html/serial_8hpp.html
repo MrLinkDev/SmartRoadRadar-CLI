@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Файл src/serial.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('serial_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структуры данных</a> &#124;
+<a href="#define-members">Макросы</a>  </div>
+  <div class="headertitle"><div class="title">Файл serial.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Заголовочный файл, содержащий класс <a class="el" href="class_serial.html" title="Объект для общения с устройствами по последовательному интерфейсу">Serial</a> для общения с устройствами по последовательному интерфейсу  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="utils_8hpp_source.html">utils.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для serial.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="serial_8hpp__incl.png" border="0" usemap="#asrc_2serial_8hpp" alt=""/></div>
+<map name="asrc_2serial_8hpp" id="asrc_2serial_8hpp">
+<area shape="rect" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="96,5,196,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,87,107"/>
+<area shape="poly" title=" " alt="" coords="130,35,77,73,74,69,127,30"/>
+<area shape="rect" title=" " alt="" coords="110,80,182,107"/>
+<area shape="poly" title=" " alt="" coords="149,33,149,65,143,65,143,33"/>
+<area shape="rect" href="utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="206,80,276,107"/>
+<area shape="poly" title=" " alt="" coords="164,30,214,69,211,73,161,35"/>
+<area shape="rect" title=" " alt="" coords="214,155,267,181"/>
+<area shape="poly" title=" " alt="" coords="243,107,243,140,238,140,238,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="serial_8hpp__dep__incl.png" border="0" usemap="#asrc_2serial_8hppdep" alt=""/></div>
+<map name="asrc_2serial_8hppdep" id="asrc_2serial_8hppdep">
+<area shape="rect" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="40,5,140,32"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="18,80,162,123"/>
+<area shape="poly" title=" " alt="" coords="93,47,93,80,87,80,87,47"/>
+<area shape="rect" href="smart__road__radar_8hpp.html" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="5,171,175,197"/>
+<area shape="poly" title=" " alt="" coords="93,138,93,170,87,170,87,138"/>
+<area shape="rect" href="smart__road__radar__cli_8hpp.html" title=" " alt="" coords="18,245,162,288"/>
+<area shape="poly" title=" " alt="" coords="93,212,93,245,87,245,87,212"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="42,336,138,363"/>
+<area shape="poly" title=" " alt="" coords="93,303,93,335,87,335,87,303"/>
+</map>
+</div>
+</div>
+<p><a href="serial_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Структуры данных</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structport__config.html">port_config</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_serial.html">Serial</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект для общения с устройствами по последовательному интерфейсу  <a href="class_serial.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a86fd4404b140711fdb77326609c0f393"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_8hpp.html#a86fd4404b140711fdb77326609c0f393">BYTE_SIZE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:a86fd4404b140711fdb77326609c0f393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стандартный размер байта  <br /></td></tr>
+<tr class="separator:a86fd4404b140711fdb77326609c0f393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7166694911f70a7a296be2512d4784d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_8hpp.html#ae7166694911f70a7a296be2512d4784d">SYMBOL_NULL</a>&#160;&#160;&#160;'\0'</td></tr>
+<tr class="memdesc:ae7166694911f70a7a296be2512d4784d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Нулевой символ  <br /></td></tr>
+<tr class="separator:ae7166694911f70a7a296be2512d4784d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69e89dbc50d057c72f785cabe89ba27"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_8hpp.html#ad69e89dbc50d057c72f785cabe89ba27">SYMBOL_CR</a>&#160;&#160;&#160;'\r'</td></tr>
+<tr class="memdesc:ad69e89dbc50d057c72f785cabe89ba27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Символ возврата каретки  <br /></td></tr>
+<tr class="separator:ad69e89dbc50d057c72f785cabe89ba27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad747c17b23909394aa594f8b8ee4df97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_8hpp.html#ad747c17b23909394aa594f8b8ee4df97">SYMBOL_LF</a>&#160;&#160;&#160;'\n'</td></tr>
+<tr class="memdesc:ad747c17b23909394aa594f8b8ee4df97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Символ переноса строки  <br /></td></tr>
+<tr class="separator:ad747c17b23909394aa594f8b8ee4df97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6950cf86087877bb855d1c7c848fc2a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_8hpp.html#a6950cf86087877bb855d1c7c848fc2a9">SERIAL_OK</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a6950cf86087877bb855d1c7c848fc2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращаемый код при успешной операции  <br /></td></tr>
+<tr class="separator:a6950cf86087877bb855d1c7c848fc2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa510e9a815c3fb95877501fdaa5bbc64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="serial_8hpp.html#aa510e9a815c3fb95877501fdaa5bbc64">SERIAL_ERROR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:aa510e9a815c3fb95877501fdaa5bbc64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращаемый код при невыполненной операции  <br /></td></tr>
+<tr class="separator:aa510e9a815c3fb95877501fdaa5bbc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Заголовочный файл, содержащий класс <a class="el" href="class_serial.html" title="Объект для общения с устройствами по последовательному интерфейсу">Serial</a> для общения с устройствами по последовательному интерфейсу </p>
+<dl class="section author"><dt>Авторы</dt><dd>Александр Горбунов </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>11 марта 2023 </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a></p>
+</div><h2 class="groupheader">Макросы</h2>
+<a id="a86fd4404b140711fdb77326609c0f393" name="a86fd4404b140711fdb77326609c0f393"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fd4404b140711fdb77326609c0f393">&#9670;&#160;</a></span>BYTE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BYTE_SIZE&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Стандартный размер байта </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a id="ae7166694911f70a7a296be2512d4784d" name="ae7166694911f70a7a296be2512d4784d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7166694911f70a7a296be2512d4784d">&#9670;&#160;</a></span>SYMBOL_NULL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYMBOL_NULL&#160;&#160;&#160;'\0'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Нулевой символ </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a id="ad69e89dbc50d057c72f785cabe89ba27" name="ad69e89dbc50d057c72f785cabe89ba27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad69e89dbc50d057c72f785cabe89ba27">&#9670;&#160;</a></span>SYMBOL_CR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYMBOL_CR&#160;&#160;&#160;'\r'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Символ возврата каретки </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a id="ad747c17b23909394aa594f8b8ee4df97" name="ad747c17b23909394aa594f8b8ee4df97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad747c17b23909394aa594f8b8ee4df97">&#9670;&#160;</a></span>SYMBOL_LF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SYMBOL_LF&#160;&#160;&#160;'\n'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Символ переноса строки </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a id="a6950cf86087877bb855d1c7c848fc2a9" name="a6950cf86087877bb855d1c7c848fc2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6950cf86087877bb855d1c7c848fc2a9">&#9670;&#160;</a></span>SERIAL_OK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SERIAL_OK&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращаемый код при успешной операции </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a id="aa510e9a815c3fb95877501fdaa5bbc64" name="aa510e9a815c3fb95877501fdaa5bbc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa510e9a815c3fb95877501fdaa5bbc64">&#9670;&#160;</a></span>SERIAL_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SERIAL_ERROR&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращаемый код при невыполненной операции </p>
+
+<p class="definition">См. определение в файле <a class="el" href="serial_8hpp_source.html">serial.hpp</a> строка <a class="el" href="serial_8hpp_source.html#l00030">30</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="serial_8hpp.html">serial.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

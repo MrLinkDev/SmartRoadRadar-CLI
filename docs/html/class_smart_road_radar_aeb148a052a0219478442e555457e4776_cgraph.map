@@ -1,0 +1,13 @@
+<map id="SmartRoadRadar::read_expected_frame" name="SmartRoadRadar::read_expected_frame">
+<area shape="rect" id="Node000001" title="Чтение данных с радара с требуемым командным словом." alt="" coords="5,48,159,91"/>
+<area shape="rect" id="Node000002" href="$class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="207,48,360,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,67,192,67,192,72,159,72"/>
+<area shape="rect" id="Node000003" href="$smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="408,5,548,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="360,47,410,34,411,39,361,52"/>
+<area shape="rect" id="Node000004" href="$class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="412,56,545,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="361,67,397,67,397,72,361,72"/>
+<area shape="rect" id="Node000005" href="$class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="408,107,548,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="361,87,411,100,410,105,360,92"/>
+<area shape="rect" id="Node000006" href="$class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="596,107,716,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="549,117,582,117,582,123,549,123"/>
+</map>

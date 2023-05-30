@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Файл src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" alt=""/></div>
+<map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
+<area shape="rect" title=" " alt="" coords="70,5,166,32"/>
+<area shape="rect" href="smart__road__radar__cli_8hpp.html" title=" " alt="" coords="34,80,202,107"/>
+<area shape="poly" title=" " alt="" coords="121,33,121,65,115,65,115,33"/>
+<area shape="rect" title=" " alt="" coords="5,155,63,181"/>
+<area shape="poly" title=" " alt="" coords="105,109,61,147,57,143,102,105"/>
+<area shape="rect" title=" " alt="" coords="86,155,150,181"/>
+<area shape="poly" title=" " alt="" coords="121,107,121,140,115,140,115,107"/>
+<area shape="rect" href="smart__road__radar_8hpp.html" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="174,155,321,181"/>
+<area shape="poly" title=" " alt="" coords="142,105,213,145,211,149,139,110"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="158,229,337,256"/>
+<area shape="poly" title=" " alt="" coords="250,182,250,214,245,214,245,182"/>
+<area shape="rect" href="serial_8hpp.html" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="209,304,286,331"/>
+<area shape="poly" title=" " alt="" coords="250,257,250,289,245,289,245,257"/>
+<area shape="rect" title=" " alt="" coords="107,379,188,405"/>
+<area shape="poly" title=" " alt="" coords="231,333,178,372,175,367,228,329"/>
+<area shape="rect" title=" " alt="" coords="212,379,283,405"/>
+<area shape="poly" title=" " alt="" coords="250,331,250,364,245,364,245,331"/>
+<area shape="rect" href="utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="307,379,377,405"/>
+<area shape="poly" title=" " alt="" coords="265,329,316,367,312,372,262,333"/>
+<area shape="rect" title=" " alt="" coords="315,453,369,480"/>
+<area shape="poly" title=" " alt="" coords="345,406,345,438,339,438,339,406"/>
+</map>
+</div>
+</div>
+<p><a href="main_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a2ef30c42cbc289d899a8be5d2d8f77d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a> ()</td></tr>
+<tr class="separator:a2ef30c42cbc289d899a8be5d2d8f77d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a2ef30c42cbc289d899a8be5d2d8f77d0" name="a2ef30c42cbc289d899a8be5d2d8f77d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef30c42cbc289d899a8be5d2d8f77d0">&#9670;&#160;</a></span>usage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00003">3</a></p>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph.png" border="0" usemap="#amain_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph" alt=""/></div>
+<map name="amain_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph" id="amain_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,159,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="88,21,55,21,55,16,88,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="main_8cpp_source.html">main.cpp</a> строка <a class="el" href="main_8cpp_source.html#l00009">9</a></p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#amain_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
+<map name="amain_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="amain_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title=" " alt="" coords="5,393,55,420"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#abf07bcc4592362ec0a2bfef14a94eded" title=" " alt="" coords="103,356,250,399"/>
+<area shape="poly" title=" " alt="" coords="55,399,87,393,88,398,56,404"/>
+<area shape="rect" href="main_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0" title=" " alt="" coords="148,423,205,449"/>
+<area shape="poly" title=" " alt="" coords="56,409,134,425,133,430,55,414"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a28a5a89251ca4990e331fdaae989fa8a" title=" " alt="" coords="298,356,445,399"/>
+<area shape="poly" title=" " alt="" coords="251,375,283,375,283,380,251,380"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad00e720d3233d6a6ef0c24cc510fd58a" title=" " alt="" coords="509,323,658,365"/>
+<area shape="poly" title=" " alt="" coords="445,363,494,355,495,361,446,368"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#aad792eea460003e08ead0dd03b89ae15" title=" " alt="" coords="493,389,674,432"/>
+<area shape="poly" title=" " alt="" coords="446,386,479,392,478,397,445,392"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad85aaac4a0d9e095d505ef3915db412f" title=" " alt="" coords="510,456,657,499"/>
+<area shape="poly" title=" " alt="" coords="410,397,494,442,508,447,505,452,492,446,408,402"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a46f74cf12918b6d9ae1c74288f45bc3e" title=" " alt="" coords="495,5,672,48"/>
+<area shape="poly" title=" " alt="" coords="373,355,382,297,402,218,417,175,437,133,462,93,491,58,495,55,499,59,495,62,466,97,442,136,422,177,407,219,387,298,378,356"/>
+<area shape="rect" href="utils_8hpp.html#aea91c2d1e65cdd095e4c1dc452c598a4" title="Из принимаемой строки выделяет содержимое до первого делителя" alt="" coords="757,272,856,299"/>
+<area shape="poly" title=" " alt="" coords="402,353,444,329,493,308,558,293,624,284,742,280,742,285,625,290,559,298,494,313,446,333,405,358"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae298cebd441105bbf24255d7d312c581" title=" " alt="" coords="510,523,657,565"/>
+<area shape="poly" title=" " alt="" coords="390,398,433,453,462,482,495,508,502,513,499,518,492,513,459,486,429,456,386,401"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae784ac22ae75a7483ff193f9704d38b7" title=" " alt="" coords="510,656,657,699"/>
+<area shape="poly" title=" " alt="" coords="380,399,392,448,413,513,447,582,469,614,495,642,499,646,496,650,491,646,465,617,443,585,409,515,386,450,374,400"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a8f14dcb67c699434b4dc692ae414bf69" title=" " alt="" coords="510,589,657,632"/>
+<area shape="poly" title=" " alt="" coords="383,398,399,436,423,484,455,533,495,575,500,579,497,583,492,579,451,536,418,486,394,438,378,400"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4be70341b89baae66911943901b99c23" title=" " alt="" coords="510,72,657,115"/>
+<area shape="poly" title=" " alt="" coords="375,355,388,308,411,246,445,182,466,152,491,125,496,121,499,125,495,129,470,155,449,185,415,249,393,310,380,356"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a44726f92b5311d06a0ac91b53f00cdf0" title=" " alt="" coords="510,205,657,248"/>
+<area shape="poly" title=" " alt="" coords="391,354,435,310,492,264,512,253,515,257,495,269,438,314,394,357"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#a4fd7e4209a2035c7a5a80f090f02d783" title=" " alt="" coords="510,139,657,181"/>
+<area shape="poly" title=" " alt="" coords="379,354,396,319,420,276,452,231,492,191,497,187,500,192,495,195,457,234,425,278,401,322,384,357"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ad6310deb786f35f80677218ae800816c" title=" " alt="" coords="510,723,657,765"/>
+<area shape="poly" title=" " alt="" coords="377,399,386,459,405,542,420,587,440,631,465,672,495,709,500,713,496,717,491,712,461,675,435,633,415,588,400,543,380,460,372,399"/>
+<area shape="rect" href="class_smart_road_radar.html#a955c0ffc54498e77b42323c5b6d7c858" title="Остановка передачи данных." alt="" coords="722,323,891,365"/>
+<area shape="poly" title=" " alt="" coords="658,341,707,341,707,347,658,347"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="961,331,1073,357"/>
+<area shape="poly" title=" " alt="" coords="892,341,946,341,946,347,892,347"/>
+<area shape="rect" href="class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="940,235,1093,277"/>
+<area shape="poly" title=" " alt="" coords="862,320,890,308,952,281,954,286,892,313,864,324"/>
+<area shape="rect" href="class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="939,381,1094,424"/>
+<area shape="poly" title=" " alt="" coords="886,363,926,375,924,380,884,368"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="1545,363,1685,389"/>
+<area shape="poly" title=" " alt="" coords="1073,344,1530,369,1530,374,1073,350"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="1142,523,1296,565"/>
+<area shape="poly" title=" " alt="" coords="1053,276,1076,294,1096,317,1114,346,1123,371,1131,396,1145,427,1196,509,1192,512,1140,429,1126,398,1118,373,1109,348,1092,320,1072,298,1049,280"/>
+<area shape="rect" href="class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="1344,491,1497,533"/>
+<area shape="poly" title=" " alt="" coords="1296,529,1329,524,1330,529,1296,534"/>
+<area shape="poly" title=" " alt="" coords="1451,488,1581,396,1584,400,1454,492"/>
+<area shape="rect" href="class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="1549,469,1682,496"/>
+<area shape="poly" title=" " alt="" coords="1497,498,1534,492,1534,497,1498,503"/>
+<area shape="rect" href="class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="1545,520,1685,547"/>
+<area shape="poly" title=" " alt="" coords="1498,518,1530,521,1530,527,1497,523"/>
+<area shape="rect" href="class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="1733,520,1853,547"/>
+<area shape="poly" title=" " alt="" coords="1686,531,1719,531,1719,536,1686,536"/>
+<area shape="rect" href="class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="1148,389,1290,416"/>
+<area shape="poly" title=" " alt="" coords="1095,400,1133,400,1133,405,1095,405"/>
+<area shape="rect" href="class_smart_road_radar.html#a85fb7d07156913963a6b9abd20b07e1c" title="Выключение передачи нулевых данных." alt="" coords="722,389,891,432"/>
+<area shape="poly" title=" " alt="" coords="674,408,707,408,707,413,674,413"/>
+<area shape="poly" title=" " alt="" coords="875,386,958,360,959,365,876,391"/>
+<area shape="poly" title=" " alt="" coords="871,386,889,375,905,361,914,348,937,317,973,285,977,289,941,320,918,351,909,365,893,379,874,391"/>
+<area shape="poly" title=" " alt="" coords="891,405,924,404,924,409,892,410"/>
+<area shape="rect" href="class_smart_road_radar.html#a4c359504214e8d6796df36308ce344c0" title="Запуск передачи данных." alt="" coords="723,456,890,499"/>
+<area shape="poly" title=" " alt="" coords="658,475,709,475,709,480,658,480"/>
+<area shape="poly" title=" " alt="" coords="873,453,889,442,905,424,912,405,920,386,937,367,946,362,949,366,941,371,925,389,917,407,909,427,893,446,875,458"/>
+<area shape="poly" title=" " alt="" coords="875,453,889,442,901,427,909,412,915,383,920,352,937,317,968,285,972,288,941,320,925,353,920,384,914,414,906,430,893,446,878,458"/>
+<area shape="poly" title=" " alt="" coords="868,453,940,427,942,432,870,458"/>
+<area shape="rect" href="class_smart_road_radar.html#a2d1fe3f83ba38b5a1fb0eeb76f72c906" title="Включение передачи нулевых данных." alt="" coords="723,5,890,48"/>
+<area shape="poly" title=" " alt="" coords="672,24,708,24,708,29,672,29"/>
+<area shape="poly" title=" " alt="" coords="880,46,893,58,912,88,921,117,923,145,921,172,920,228,926,257,941,288,957,306,976,321,973,325,953,310,937,291,921,259,914,228,916,172,918,145,916,118,908,90,889,62,876,50"/>
+<area shape="poly" title=" " alt="" coords="876,46,893,58,930,96,961,139,986,182,1003,219,999,222,981,185,957,142,926,99,889,62,873,51"/>
+<area shape="poly" title=" " alt="" coords="881,47,893,58,917,99,926,139,925,177,918,215,912,252,911,290,919,328,941,368,942,369,938,373,937,371,914,330,905,290,907,251,913,214,919,176,920,139,912,101,889,62,877,50"/>
+<area shape="rect" href="class_smart_road_radar.html#ab6ebab995997fd2d4cf91b72297c3bef" title="Чтение настроек с радара." alt="" coords="733,523,880,565"/>
+<area shape="poly" title=" " alt="" coords="658,541,718,541,718,547,658,547"/>
+<area shape="poly" title=" " alt="" coords="875,520,889,509,902,491,909,474,912,439,915,404,923,386,937,367,946,360,949,364,941,371,928,388,921,405,917,440,914,475,907,494,893,513,878,524"/>
+<area shape="poly" title=" " alt="" coords="880,541,1127,541,1127,547,880,547"/>
+<area shape="poly" title=" " alt="" coords="868,520,890,508,940,471,983,433,986,437,944,476,892,513,871,524"/>
+<area shape="rect" href="class_smart_road_radar.html#aeb34ccb7999a4f6a67eb77121c4d7a93" title="Чтение данных о целях." alt="" coords="733,723,880,765"/>
+<area shape="poly" title=" " alt="" coords="658,697,720,715,718,720,656,702"/>
+<area shape="rect" href="class_smart_road_radar_c_l_i.html#ae85126e775f388d03ef0909399ecfe9c" title=" " alt="" coords="733,656,880,699"/>
+<area shape="poly" title=" " alt="" coords="658,675,718,675,718,680,658,680"/>
+<area shape="poly" title=" " alt="" coords="863,720,890,708,1040,636,1164,570,1166,575,1042,640,892,713,865,725"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html#abcd974e8aaebad5eec9f1530e88a4b57" title=" " alt="" coords="962,731,1071,757"/>
+<area shape="poly" title=" " alt="" coords="880,741,947,741,947,747,880,747"/>
+<area shape="rect" href="class_smart_road_radar.html#a2e02fefc0c401668114ce41ec9eda7e8" title="Запрос версии ПО у радара." alt="" coords="733,589,880,632"/>
+<area shape="poly" title=" " alt="" coords="658,608,718,608,718,613,658,613"/>
+<area shape="poly" title=" " alt="" coords="876,587,889,576,906,549,913,524,914,498,912,473,909,447,911,421,919,394,937,368,946,360,949,364,941,371,924,397,916,422,915,447,917,472,919,498,918,525,911,552,893,579,880,591"/>
+<area shape="poly" title=" " alt="" coords="880,596,1127,556,1128,561,880,602"/>
+<area shape="poly" title=" " alt="" coords="872,586,889,575,924,543,953,506,996,436,1001,439,958,509,928,546,893,579,875,591"/>
+<area shape="rect" href="class_smart_road_radar.html#aa66f8c64c85119620bae8380b8856124" title="Установка частоты отправки данных." alt="" coords="733,72,880,115"/>
+<area shape="poly" title=" " alt="" coords="658,91,718,91,718,96,658,96"/>
+<area shape="poly" title=" " alt="" coords="879,113,893,125,908,146,916,166,920,206,923,245,929,266,941,288,957,306,977,320,973,325,954,310,937,291,924,268,918,246,915,206,911,168,904,148,889,128,876,117"/>
+<area shape="poly" title=" " alt="" coords="872,113,893,124,948,172,992,221,988,224,945,176,889,129,870,118"/>
+<area shape="poly" title=" " alt="" coords="880,113,893,125,913,157,921,188,922,218,918,248,915,277,915,307,923,337,941,368,943,370,939,373,937,371,918,339,910,308,909,277,913,247,916,218,916,189,908,159,889,128,877,117"/>
+<area shape="poly" title=" " alt="" coords="658,243,743,266,741,271,657,249"/>
+<area shape="rect" href="class_smart_road_radar.html#a3975a1a1681946f74e24328ea10b7025" title="Изменение настроек радара." alt="" coords="733,205,880,248"/>
+<area shape="poly" title=" " alt="" coords="658,224,718,224,718,229,658,229"/>
+<area shape="poly" title=" " alt="" coords="868,246,892,258,986,320,983,324,890,262,866,251"/>
+<area shape="poly" title=" " alt="" coords="880,234,926,241,925,246,879,239"/>
+<area shape="poly" title=" " alt="" coords="878,246,893,258,905,272,912,286,918,314,924,341,930,354,941,368,944,370,940,374,937,371,925,357,918,342,913,315,907,288,900,275,889,262,874,251"/>
+<area shape="rect" href="class_smart_road_radar.html#ac68582d046bc01ac72bbc0dbec366deb" title="Установка числа целей." alt="" coords="733,139,880,181"/>
+<area shape="poly" title=" " alt="" coords="658,157,718,157,718,163,658,163"/>
+<area shape="poly" title=" " alt="" coords="877,180,893,191,911,216,919,239,926,262,941,288,979,320,976,324,937,291,921,265,914,241,907,218,889,195,874,184"/>
+<area shape="poly" title=" " alt="" coords="865,179,892,191,963,225,960,230,890,196,863,184"/>
+<area shape="poly" title=" " alt="" coords="880,180,893,192,909,215,916,237,918,281,919,324,926,345,941,368,943,370,939,374,937,371,922,348,914,325,913,281,911,238,904,217,889,195,876,184"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

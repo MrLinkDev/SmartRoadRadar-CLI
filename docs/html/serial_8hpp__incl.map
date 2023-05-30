@@ -1,0 +1,11 @@
+<map id="src/serial.hpp" name="src/serial.hpp">
+<area shape="rect" id="Node000001" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="96,5,196,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,87,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,35,77,73,74,69,127,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="110,80,182,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,33,149,65,143,65,143,33"/>
+<area shape="rect" id="Node000004" href="$utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="206,80,276,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,30,214,69,211,73,161,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="214,155,267,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="243,107,243,140,238,140,238,107"/>
+</map>

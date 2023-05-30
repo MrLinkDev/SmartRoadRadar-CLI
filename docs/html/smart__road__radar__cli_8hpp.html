@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SmartRoad Radar Communication: Файл src/smart_road_radar_cli.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="darkmode_toggle.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SmartRoad Radar Communication<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('smart__road__radar__cli_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Структуры данных</a> &#124;
+<a href="#define-members">Макросы</a>  </div>
+  <div class="headertitle"><div class="title">Файл smart_road_radar_cli.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;conio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="smart__road__radar_8hpp_source.html">smart_road_radar.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для smart_road_radar_cli.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__cli_8hpp__incl.png" border="0" usemap="#asrc_2smart__road__radar__cli_8hpp" alt=""/></div>
+<map name="asrc_2smart__road__radar__cli_8hpp" id="asrc_2smart__road__radar__cli_8hpp">
+<area shape="rect" title=" " alt="" coords="46,5,190,48"/>
+<area shape="rect" title=" " alt="" coords="5,96,63,123"/>
+<area shape="poly" title=" " alt="" coords="98,51,59,88,56,84,95,47"/>
+<area shape="rect" title=" " alt="" coords="86,96,150,123"/>
+<area shape="poly" title=" " alt="" coords="121,49,121,81,115,81,115,49"/>
+<area shape="rect" href="smart__road__radar_8hpp.html" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="174,96,321,123"/>
+<area shape="poly" title=" " alt="" coords="153,46,216,85,213,90,150,51"/>
+<area shape="rect" href="smart__road__radar__utils_8hpp.html" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="158,171,337,197"/>
+<area shape="poly" title=" " alt="" coords="250,123,250,156,245,156,245,123"/>
+<area shape="rect" href="serial_8hpp.html" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="209,245,286,272"/>
+<area shape="poly" title=" " alt="" coords="250,198,250,230,245,230,245,198"/>
+<area shape="rect" title=" " alt="" coords="107,320,188,347"/>
+<area shape="poly" title=" " alt="" coords="231,275,178,313,175,309,228,270"/>
+<area shape="rect" title=" " alt="" coords="212,320,283,347"/>
+<area shape="poly" title=" " alt="" coords="250,273,250,305,245,305,245,273"/>
+<area shape="rect" href="utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="307,320,377,347"/>
+<area shape="poly" title=" " alt="" coords="265,270,316,309,312,313,262,275"/>
+<area shape="rect" title=" " alt="" coords="315,395,369,421"/>
+<area shape="poly" title=" " alt="" coords="345,347,345,380,339,380,339,347"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="smart__road__radar__cli_8hpp__dep__incl.png" border="0" usemap="#asrc_2smart__road__radar__cli_8hppdep" alt=""/></div>
+<map name="asrc_2smart__road__radar__cli_8hppdep" id="asrc_2smart__road__radar__cli_8hppdep">
+<area shape="rect" title=" " alt="" coords="5,5,150,48"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="29,96,126,123"/>
+<area shape="poly" title=" " alt="" coords="80,63,80,95,75,95,75,63"/>
+</map>
+</div>
+</div>
+<p><a href="smart__road__radar__cli_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Структуры данных</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smart_road_radar_c_l_i.html">SmartRoadRadarCLI</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a7550c6ae17b93c7c63597c3385cfdd84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a7550c6ae17b93c7c63597c3385cfdd84">CLI_VERSION</a>&#160;&#160;&#160;&quot;version&quot;</td></tr>
+<tr class="separator:a7550c6ae17b93c7c63597c3385cfdd84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f2bc396111652db1e60d3421e6c045"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a60f2bc396111652db1e60d3421e6c045">CLI_VERSION_SHORT</a>&#160;&#160;&#160;&quot;-v&quot;</td></tr>
+<tr class="separator:a60f2bc396111652db1e60d3421e6c045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5200c7ba3999ee70ef24fcd62892ba19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a5200c7ba3999ee70ef24fcd62892ba19">CLI_SET_PARAMS</a>&#160;&#160;&#160;&quot;set-params&quot;</td></tr>
+<tr class="separator:a5200c7ba3999ee70ef24fcd62892ba19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb4b237008d7bd84bc0b2be7ae9110d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a1cb4b237008d7bd84bc0b2be7ae9110d">CLI_SET_PARAMS_SHORT</a>&#160;&#160;&#160;&quot;-sp&quot;</td></tr>
+<tr class="separator:a1cb4b237008d7bd84bc0b2be7ae9110d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0778ff39e973d74dfdc421cb4e182f37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a0778ff39e973d74dfdc421cb4e182f37">CLI_GET_PARAMS</a>&#160;&#160;&#160;&quot;get-params&quot;</td></tr>
+<tr class="separator:a0778ff39e973d74dfdc421cb4e182f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45a1a8a185321038c82f3bebcd1894a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#ab45a1a8a185321038c82f3bebcd1894a">CLI_GET_PARAMS_SHORT</a>&#160;&#160;&#160;&quot;-gp&quot;</td></tr>
+<tr class="separator:ab45a1a8a185321038c82f3bebcd1894a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac21835963d0683400a5b2da0b178d1a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#ac21835963d0683400a5b2da0b178d1a4">CLI_SET_TARGET_NUM</a>&#160;&#160;&#160;&quot;target-num&quot;</td></tr>
+<tr class="separator:ac21835963d0683400a5b2da0b178d1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b59bfcad7b38b194e6ac792ecb5a34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#af4b59bfcad7b38b194e6ac792ecb5a34">CLI_SET_TARGET_NUM_SHORT</a>&#160;&#160;&#160;&quot;-t&quot;</td></tr>
+<tr class="separator:af4b59bfcad7b38b194e6ac792ecb5a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a3dfbb3ebdbc51187778104fe691b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a89a3dfbb3ebdbc51187778104fe691b2">CLI_GET_TARGET_DATA</a>&#160;&#160;&#160;&quot;get-targets&quot;</td></tr>
+<tr class="separator:a89a3dfbb3ebdbc51187778104fe691b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d41bc5b02e256b7ff216243fb21f3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a27d41bc5b02e256b7ff216243fb21f3e">CLI_GET_TARGET_DATA_SHORT</a>&#160;&#160;&#160;&quot;-gt&quot;</td></tr>
+<tr class="separator:a27d41bc5b02e256b7ff216243fb21f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9047b15ad6d5301bd5c99780bb867a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#add9047b15ad6d5301bd5c99780bb867a">CLI_ENABLE_TRANSMIT</a>&#160;&#160;&#160;&quot;enable&quot;</td></tr>
+<tr class="separator:add9047b15ad6d5301bd5c99780bb867a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc78621fdafe1a76cf3e80427f5393e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#acc78621fdafe1a76cf3e80427f5393e0">CLI_ENABLE_TRANSMIT_SHORT</a>&#160;&#160;&#160;&quot;-e&quot;</td></tr>
+<tr class="separator:acc78621fdafe1a76cf3e80427f5393e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a2ef46dfd863f9af7d438950484567"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a76a2ef46dfd863f9af7d438950484567">CLI_DISABLE_TRANSMIT</a>&#160;&#160;&#160;&quot;disable&quot;</td></tr>
+<tr class="separator:a76a2ef46dfd863f9af7d438950484567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4da46aab3566aa943e0a89efb0c8abf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#af4da46aab3566aa943e0a89efb0c8abf">CLI_DISABLE_TRANSMIT_SHORT</a>&#160;&#160;&#160;&quot;-d&quot;</td></tr>
+<tr class="separator:af4da46aab3566aa943e0a89efb0c8abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9062fb62893bd07d9f8442fb4a72dc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#ad9062fb62893bd07d9f8442fb4a72dc1">CLI_SET_DATA_FREQ</a>&#160;&#160;&#160;&quot;freq&quot;</td></tr>
+<tr class="separator:ad9062fb62893bd07d9f8442fb4a72dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42abce86c460075c4f69f2c971837d99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a42abce86c460075c4f69f2c971837d99">CLI_SET_DATA_FREQ_SHORT</a>&#160;&#160;&#160;&quot;-f&quot;</td></tr>
+<tr class="separator:a42abce86c460075c4f69f2c971837d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b8279c03adeff5dc1d7462d14c1a45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a77b8279c03adeff5dc1d7462d14c1a45">CLI_ENABLE_ZERO_DATA</a>&#160;&#160;&#160;&quot;enable-zero&quot;</td></tr>
+<tr class="separator:a77b8279c03adeff5dc1d7462d14c1a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3115ed945e5b13599982f880affb6409"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a3115ed945e5b13599982f880affb6409">CLI_ENABLE_ZERO_DATA_SHORT</a>&#160;&#160;&#160;&quot;-ez&quot;</td></tr>
+<tr class="separator:a3115ed945e5b13599982f880affb6409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe3812ee02456168db84d36eb0e16dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#aefe3812ee02456168db84d36eb0e16dc">CLI_DISABLE_ZERO_DATA</a>&#160;&#160;&#160;&quot;disable-zero&quot;</td></tr>
+<tr class="separator:aefe3812ee02456168db84d36eb0e16dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca163fdaee5e8a636dbf5bbbf14ae67e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#aca163fdaee5e8a636dbf5bbbf14ae67e">CLI_DISABLE_ZERO_DATA_SHORT</a>&#160;&#160;&#160;&quot;-dz&quot;</td></tr>
+<tr class="separator:aca163fdaee5e8a636dbf5bbbf14ae67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd456b59e6d4009012c394e2344d7fb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#acd456b59e6d4009012c394e2344d7fb7">CLI_HELP</a>&#160;&#160;&#160;&quot;help&quot;</td></tr>
+<tr class="separator:acd456b59e6d4009012c394e2344d7fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343cc848bb54fb2b8c4b04b0993e44cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a343cc848bb54fb2b8c4b04b0993e44cc">CLI_HELP_SHORT</a>&#160;&#160;&#160;&quot;?&quot;</td></tr>
+<tr class="separator:a343cc848bb54fb2b8c4b04b0993e44cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d30936f12d9ab18a12efc723c94d335"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#a8d30936f12d9ab18a12efc723c94d335">CLI_EXIT</a>&#160;&#160;&#160;&quot;exit&quot;</td></tr>
+<tr class="separator:a8d30936f12d9ab18a12efc723c94d335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1044915eb305f07e6825a5ba500c06d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="smart__road__radar__cli_8hpp.html#ac1044915eb305f07e6825a5ba500c06d">ESCAPE_CHAR</a>&#160;&#160;&#160;27</td></tr>
+<tr class="separator:ac1044915eb305f07e6825a5ba500c06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a7550c6ae17b93c7c63597c3385cfdd84" name="a7550c6ae17b93c7c63597c3385cfdd84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7550c6ae17b93c7c63597c3385cfdd84">&#9670;&#160;</a></span>CLI_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_VERSION&#160;&#160;&#160;&quot;version&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00009">9</a></p>
+
+</div>
+</div>
+<a id="a60f2bc396111652db1e60d3421e6c045" name="a60f2bc396111652db1e60d3421e6c045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f2bc396111652db1e60d3421e6c045">&#9670;&#160;</a></span>CLI_VERSION_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_VERSION_SHORT&#160;&#160;&#160;&quot;-v&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00010">10</a></p>
+
+</div>
+</div>
+<a id="a5200c7ba3999ee70ef24fcd62892ba19" name="a5200c7ba3999ee70ef24fcd62892ba19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5200c7ba3999ee70ef24fcd62892ba19">&#9670;&#160;</a></span>CLI_SET_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_SET_PARAMS&#160;&#160;&#160;&quot;set-params&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00012">12</a></p>
+
+</div>
+</div>
+<a id="a1cb4b237008d7bd84bc0b2be7ae9110d" name="a1cb4b237008d7bd84bc0b2be7ae9110d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb4b237008d7bd84bc0b2be7ae9110d">&#9670;&#160;</a></span>CLI_SET_PARAMS_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_SET_PARAMS_SHORT&#160;&#160;&#160;&quot;-sp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<a id="a0778ff39e973d74dfdc421cb4e182f37" name="a0778ff39e973d74dfdc421cb4e182f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0778ff39e973d74dfdc421cb4e182f37">&#9670;&#160;</a></span>CLI_GET_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_GET_PARAMS&#160;&#160;&#160;&quot;get-params&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00015">15</a></p>
+
+</div>
+</div>
+<a id="ab45a1a8a185321038c82f3bebcd1894a" name="ab45a1a8a185321038c82f3bebcd1894a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45a1a8a185321038c82f3bebcd1894a">&#9670;&#160;</a></span>CLI_GET_PARAMS_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_GET_PARAMS_SHORT&#160;&#160;&#160;&quot;-gp&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00016">16</a></p>
+
+</div>
+</div>
+<a id="ac21835963d0683400a5b2da0b178d1a4" name="ac21835963d0683400a5b2da0b178d1a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac21835963d0683400a5b2da0b178d1a4">&#9670;&#160;</a></span>CLI_SET_TARGET_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_SET_TARGET_NUM&#160;&#160;&#160;&quot;target-num&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00018">18</a></p>
+
+</div>
+</div>
+<a id="af4b59bfcad7b38b194e6ac792ecb5a34" name="af4b59bfcad7b38b194e6ac792ecb5a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b59bfcad7b38b194e6ac792ecb5a34">&#9670;&#160;</a></span>CLI_SET_TARGET_NUM_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_SET_TARGET_NUM_SHORT&#160;&#160;&#160;&quot;-t&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a id="a89a3dfbb3ebdbc51187778104fe691b2" name="a89a3dfbb3ebdbc51187778104fe691b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a3dfbb3ebdbc51187778104fe691b2">&#9670;&#160;</a></span>CLI_GET_TARGET_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_GET_TARGET_DATA&#160;&#160;&#160;&quot;get-targets&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a id="a27d41bc5b02e256b7ff216243fb21f3e" name="a27d41bc5b02e256b7ff216243fb21f3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d41bc5b02e256b7ff216243fb21f3e">&#9670;&#160;</a></span>CLI_GET_TARGET_DATA_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_GET_TARGET_DATA_SHORT&#160;&#160;&#160;&quot;-gt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a id="add9047b15ad6d5301bd5c99780bb867a" name="add9047b15ad6d5301bd5c99780bb867a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9047b15ad6d5301bd5c99780bb867a">&#9670;&#160;</a></span>CLI_ENABLE_TRANSMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_ENABLE_TRANSMIT&#160;&#160;&#160;&quot;enable&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a id="acc78621fdafe1a76cf3e80427f5393e0" name="acc78621fdafe1a76cf3e80427f5393e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc78621fdafe1a76cf3e80427f5393e0">&#9670;&#160;</a></span>CLI_ENABLE_TRANSMIT_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_ENABLE_TRANSMIT_SHORT&#160;&#160;&#160;&quot;-e&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a id="a76a2ef46dfd863f9af7d438950484567" name="a76a2ef46dfd863f9af7d438950484567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a2ef46dfd863f9af7d438950484567">&#9670;&#160;</a></span>CLI_DISABLE_TRANSMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_DISABLE_TRANSMIT&#160;&#160;&#160;&quot;disable&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="af4da46aab3566aa943e0a89efb0c8abf" name="af4da46aab3566aa943e0a89efb0c8abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4da46aab3566aa943e0a89efb0c8abf">&#9670;&#160;</a></span>CLI_DISABLE_TRANSMIT_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_DISABLE_TRANSMIT_SHORT&#160;&#160;&#160;&quot;-d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a id="ad9062fb62893bd07d9f8442fb4a72dc1" name="ad9062fb62893bd07d9f8442fb4a72dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9062fb62893bd07d9f8442fb4a72dc1">&#9670;&#160;</a></span>CLI_SET_DATA_FREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_SET_DATA_FREQ&#160;&#160;&#160;&quot;freq&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<a id="a42abce86c460075c4f69f2c971837d99" name="a42abce86c460075c4f69f2c971837d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42abce86c460075c4f69f2c971837d99">&#9670;&#160;</a></span>CLI_SET_DATA_FREQ_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_SET_DATA_FREQ_SHORT&#160;&#160;&#160;&quot;-f&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00031">31</a></p>
+
+</div>
+</div>
+<a id="a77b8279c03adeff5dc1d7462d14c1a45" name="a77b8279c03adeff5dc1d7462d14c1a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b8279c03adeff5dc1d7462d14c1a45">&#9670;&#160;</a></span>CLI_ENABLE_ZERO_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_ENABLE_ZERO_DATA&#160;&#160;&#160;&quot;enable-zero&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00033">33</a></p>
+
+</div>
+</div>
+<a id="a3115ed945e5b13599982f880affb6409" name="a3115ed945e5b13599982f880affb6409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3115ed945e5b13599982f880affb6409">&#9670;&#160;</a></span>CLI_ENABLE_ZERO_DATA_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_ENABLE_ZERO_DATA_SHORT&#160;&#160;&#160;&quot;-ez&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<a id="aefe3812ee02456168db84d36eb0e16dc" name="aefe3812ee02456168db84d36eb0e16dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe3812ee02456168db84d36eb0e16dc">&#9670;&#160;</a></span>CLI_DISABLE_ZERO_DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_DISABLE_ZERO_DATA&#160;&#160;&#160;&quot;disable-zero&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00036">36</a></p>
+
+</div>
+</div>
+<a id="aca163fdaee5e8a636dbf5bbbf14ae67e" name="aca163fdaee5e8a636dbf5bbbf14ae67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca163fdaee5e8a636dbf5bbbf14ae67e">&#9670;&#160;</a></span>CLI_DISABLE_ZERO_DATA_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_DISABLE_ZERO_DATA_SHORT&#160;&#160;&#160;&quot;-dz&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<a id="acd456b59e6d4009012c394e2344d7fb7" name="acd456b59e6d4009012c394e2344d7fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd456b59e6d4009012c394e2344d7fb7">&#9670;&#160;</a></span>CLI_HELP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_HELP&#160;&#160;&#160;&quot;help&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00039">39</a></p>
+
+</div>
+</div>
+<a id="a343cc848bb54fb2b8c4b04b0993e44cc" name="a343cc848bb54fb2b8c4b04b0993e44cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343cc848bb54fb2b8c4b04b0993e44cc">&#9670;&#160;</a></span>CLI_HELP_SHORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_HELP_SHORT&#160;&#160;&#160;&quot;?&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00040">40</a></p>
+
+</div>
+</div>
+<a id="a8d30936f12d9ab18a12efc723c94d335" name="a8d30936f12d9ab18a12efc723c94d335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d30936f12d9ab18a12efc723c94d335">&#9670;&#160;</a></span>CLI_EXIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLI_EXIT&#160;&#160;&#160;&quot;exit&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a id="ac1044915eb305f07e6825a5ba500c06d" name="ac1044915eb305f07e6825a5ba500c06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1044915eb305f07e6825a5ba500c06d">&#9670;&#160;</a></span>ESCAPE_CHAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ESCAPE_CHAR&#160;&#160;&#160;27</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="smart__road__radar__cli_8hpp_source.html">smart_road_radar_cli.hpp</a> строка <a class="el" href="smart__road__radar__cli_8hpp_source.html#l00044">44</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="smart__road__radar__cli_8hpp.html">smart_road_radar_cli.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

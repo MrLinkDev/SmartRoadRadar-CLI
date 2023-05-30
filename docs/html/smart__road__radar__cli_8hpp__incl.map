@@ -1,0 +1,21 @@
+<map id="src/smart_road_radar_cli.hpp" name="src/smart_road_radar_cli.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="46,5,190,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,63,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,51,59,88,56,84,95,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="86,96,150,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,49,121,81,115,81,115,49"/>
+<area shape="rect" id="Node000004" href="$smart__road__radar_8hpp.html" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="174,96,321,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,46,216,85,213,90,150,51"/>
+<area shape="rect" id="Node000005" href="$smart__road__radar__utils_8hpp.html" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="158,171,337,197"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="250,123,250,156,245,156,245,123"/>
+<area shape="rect" id="Node000006" href="$serial_8hpp.html" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="209,245,286,272"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="250,198,250,230,245,230,245,198"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="107,320,188,347"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="231,275,178,313,175,309,228,270"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="212,320,283,347"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="250,273,250,305,245,305,245,273"/>
+<area shape="rect" id="Node000009" href="$utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="307,320,377,347"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="265,270,316,309,312,313,262,275"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="315,395,369,421"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="345,347,345,380,339,380,339,347"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SmartRoadRadar" name="SmartRoadRadar">
+<area shape="rect" id="Node000001" title="Объект для взаимодействия с радаром" alt="" coords="5,96,126,123"/>
+<area shape="rect" id="Node000002" href="$class_serial.html" title="Объект для общения с устройствами по последовательному интерфейсу" alt="" coords="38,5,93,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,47,68,95,63,95,63,47"/>
+</map>

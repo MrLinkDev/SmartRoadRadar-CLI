@@ -1,0 +1,23 @@
+<map id="src/main.cpp" name="src/main.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="70,5,166,32"/>
+<area shape="rect" id="Node000002" href="$smart__road__radar__cli_8hpp.html" title=" " alt="" coords="34,80,202,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,33,121,65,115,65,115,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,63,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,109,61,147,57,143,102,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="86,155,150,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="121,107,121,140,115,140,115,107"/>
+<area shape="rect" id="Node000005" href="$smart__road__radar_8hpp.html" title="Заголовочный файл, содержащий класс SmartRoadRadar для взаимодействия с радаром по протоколу" alt="" coords="174,155,321,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="142,105,213,145,211,149,139,110"/>
+<area shape="rect" id="Node000006" href="$smart__road__radar__utils_8hpp.html" title="Заголовочный файл, содержащий вспомогательные константы, структуры и методы для работы SmartRoadRadar..." alt="" coords="158,229,337,256"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="250,182,250,214,245,214,245,182"/>
+<area shape="rect" id="Node000007" href="$serial_8hpp.html" title="Заголовочный файл, содержащий класс Serial для общения с устройствами по последовательному интерфейсу" alt="" coords="209,304,286,331"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="250,257,250,289,245,289,245,257"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="107,379,188,405"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="231,333,178,372,175,367,228,329"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="212,379,283,405"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="250,331,250,364,245,364,245,331"/>
+<area shape="rect" id="Node000010" href="$utils_8hpp.html" title="Заголовочный файл, содержащий определения требуемых типов данных и функции для обработки строк" alt="" coords="307,379,377,405"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="265,329,316,367,312,372,262,333"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="315,453,369,480"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="345,406,345,438,339,438,339,406"/>
+</map>

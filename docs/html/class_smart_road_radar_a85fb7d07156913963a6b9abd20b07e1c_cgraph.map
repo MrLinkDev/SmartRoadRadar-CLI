@@ -1,0 +1,24 @@
+<map id="SmartRoadRadar::disable_zero_data_reporting" name="SmartRoadRadar::disable_zero_data_reporting">
+<area shape="rect" id="Node000001" title="Выключение передачи нулевых данных." alt="" coords="5,56,175,99"/>
+<area shape="rect" id="Node000002" href="$smart__road__radar__utils_8hpp.html#a4bba85313252440393bd850c559cf126" title=" " alt="" coords="648,5,760,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,53,222,41,334,28,447,20,633,15,633,21,447,26,335,33,223,47,168,58"/>
+<area shape="rect" id="Node000004" href="$class_smart_road_radar.html#a62c2eff65015669baf6dcd63a7f42631" title="Чтение статуса. Функция, которая ожидает кадр с командным словом чтения статуса от радара" alt="" coords="224,56,377,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,75,209,75,209,80,175,80"/>
+<area shape="rect" id="Node000010" href="$class_smart_road_radar.html#a7dd796778567dee18eb6256c71aaaceb" title="Отправка кадра. Из кадра, передаваемого в качестве аргумента, формируется массив типа u_byte_t,..." alt="" coords="223,123,378,165"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="160,97,218,115,216,120,159,102"/>
+<area shape="rect" id="Node000003" href="$smart__road__radar__utils_8hpp.html#ac95cbfca74bef5fb7d0ebe516fe72cac" title=" " alt="" coords="829,7,969,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="760,16,814,17,814,22,760,22"/>
+<area shape="rect" id="Node000005" href="$class_smart_road_radar.html#aeb148a052a0219478442e555457e4776" title="Чтение данных с радара с требуемым командным словом." alt="" coords="426,56,579,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="377,75,411,75,411,80,377,80"/>
+<area shape="rect" id="Node000006" href="$class_smart_road_radar.html#a4702da64442130c81fba68dbe04d922c" title="Чтение данных с радара. Читает данные, которые отправляет радар и формирует из них кадр" alt="" coords="627,56,781,99"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="580,75,613,75,613,80,580,80"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="778,53,836,36,838,41,779,58"/>
+<area shape="rect" id="Node000007" href="$class_serial.html#a07339f65a29949df9b5949d26bd63113" title="Чтение одного байта." alt="" coords="832,61,966,88"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="781,74,818,73,818,78,781,79"/>
+<area shape="rect" id="Node000008" href="$class_serial.html#acd3b5133a1bb28da5c5d7e1b811aff3e" title="Чтение массива байтов." alt="" coords="829,112,969,139"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="782,94,828,105,827,110,781,99"/>
+<area shape="rect" id="Node000009" href="$class_serial.html#aa87bfd9aae65c56c2f9944329c4a4533" title="Чтение одного байта." alt="" coords="1017,112,1136,139"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="969,123,1002,123,1002,128,969,128"/>
+<area shape="rect" id="Node000011" href="$class_serial.html#a29ef8d7663e7c90420c7c982be42e557" title="Отправка массива байтов на устройство." alt="" coords="432,131,574,157"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="378,141,417,141,417,147,378,147"/>
+</map>
