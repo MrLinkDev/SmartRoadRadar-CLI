@@ -15,14 +15,17 @@
 #include "utils.hpp"
 
 /// Стандартный размер байта
-#define BYTE_SIZE 8
+#define BYTE_SIZE   8
+
+/// Стандартная скорость передачи данных
+#define DEFAULT_BAUD_RATE   115200
 
 /// Нулевой символ
-#define SYMBOL_NULL '\0'
+#define SYMBOL_NULL     '\0'
 /// Символ возврата каретки
-#define SYMBOL_CR   '\r'
+#define SYMBOL_CR       '\r'
 /// Символ переноса строки
-#define SYMBOL_LF   '\n'
+#define SYMBOL_LF       '\n'
 
 /// Возвращаемый код при успешной операции
 #define SERIAL_OK       0
@@ -92,10 +95,10 @@ public:
         DCB dcbSerialParameters = {0};
 
         dcbSerialParameters.DCBlength = sizeof dcbSerialParameters;
-        dcbSerialParameters.BaudRate = BAUD_115200;
-        dcbSerialParameters.ByteSize = BYTE_SIZE;
-        dcbSerialParameters.StopBits = ONESTOPBIT;
-        dcbSerialParameters.Parity = NOPARITY;
+        dcbSerialParameters.BaudRate =  DEFAULT_BAUD_RATE;
+        dcbSerialParameters.ByteSize =  BYTE_SIZE;
+        dcbSerialParameters.StopBits =  ONESTOPBIT;
+        dcbSerialParameters.Parity =    NOPARITY;
 
         SetCommState(h_serial, &dcbSerialParameters);
     }
@@ -138,10 +141,10 @@ public:
         DCB dcbSerialParameters = {0};
 
         dcbSerialParameters.DCBlength = sizeof dcbSerialParameters;
-        dcbSerialParameters.BaudRate = config.baud_rate;
-        dcbSerialParameters.ByteSize = config.byte_size;
-        dcbSerialParameters.StopBits = config.stop_bits;
-        dcbSerialParameters.Parity = config.parity;
+        dcbSerialParameters.BaudRate =  config.baud_rate;
+        dcbSerialParameters.ByteSize =  config.byte_size;
+        dcbSerialParameters.StopBits =  config.stop_bits;
+        dcbSerialParameters.Parity =    config.parity;
 
         SetCommState(h_serial, &dcbSerialParameters);
     }
@@ -329,7 +332,6 @@ public:
             buffer[pos] = received_byte;
         }
     }
-
 };
 
 
