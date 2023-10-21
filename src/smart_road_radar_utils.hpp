@@ -92,7 +92,10 @@
 #define SCALE   0.01f
 
 /// Размер данных об одной цели
-#define TARGET_DATA_BYTE_LENGTH 9
+#define TARGET_DATA_BYTE_LENGTH 10
+
+/// Количество байт, отвечающих за облако точек
+#define TARGET_DATA_BYTE_OFFSET 2502
 
 /// Частота передачи данных (1 раз в секунду)
 #define DATA_FREQ_1     0x01

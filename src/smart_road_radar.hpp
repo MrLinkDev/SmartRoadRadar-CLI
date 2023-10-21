@@ -33,24 +33,37 @@ private:
     frame read_frame() {
         frame received_frame{};
 
+        /// Ожидание начала кадра
         while (data_bus.read_u_byte() != HEADER_DATA_FRAME_1);
 
+        /// Если следующий байт данных не равен второму байту заголовка, то кадр считается невалидным
         if (data_bus.read_u_byte() != HEADER_DATA_FRAME_2) {
             received_frame.is_valid = false;
             return received_frame;
         }
 
+        /// Чтение первого байта длины данных
         received_frame.data_length.b[0] = data_bus.read_u_byte();
+        /// Чтение второго байта длины данных
         received_frame.data_length.b[1] = data_bus.read_u_byte();
 
+        /// Чтение командного слова
         received_frame.word = data_bus.read_u_byte();
 
-        if (received_frame.data_length.s > 1) {
-            received_frame.data = new u_byte_t[received_frame.data_length.s - 1];
+        /// Пропуск пустого байта
+        data_bus.read_u_byte();
 
-            data_bus.read_u_bytes(received_frame.data, received_frame.data_length.s - 1);
+        if (received_frame.data_length.s > 1) {
+            received_frame.data = new u_byte_t[received_frame.data_length.s - 2];
+
+            /// Чтение данных
+            data_bus.read_u_bytes(received_frame.data, received_frame.data_length.s - 2);
         }
 
+        /// Пропуск пустого байта
+        data_bus.read_u_byte();
+
+        /// Чтение контрольной суммы
         received_frame.checksum = data_bus.read_u_byte();
 
         u_byte_t calc_checksum = calculate_checksum(received_frame);
@@ -220,7 +233,7 @@ public:
      * }
      * \endcode
      */
-    int get_firmware_version(u_byte_t *version_buffer) {
+    virtual int get_firmware_version(u_byte_t *version_buffer) {
         frame target_frame = configure_frame(CMD_REQUEST_VERSION);
         write_frame(target_frame);
 
@@ -266,7 +279,7 @@ public:
      * }
      * \endcode
      */
-    int set_parameters(parameters target_parameters) {
+    virtual int set_parameters(parameters target_parameters) {
         u_short_t length = sizeof target_parameters;
         u_byte_t data[length];
 
@@ -347,7 +360,7 @@ public:
      * }
      * \endcode
      */
-    int get_parameters(parameters *received_parameters) {
+    virtual int get_parameters(parameters *received_parameters) {
         frame target_frame = configure_frame(CMD_GET_PARAMETERS);
         write_frame(target_frame);
         
@@ -421,7 +434,7 @@ public:
      * }
      * \endcode
      */
-    int set_target_number(u_byte_t number) {
+    virtual int set_target_number(u_byte_t number) {
         frame target_frame = configure_frame(CMD_SET_TARGET_NUM, number);
         write_frame(target_frame);
         
@@ -459,7 +472,7 @@ public:
      * }
      * \endcode
      */
-    int get_target_data(target_data *data) {
+    virtual int get_target_data(target_data *data, int target_data_capacity) {
         frame received_frame;
         
         do {
@@ -467,9 +480,7 @@ public:
         } while (received_frame.data_length.s <= 1);
         
         if (received_frame.is_valid) {
-            int target_count = (received_frame.data_length.s - 1) / TARGET_DATA_BYTE_LENGTH;
-
-            for (int pos = 0; pos < target_count; ++pos) {
+            for (int pos = 0; pos < target_data_capacity; ++pos) {
                 data[pos].num = received_frame.data[0 + TARGET_DATA_BYTE_LENGTH * pos];
 
                 data[pos].distance = u_byte_to_float(new u_byte_t[2] {
@@ -516,7 +527,7 @@ public:
      * }
      * \endcode
      */
-    int enable_data_transmit() {
+    virtual int enable_data_transmit() {
         frame target_frame = configure_frame(CMD_ENABLE_TRANSMIT);
         write_frame(target_frame);
 
@@ -541,7 +552,7 @@ public:
      * }
      * \endcode
      */
-    int disable_data_transmit() {
+    virtual int disable_data_transmit() {
         frame target_frame = configure_frame(CMD_DISABLE_TRANSMIT);
         write_frame(target_frame);
 
@@ -579,7 +590,7 @@ public:
      *  }
      * \endcode
      */
-    int set_data_transmit_freq(u_byte_t freq) {
+    virtual int set_data_transmit_freq(u_byte_t freq) {
         frame target_frame = configure_frame(CMD_SET_DATA_FREQ, freq);
         write_frame(target_frame);
 
@@ -604,7 +615,7 @@ public:
      * }
      * \endcode
      */
-    int enable_zero_data_reporting() {
+    virtual int enable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_REPORT);
         write_frame(target_frame);
 
@@ -629,7 +640,7 @@ public:
      * }
      * \endcode
      */
-    int disable_zero_data_reporting() {
+    virtual int disable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_NOT_REPORT);
         write_frame(target_frame);
 

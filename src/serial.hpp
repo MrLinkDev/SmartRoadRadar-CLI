@@ -328,7 +328,7 @@ public:
         u_byte_t received_byte;
 
         for (size_t pos = 0; pos < buffer_length; ++pos) {
-            received_byte = read_byte();
+            received_byte = read_u_byte();
             buffer[pos] = received_byte;
         }
     }

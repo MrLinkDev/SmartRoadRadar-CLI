@@ -5,6 +5,7 @@
 #include <conio.h>
 
 #include "smart_road_radar.hpp"
+#include "smart_road_radar_demo.hpp"
 
 #define CLI_VERSION                 "version"
 #define CLI_VERSION_SHORT           "-v"
@@ -55,7 +56,7 @@ protected:
     }
 
 private:
-    SmartRoadRadar radar{};
+    SmartRoadRadar *radar;
 
     bool exit_from_main_loop = false;
 
@@ -155,7 +156,7 @@ private:
     void get_version() {
         u_byte_t version_buffer[3];
 
-        if (radar.get_firmware_version(version_buffer) == SMART_ROAD_RADAR_OK) {
+        if (radar->get_firmware_version(version_buffer) == SMART_ROAD_RADAR_OK) {
             printf("Firmware version: V%d.%d.%d\n",
                     (int) version_buffer[0],
                     (int) version_buffer[1],
@@ -179,7 +180,7 @@ private:
             target_parameters.right_border.f = std::stof(get_first_item(args));
         }
 
-        if (radar.set_parameters(target_parameters) == SMART_ROAD_RADAR_OK) {
+        if (radar->set_parameters(target_parameters) == SMART_ROAD_RADAR_OK) {
             printf("Parameters are loaded\n");
         } else {
             printf("Can't load parameters into radar\n");
@@ -189,7 +190,7 @@ private:
     void get_parameters() {
         parameters received_parameters;
 
-        if (radar.get_parameters(&received_parameters) == SMART_ROAD_RADAR_OK) {
+        if (radar->get_parameters(&received_parameters) == SMART_ROAD_RADAR_OK) {
             printf("Min distance = %f\n", received_parameters.min_dist.f);
             printf("Max distance = %f\n", received_parameters.max_dist.f);
             printf("Min speed    = %f\n", received_parameters.min_speed.f);
@@ -206,7 +207,7 @@ private:
     void set_target_num(std::string num) {
         u_byte_t target_num = std::stoi(num);
 
-        if (radar.set_target_number(target_num) == SMART_ROAD_RADAR_OK) {
+        if (radar->set_target_number(target_num) == SMART_ROAD_RADAR_OK) {
             printf("Target number inserted\n");
         } else {
             printf("Can't insert target number into radar\n");
@@ -227,7 +228,7 @@ private:
         std::thread esc_handler_thread(SmartRoadRadarCLI::wait_exc_char);
 
         while (!SmartRoadRadarCLI::exit_from_target_data) {
-            if (radar.get_target_data(data) == SMART_ROAD_RADAR_OK) {
+            if (radar->get_target_data(data, target_count) == SMART_ROAD_RADAR_OK) {
 
                 for (int i = 0; i < target_count; ++i) {
                     printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
@@ -249,7 +250,7 @@ private:
     }
 
     void enable_data_transmit() {
-        if (radar.enable_data_transmit() == SMART_ROAD_RADAR_OK) {
+        if (radar->enable_data_transmit() == SMART_ROAD_RADAR_OK) {
             printf("Data transmit enabled\n");
         } else {
             printf("Can't enable data transmit\n");
@@ -257,7 +258,7 @@ private:
     }
 
     void disable_data_transmit() {
-        if (radar.disable_data_transmit() == SMART_ROAD_RADAR_OK) {
+        if (radar->disable_data_transmit() == SMART_ROAD_RADAR_OK) {
             printf("Data transmit disabled\n");
         } else {
             printf("Can't disable data transmit\n");
@@ -267,7 +268,7 @@ private:
     void set_data_freq(std::string freq) {
         u_byte_t data_freq = std::stoi(freq);
 
-        if (radar.set_data_transmit_freq(data_freq) == SMART_ROAD_RADAR_OK) {
+        if (radar->set_data_transmit_freq(data_freq) == SMART_ROAD_RADAR_OK) {
             printf("Frequency value uploaded into radar\n");
         } else {
             printf("Can't upload frequency value\n");
@@ -275,7 +276,7 @@ private:
     }
 
     void enable_zero_data_transmit() {
-        if (radar.enable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
+        if (radar->enable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
             printf("Zero data reporting enabled\n");
         } else {
             printf("Can't enable zero data reporting\n");
@@ -283,7 +284,7 @@ private:
     }
 
     void disable_zero_data_transmit() {
-        if (radar.disable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
+        if (radar->disable_zero_data_reporting() == SMART_ROAD_RADAR_OK) {
             printf("Zero data reporting disabled\n");
         } else {
             printf("Can't disable zero data reporting\n");
@@ -291,14 +292,17 @@ private:
     }
 
 public:
-    SmartRoadRadarCLI() = default;
+
+    SmartRoadRadarCLI() {
+        radar = new SmartRoadRadarDemo();
+    }
 
     explicit SmartRoadRadarCLI(LPTSTR address) {
-        radar = SmartRoadRadar(address);
+        radar = new SmartRoadRadar(address);
     }
 
     SmartRoadRadarCLI(LPTSTR address, port_config config) {
-        radar = SmartRoadRadar(address, config);
+        radar = new SmartRoadRadar(address, config);
     }
 
     void main_loop() {
@@ -313,6 +317,8 @@ public:
 
             parse_line(&line);
         }
+
+        delete radar;
     }
 };
 
