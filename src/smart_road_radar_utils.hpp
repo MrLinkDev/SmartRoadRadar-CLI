@@ -216,7 +216,8 @@ u_byte_t calculate_checksum(frame target_frame) {
  * \return число типа float
  */
 float u_byte_to_float(const u_byte_t u_bytes[2]) {
-    short data = (u_bytes[1] << 8) | u_bytes[0];
+    // TODO: Проверить это место на реальном радаре
+    int data = (u_bytes[1] << 8) | u_bytes[0];
     return (float) data * SCALE;
 }
 
