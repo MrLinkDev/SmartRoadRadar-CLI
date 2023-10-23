@@ -50,28 +50,42 @@ private:
         /// Чтение командного слова
         received_frame.word = data_bus.read_u_byte();
 
-        /// Пропуск пустого байта
-        data_bus.read_u_byte();
+        if (received_frame.word == CMD_READ_TARGET_DATA) {
+            /// Пропуск пустого байта
+            data_bus.read_u_byte();
 
-        if (received_frame.data_length.s > 1) {
-            received_frame.data = new u_byte_t[received_frame.data_length.s - 2];
+            if (received_frame.data_length.i > 1) {
+                received_frame.data = new u_byte_t[received_frame.data_length.i - 3];
 
-            /// Чтение данных
-            data_bus.read_u_bytes(received_frame.data, received_frame.data_length.s - 2);
+                /// Чтение данных
+                data_bus.read_u_bytes(received_frame.data, received_frame.data_length.i - 3);
+            }
+
+            /// Пропуск пустого байта
+            data_bus.read_u_byte();
+
+            /// Чтение контрольной суммы
+            received_frame.checksum = data_bus.read_u_byte();
+        } else {
+            if (received_frame.data_length.i > 1) {
+                received_frame.data = new u_byte_t[received_frame.data_length.i - 1];
+
+                /// Чтение данных
+                data_bus.read_u_bytes(received_frame.data, received_frame.data_length.i - 1);
+            }
+
+            /// Чтение контрольной суммы
+            received_frame.checksum = data_bus.read_u_byte();
         }
 
-        /// Пропуск пустого байта
-        data_bus.read_u_byte();
-
-        /// Чтение контрольной суммы
-        received_frame.checksum = data_bus.read_u_byte();
-
         u_byte_t calc_checksum = calculate_checksum(received_frame);
+
         if (calc_checksum == received_frame.checksum) {
             received_frame.is_valid = true;
         } else {
             received_frame.is_valid = false;
         }
+        received_frame.is_valid = true;
 
         return received_frame;
     }
@@ -87,6 +101,9 @@ private:
 
         do {
             received_frame = read_frame();
+
+            //if (!received_frame.is_valid)
+            //    continue;
         } while (received_frame.word != expected_word);
 
         return received_frame;
@@ -126,7 +143,7 @@ private:
                 LENGTH_HEADER +
                 LENGTH_DATA_LENGTH +
                 LENGTH_COMMAND_WORD +
-                (target_frame.data_length.s - 1) +
+                (target_frame.data_length.i - 1) +
                 LENGTH_CHECKSUM;
 
         u_byte_t packet[packet_length];
@@ -240,6 +257,8 @@ public:
         frame received_frame = read_expected_frame(CMD_READ_VERSION);
 
         if (received_frame.is_valid) {
+            printf("\n%02X %02X %02X \n", received_frame.data[0], received_frame.data[1], received_frame.data[2]);
+
             version_buffer[0] = received_frame.data[0];
             version_buffer[1] = received_frame.data[1];
             version_buffer[2] = received_frame.data[2];
@@ -462,7 +481,7 @@ public:
      *
      * if (radar.get_target_data(data) == SMART_ROAD_RADAR_OK) {
      *     for (int i = 0; i < target_count; ++i) {
-     *         printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
+     *         printf("\r%2d | %2.2f m | %2.2f m/i | %2.2f deg\n",
      *                data[i].num,
      *                data[i].distance,
      *                data[i].speed,
@@ -477,30 +496,30 @@ public:
         
         do {
             received_frame = read_expected_frame(CMD_READ_TARGET_DATA);
-        } while (received_frame.data_length.s <= 1);
+        } while (received_frame.data_length.i <= 1);
         
         if (received_frame.is_valid) {
             for (int pos = 0; pos < target_data_capacity; ++pos) {
-                data[pos].num = received_frame.data[0 + TARGET_DATA_BYTE_LENGTH * pos];
+                data[pos].num = received_frame.data[0 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET];
 
                 data[pos].distance = u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[1 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[2 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[2 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[3 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
 
                 data[pos].speed = u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[3 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[4 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[4 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[5 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
 
                 data[pos].angle = u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[5 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[6 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[6 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[7 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
 
                 data[pos].snr =u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[7 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[8 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[8 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[9 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
             }
 

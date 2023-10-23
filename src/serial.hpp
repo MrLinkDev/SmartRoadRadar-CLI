@@ -302,7 +302,7 @@ public:
      */
     u_byte_t read_u_byte() {
         DWORD size;
-        u_byte_t received_byte;
+        u_byte_t received_byte = 0x00;
 
         ReadFile(
                 h_serial,
@@ -311,9 +311,9 @@ public:
                 &size,
                 nullptr);
 
-        if (size > 0) {
-            return received_byte;
-        }
+        //printf("%02X ", received_byte);
+
+        return received_byte;
     }
 
     /**
@@ -329,7 +329,8 @@ public:
 
         for (size_t pos = 0; pos < buffer_length; ++pos) {
             received_byte = read_u_byte();
-            buffer[pos] = received_byte;
+            //buffer[pos] = received_byte;
+            *(buffer + pos) = received_byte;
         }
     }
 };

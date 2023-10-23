@@ -243,7 +243,7 @@ public:
      *
      * if (radar.get_target_data(data) == SMART_ROAD_RADAR_OK) {
      *     for (int i = 0; i < target_count; ++i) {
-     *         printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
+     *         printf("\r%2d | %2.2f m | %2.2f m/i | %2.2f deg\n",
      *                data[i].num,
      *                data[i].distance,
      *                data[i].speed,

@@ -158,16 +158,16 @@ private:
 
         if (radar->get_firmware_version(version_buffer) == SMART_ROAD_RADAR_OK) {
             printf("Firmware version: V%d.%d.%d\n",
-                    (int) version_buffer[0],
-                    (int) version_buffer[1],
-                    (int) version_buffer[2]);
+                    version_buffer[0],
+                    version_buffer[1],
+                    version_buffer[2]);
         } else {
             printf("Can't get firmware version from radar\n");
         }
     }
 
     void set_parameters(std::string *args) {
-        parameters target_parameters;
+        parameters target_parameters{};
 
         if (*args != "default") {
             target_parameters.min_dist.f     = std::stof(get_first_item(args));
@@ -231,7 +231,7 @@ private:
             if (radar->get_target_data(data, target_count) == SMART_ROAD_RADAR_OK) {
 
                 for (int i = 0; i < target_count; ++i) {
-                    printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
+                    printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\t\n",
                            data[i].num,
                            data[i].distance,
                            data[i].speed,
@@ -308,6 +308,8 @@ public:
     void main_loop() {
         std::string line;
         exit_from_main_loop = false;
+
+        system("cls");
 
         while (!exit_from_main_loop) {
             printf("smart_road_radar:\\> ");
