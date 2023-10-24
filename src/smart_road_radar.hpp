@@ -85,7 +85,6 @@ private:
         } else {
             received_frame.is_valid = false;
         }
-        received_frame.is_valid = true;
 
         return received_frame;
     }
@@ -98,13 +97,16 @@ private:
      */
     frame read_expected_frame(u_byte_t expected_word) {
         frame received_frame;
+        int attempts = 10;
 
         do {
             received_frame = read_frame();
+            --attempts;
+        } while (received_frame.word != expected_word && attempts > 0);
 
-            //if (!received_frame.is_valid)
-            //    continue;
-        } while (received_frame.word != expected_word);
+        if (received_frame.word != expected_word && attempts == 0) {
+            received_frame.is_valid = false;
+        }
 
         return received_frame;
     }
@@ -257,8 +259,6 @@ public:
         frame received_frame = read_expected_frame(CMD_READ_VERSION);
 
         if (received_frame.is_valid) {
-            printf("\n%02X %02X %02X \n", received_frame.data[0], received_frame.data[1], received_frame.data[2]);
-
             version_buffer[0] = received_frame.data[0];
             version_buffer[1] = received_frame.data[1];
             version_buffer[2] = received_frame.data[2];
@@ -343,9 +343,17 @@ public:
         data[31] = target_parameters.right_border.b[3];
 
         frame target_frame = configure_frame(CMD_SET_PARAMETERS, data, length);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -455,9 +463,17 @@ public:
      */
     virtual int set_target_number(u_byte_t number) {
         frame target_frame = configure_frame(CMD_SET_TARGET_NUM, number);
-        write_frame(target_frame);
-        
-        int result = read_status();
+
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -548,9 +564,17 @@ public:
      */
     virtual int enable_data_transmit() {
         frame target_frame = configure_frame(CMD_ENABLE_TRANSMIT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -573,9 +597,17 @@ public:
      */
     virtual int disable_data_transmit() {
         frame target_frame = configure_frame(CMD_DISABLE_TRANSMIT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -611,9 +643,17 @@ public:
      */
     virtual int set_data_transmit_freq(u_byte_t freq) {
         frame target_frame = configure_frame(CMD_SET_DATA_FREQ, freq);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -636,9 +676,17 @@ public:
      */
     virtual int enable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_REPORT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -661,9 +709,17 @@ public:
      */
     virtual int disable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_NOT_REPORT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 };
