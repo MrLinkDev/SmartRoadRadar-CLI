@@ -92,7 +92,10 @@
 #define SCALE   0.01f
 
 /// Размер данных об одной цели
-#define TARGET_DATA_BYTE_LENGTH 9
+#define TARGET_DATA_BYTE_LENGTH 10
+
+/// Количество байт, отвечающих за облако точек
+#define TARGET_DATA_BYTE_OFFSET 2504
 
 /// Частота передачи данных (1 раз в секунду)
 #define DATA_FREQ_1     0x01
@@ -124,7 +127,7 @@ struct frame {
 
     union {
         u_byte_t b[2];
-        u_short_t s;
+        int i;
     } data_length{};            ///< Размер данных
 
     u_byte_t word{};            ///< Командное слово
@@ -200,8 +203,8 @@ u_byte_t calculate_checksum(frame target_frame) {
 
     checksum += target_frame.word;
 
-    if (target_frame.data_length.s > 1) {
-        for (unsigned short i = 0; i < target_frame.data_length.s - 1; ++i) {
+    if (target_frame.data_length.i > 1) {
+        for (long long i = 0; i < target_frame.data_length.i - 1; ++i) {
             checksum += target_frame.data[i];
         }
     }
@@ -216,7 +219,8 @@ u_byte_t calculate_checksum(frame target_frame) {
  * \return число типа float
  */
 float u_byte_to_float(const u_byte_t u_bytes[2]) {
-    short data = (u_bytes[1] << 8) | u_bytes[0];
+    // TODO: Проверить это место на реальном радаре
+    short data = (int) (u_bytes[1] << 8) | (int) u_bytes[0];
     return (float) data * SCALE;
 }
 
@@ -229,7 +233,7 @@ float u_byte_to_float(const u_byte_t u_bytes[2]) {
 frame configure_frame(u_byte_t word) {
     frame configured_frame{};
 
-    configured_frame.data_length.s = (u_short_t) 1;
+    configured_frame.data_length.i = 1;
     configured_frame.word = word;
 
     configured_frame.checksum = calculate_checksum(configured_frame);
@@ -247,7 +251,7 @@ frame configure_frame(u_byte_t word) {
 frame configure_frame(u_byte_t word, u_byte_t data) {
     frame configured_frame{};
 
-    configured_frame.data_length.s = (u_short_t) 2;
+    configured_frame.data_length.i = 2;
     configured_frame.word = word;
 
     configured_frame.data = new u_byte_t[1];
@@ -269,11 +273,13 @@ frame configure_frame(u_byte_t word, u_byte_t data) {
 frame configure_frame(u_byte_t word, u_byte_t *data, u_short_t length) {
     frame configured_frame{};
 
-    configured_frame.data_length.s = (u_short_t) (length + 1);
+    configured_frame.data_length.i = length + 1;
     configured_frame.word = word;
 
     configured_frame.data = new u_byte_t[length];
-    configured_frame.data = data;
+    for (int i = 0; i < length; ++i) {
+        configured_frame.data[i] = *(data + i);
+    }
 
     configured_frame.checksum = calculate_checksum(configured_frame);
 

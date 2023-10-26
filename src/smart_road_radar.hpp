@@ -33,27 +33,53 @@ private:
     frame read_frame() {
         frame received_frame{};
 
+        /// Ожидание начала кадра
         while (data_bus.read_u_byte() != HEADER_DATA_FRAME_1);
 
+        /// Если следующий байт данных не равен второму байту заголовка, то кадр считается невалидным
         if (data_bus.read_u_byte() != HEADER_DATA_FRAME_2) {
             received_frame.is_valid = false;
             return received_frame;
         }
 
+        /// Чтение первого байта длины данных
         received_frame.data_length.b[0] = data_bus.read_u_byte();
+        /// Чтение второго байта длины данных
         received_frame.data_length.b[1] = data_bus.read_u_byte();
 
+        /// Чтение командного слова
         received_frame.word = data_bus.read_u_byte();
 
-        if (received_frame.data_length.s > 1) {
-            received_frame.data = new u_byte_t[received_frame.data_length.s - 1];
+        if (received_frame.word == CMD_READ_TARGET_DATA) {
+            /// Пропуск пустого байта
+            data_bus.read_u_byte();
 
-            data_bus.read_u_bytes(received_frame.data, received_frame.data_length.s - 1);
+            if (received_frame.data_length.i > 1) {
+                received_frame.data = new u_byte_t[received_frame.data_length.i - 3];
+
+                /// Чтение данных
+                data_bus.read_u_bytes(received_frame.data, received_frame.data_length.i - 3);
+            }
+
+            /// Пропуск пустого байта
+            data_bus.read_u_byte();
+
+            /// Чтение контрольной суммы
+            received_frame.checksum = data_bus.read_u_byte();
+        } else {
+            if (received_frame.data_length.i > 1) {
+                received_frame.data = new u_byte_t[received_frame.data_length.i - 1];
+
+                /// Чтение данных
+                data_bus.read_u_bytes(received_frame.data, received_frame.data_length.i - 1);
+            }
+
+            /// Чтение контрольной суммы
+            received_frame.checksum = data_bus.read_u_byte();
         }
 
-        received_frame.checksum = data_bus.read_u_byte();
-
         u_byte_t calc_checksum = calculate_checksum(received_frame);
+
         if (calc_checksum == received_frame.checksum) {
             received_frame.is_valid = true;
         } else {
@@ -71,10 +97,16 @@ private:
      */
     frame read_expected_frame(u_byte_t expected_word) {
         frame received_frame;
+        int attempts = 10;
 
         do {
             received_frame = read_frame();
-        } while (received_frame.word != expected_word);
+            --attempts;
+        } while (received_frame.word != expected_word && attempts > 0);
+
+        if (received_frame.word != expected_word && attempts == 0) {
+            received_frame.is_valid = false;
+        }
 
         return received_frame;
     }
@@ -113,7 +145,7 @@ private:
                 LENGTH_HEADER +
                 LENGTH_DATA_LENGTH +
                 LENGTH_COMMAND_WORD +
-                (target_frame.data_length.s - 1) +
+                (target_frame.data_length.i - 1) +
                 LENGTH_CHECKSUM;
 
         u_byte_t packet[packet_length];
@@ -220,7 +252,7 @@ public:
      * }
      * \endcode
      */
-    int get_firmware_version(u_byte_t *version_buffer) {
+    virtual int get_firmware_version(u_byte_t *version_buffer) {
         frame target_frame = configure_frame(CMD_REQUEST_VERSION);
         write_frame(target_frame);
 
@@ -266,7 +298,7 @@ public:
      * }
      * \endcode
      */
-    int set_parameters(parameters target_parameters) {
+    virtual int set_parameters(parameters target_parameters) {
         u_short_t length = sizeof target_parameters;
         u_byte_t data[length];
 
@@ -311,9 +343,17 @@ public:
         data[31] = target_parameters.right_border.b[3];
 
         frame target_frame = configure_frame(CMD_SET_PARAMETERS, data, length);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -347,7 +387,7 @@ public:
      * }
      * \endcode
      */
-    int get_parameters(parameters *received_parameters) {
+    virtual int get_parameters(parameters *received_parameters) {
         frame target_frame = configure_frame(CMD_GET_PARAMETERS);
         write_frame(target_frame);
         
@@ -421,11 +461,19 @@ public:
      * }
      * \endcode
      */
-    int set_target_number(u_byte_t number) {
+    virtual int set_target_number(u_byte_t number) {
         frame target_frame = configure_frame(CMD_SET_TARGET_NUM, number);
-        write_frame(target_frame);
-        
-        int result = read_status();
+
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -449,7 +497,7 @@ public:
      *
      * if (radar.get_target_data(data) == SMART_ROAD_RADAR_OK) {
      *     for (int i = 0; i < target_count; ++i) {
-     *         printf("\r%2d | %2.2f m | %2.2f m/s | %2.2f deg\n",
+     *         printf("\r%2d | %2.2f m | %2.2f m/i | %2.2f deg\n",
      *                data[i].num,
      *                data[i].distance,
      *                data[i].speed,
@@ -459,37 +507,35 @@ public:
      * }
      * \endcode
      */
-    int get_target_data(target_data *data) {
+    virtual int get_target_data(target_data *data, int target_data_capacity) {
         frame received_frame;
         
         do {
             received_frame = read_expected_frame(CMD_READ_TARGET_DATA);
-        } while (received_frame.data_length.s <= 1);
+        } while (received_frame.data_length.i <= 1);
         
         if (received_frame.is_valid) {
-            int target_count = (received_frame.data_length.s - 1) / TARGET_DATA_BYTE_LENGTH;
-
-            for (int pos = 0; pos < target_count; ++pos) {
-                data[pos].num = received_frame.data[0 + TARGET_DATA_BYTE_LENGTH * pos];
+            for (int pos = 0; pos < target_data_capacity; ++pos) {
+                data[pos].num = received_frame.data[0 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET];
 
                 data[pos].distance = u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[1 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[2 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[2 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[3 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
 
                 data[pos].speed = u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[3 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[4 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[4 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[5 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
 
                 data[pos].angle = u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[5 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[6 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[6 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[7 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
 
                 data[pos].snr =u_byte_to_float(new u_byte_t[2] {
-                        received_frame.data[7 + TARGET_DATA_BYTE_LENGTH * pos],
-                        received_frame.data[8 + TARGET_DATA_BYTE_LENGTH * pos]
+                        received_frame.data[8 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET],
+                        received_frame.data[9 + TARGET_DATA_BYTE_LENGTH * pos + TARGET_DATA_BYTE_OFFSET]
                 });
             }
 
@@ -516,11 +562,19 @@ public:
      * }
      * \endcode
      */
-    int enable_data_transmit() {
+    virtual int enable_data_transmit() {
         frame target_frame = configure_frame(CMD_ENABLE_TRANSMIT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -541,11 +595,19 @@ public:
      * }
      * \endcode
      */
-    int disable_data_transmit() {
+    virtual int disable_data_transmit() {
         frame target_frame = configure_frame(CMD_DISABLE_TRANSMIT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -579,11 +641,19 @@ public:
      *  }
      * \endcode
      */
-    int set_data_transmit_freq(u_byte_t freq) {
+    virtual int set_data_transmit_freq(u_byte_t freq) {
         frame target_frame = configure_frame(CMD_SET_DATA_FREQ, freq);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -604,11 +674,19 @@ public:
      * }
      * \endcode
      */
-    int enable_zero_data_reporting() {
+    virtual int enable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_REPORT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 
@@ -629,11 +707,19 @@ public:
      * }
      * \endcode
      */
-    int disable_zero_data_reporting() {
+    virtual int disable_zero_data_reporting() {
         frame target_frame = configure_frame(CMD_SET_ZERO_REPORT, ZERO_DATA_NOT_REPORT);
-        write_frame(target_frame);
 
-        int result = read_status();
+        int attempts = 10;
+        int result{};
+
+        do {
+            write_frame(target_frame);
+            result = read_status();
+
+            --attempts;
+        } while (result != SMART_ROAD_RADAR_OK && attempts > 0);
+
         return result;
     }
 };

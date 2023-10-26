@@ -10,5 +10,6 @@ add_executable(
         src/serial.hpp
         src/utils.hpp
         src/smart_road_radar.hpp
+        src/smart_road_radar_demo.hpp
         src/smart_road_radar_utils.hpp
         src/smart_road_radar_cli.hpp)
